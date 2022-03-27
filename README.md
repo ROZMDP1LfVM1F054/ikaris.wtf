@@ -4,10 +4,12 @@
 
     > The Vampire Legacies [RELEASED - PRIVATE], -- Released PRIVATE
     > Mystic Falls [RELEASED - PRIVATE], -- Released PRIVATE
-    > Charmed [IN DEV - PRIVATE], -- ALMOST FINISHED
+    > The Mystic Diares [FINISHED - PRIVATE], -- Havent Released
+    > Charmed [IN DEV - PRIVATE], --  Almost finished
     > The Kinetic Abilites [RELEASED - PATCHED CURRENTLY], -- Released PRIVATE
     > Heroes Resurrection [FINISHED - PRIVATE], -- Havent Released
     > Da Hood [IN DEV - PRIVATE], -- HAVENT STARTED
+    > ZOぞ [IN DEV - PRIVATE], -- Almost finished
     
 # FAQ & Info
 
