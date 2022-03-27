@@ -6,7 +6,7 @@
     > Mystic Falls [RELEASED - PRIVATE], -- Released PRIVATE
     > Charmed [IN DEV - PRIVATE], -- ALMOST FINISHED
     > The Kinetic Abilites [RELEASED - PATCHED CURRENTLY], -- Released PRIVATE
-    > Heroes Ressurection [FINISHED - PRIVATE], -- Havent Released
+    > Heroes Resurrection [FINISHED - PRIVATE], -- Havent Released
     > Da Hood [IN DEV - PRIVATE], -- HAVENT STARTED
     
 # FAQ & Info
