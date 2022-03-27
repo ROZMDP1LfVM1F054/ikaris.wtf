@@ -15,12 +15,12 @@
     
 # FAQ & Info
 
-**What is ZuvWare?**
+**What is Zynixu?**
 
-    > ZuvWare is a private, paid-to-use project which will soon be open up to the public.
-    > ZuvWare is founded by zuvbruv#3308, and scripted by zuvbruv#3308 and antikur#0666.
+    > Zynixu is a private, paid-to-use project which will soon be open up to the public.
+    > Zynixu is founded by zuvbruv#3308, and scripted by zuvbruv#3308 and antikur#0666.
 
 
-**Is ZuvWare released to the public?**
+**Is Zynixu released to the public?**
 
     > No, but soon will!
