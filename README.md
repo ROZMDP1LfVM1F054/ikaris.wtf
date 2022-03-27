@@ -22,9 +22,3 @@
 **Is ZuvWare released to the public?**
 
     > No, but soon will!
-
-# Supported Executors
-
-**ZuvWare Supports**
-
-> Synapse X, KRNL, Script-Ware.
