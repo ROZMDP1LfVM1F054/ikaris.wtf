@@ -16,7 +16,7 @@
 **What is ZuvWare?**
 
     > ZuvWare is a private, paid-to-use project 
-    > ZuvWare is created, founded, and scripted by zuvbruv#3308 and antikur#0666.
+    > ZuvWare is founded by zuvbruv#3308, and scripted by zuvbruv#3308 and antikur#0666.
 
 
 **Is ZuvWare released to the public?**
