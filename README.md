@@ -19,8 +19,7 @@
 
     > Zynixu is a private, paid-to-use project which will soon be open up to the public.
     > Zynixu is founded by zuvbruv#3308, and scripted by zuvbruv#3308 and antikur#0666.
+    
+# Join the Discord
 
-
-**Is Zynixu released to the public?**
-
-    > No, but soon will!
+https://discord.gg/Qgv3wvEVgH
