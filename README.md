@@ -8,7 +8,7 @@
     > Charmed [IN DEV - PRIVATE], --  Almost finished
     > The Kinetic Abilites [RELEASED - PATCHED CURRENTLY], -- Released PRIVATE
     > Heroes Resurrection [FINISHED - PRIVATE], -- Havent Released
-    > Da Hood [IN DEV - PRIVATE], -- HAVENT STARTED
+    > Da Hood [IN DEV - PRIVATE], -- Havent started
     > ZOぞ [IN DEV - PRIVATE], -- Almost finished
     
 # FAQ & Info
@@ -22,3 +22,7 @@
 **Is ZuvWare released to the public?**
 
     > No, but soon will!
+
+# Supported Executors
+
+> ZuvWare supports Synapse X, KRNL, Script-Ware.
