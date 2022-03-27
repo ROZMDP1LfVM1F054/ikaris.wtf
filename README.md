@@ -10,6 +10,7 @@
     > Heroes Resurrection [FINISHED - PRIVATE], -- Havent Released
     > Da Hood [IN DEV - PRIVATE], -- Havent started
     > ZOぞ [IN DEV - PRIVATE], -- Almost finished
+    > Magic Training [IN DEV - PRIVATE], -- Havent started
     > South London 2 [IN DEV - PRIVATE], -- Havent started
     
 # FAQ & Info
