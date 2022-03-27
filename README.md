@@ -1,6 +1,6 @@
 # Games
 
-**Currently ZuvWare supported games:**
+**Currently Zynixu supported games:**
 
     > The Vampire Legacies [RELEASED - PRIVATE], -- Released PRIVATE
     > Mystic Falls [RELEASED - PRIVATE], -- Released PRIVATE
