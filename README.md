@@ -25,4 +25,6 @@
 
 # Supported Executors
 
-> ZuvWare supports Synapse X, KRNL, Script-Ware.
+**ZuvWare Supports**
+
+> Synapse X, KRNL, Script-Ware.
