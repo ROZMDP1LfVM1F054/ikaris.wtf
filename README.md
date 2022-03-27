@@ -1,6 +1,6 @@
-*Games**
+**Games**
 
-Currently ZuvWare supported games:**
+**Currently ZuvWare supported games:**
 
     > The Vampire Legacies [RELEASED - PRIVATE], -- Released PRIVATE
     > Mystic Falls [RELEASED - PRIVATE], -- Released PRIVATE
@@ -9,7 +9,7 @@ Currently ZuvWare supported games:**
     > Heroes Ressurection [FINISHED - PRIVATE], -- Havent Released
     > Da Hood [IN DEV - PRIVATE], -- HAVENT STARTED
     
-FAQ & Info
+**FAQ & Info**
 
 **What is ZuvWare?**
 
