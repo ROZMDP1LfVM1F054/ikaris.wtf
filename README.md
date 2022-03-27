@@ -1,4 +1,4 @@
-**#Games**
+#Games
 
 **Currently ZuvWare supported games:**
 
