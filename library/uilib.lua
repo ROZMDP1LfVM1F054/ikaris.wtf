@@ -1439,7 +1439,7 @@ local ss = s:Tab("Main")
 local hehe = s:Tab("Misc")
 
 ss:Slider("Change Walkspeed", 16, 1500, function(value)
-	game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = value
+	
 end)
 
 ss:Toggle("EXAMPLE", false, function(t)
@@ -1482,12 +1482,11 @@ end)
 
 -- CREDITS --
 
-hm:Label("Script Maker - zuvbruv#3308")
+hm:Label("NAME HERE")
 
-hm:Label("Script Maker - antikur#0666")
+hm:Label("NAME HERE")
 
-hm:Button("Copy Discord Invite", function()
-	setclipboard("discord.gg/s86bVC6z7a")
+hm:Button("TEXT HERE", function()
 end)
 
 -- SPLIT --
