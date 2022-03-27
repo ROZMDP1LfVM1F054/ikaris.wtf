@@ -1,5 +1,6 @@
-Games
-Currently ZuvWare supported games:
+*Games**
+
+Currently ZuvWare supported games:**
 
     > The Vampire Legacies [RELEASED - PRIVATE], -- Released PRIVATE
     > Mystic Falls [RELEASED - PRIVATE], -- Released PRIVATE
@@ -9,12 +10,13 @@ Currently ZuvWare supported games:
     > Da Hood [IN DEV - PRIVATE], -- HAVENT STARTED
     
 FAQ & Info
-What is ZuvWare?
+
+**What is ZuvWare?**
 
     > ZuvWare is a private, paid-to-use project 
     > ZuvWare is created, founded, and scripted by zuvbruv#3308 and antikur#0666.
 
 
-Is ZuvWare released to the public?
+**Is ZuvWare released to the public?**
 
     > No, but soon will!
