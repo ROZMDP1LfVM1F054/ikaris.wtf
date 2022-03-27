@@ -9,7 +9,7 @@
     > Heroes Ressurection [FINISHED - PRIVATE], -- Havent Released
     > Da Hood [IN DEV - PRIVATE], -- HAVENT STARTED
     
-**FAQ & Info**
+# FAQ & Info
 
 **What is ZuvWare?**
 
