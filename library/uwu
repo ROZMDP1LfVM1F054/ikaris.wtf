@@ -1,4 +1,4 @@
-local library = {flags = {}, windows = {}, open = true}
+Zynixulocal library = {flags = {}, windows = {}, open = true}
 
 --Services
 local runService = game:GetService"RunService"
@@ -1651,7 +1651,7 @@ local UIToggle
 local UnlockMouse
 function library:Init()
 	
-	self.base = self.base or self:Create("ScreenGui")
+	self.base = self.base or self:Create("_zyixu")
 	if (syn and syn.protect_gui) then
 		syn.protect_gui(self.base)
 		self.base.Parent = game:GetService"CoreGui"
