@@ -63,7 +63,7 @@ local function MakeDraggable(topbarobject, object)
 end
 
 local zuvware = Instance.new("ScreenGui")
-zuvware.Name = "_zvw2"
+zuvware.Name = "_zyn"
 zuvware.Parent = game.CoreGui
 zuvware.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 local usi = game:GetService("UserInputService")
@@ -1430,71 +1430,3 @@ function lib:MainWindow(text)
 	end
 	return window
 end
-
--- SPLIT --
-
-local s = lib:MainWindow("TEXT HERE")
-local hm = s:Tab("Home")
-local ss = s:Tab("Main")
-local hehe = s:Tab("Misc")
-
-ss:Slider("Change Walkspeed", 16, 1500, function(value)
-	
-end)
-
-ss:Toggle("EXAMPLE", false, function(t)
-
-end)
-
-ss:Toggle("EXAMPLE", false, function(t)
-
-end)
-
-ss:Toggle("EXAMPLE", false, function(t)
-
-end)
-
-ss:Textbox("EXAMPLE",true, function(value)
-
-end)
-
--- COMBAT --
-
-ss:Slider("Change Jumpower", 16, 1500, function(value)
-	
-end)
-
-ss:Toggle("EXAMPLE", false, function(t)
-
-end)
-
-ss:Toggle("EXAMPLE", false, function(t)
-
-end)
-
-ss:Textbox("EXAMPLE",true, function(value)
-
-end)
-
-ss:Button("EXAMPLE", function()
-
-end)
-
--- CREDITS --
-
-hm:Label("NAME HERE")
-
-hm:Label("NAME HERE")
-
-hm:Button("TEXT HERE", function()
-end)
-
--- SPLIT --
-
-hehe:Button("EXAMPLE", function()
-
-end)
-
-hehe:Button("EXAMPLE", function()
-
-end)
