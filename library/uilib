@@ -62,20 +62,20 @@ local function MakeDraggable(topbarobject, object)
 	)
 end
 
-local zuvware = Instance.new("ScreenGui")
-zuvware.Name = "_zyn"
-zuvware.Parent = game.CoreGui
-zuvware.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local zynixu = Instance.new("ScreenGui")
+zynixu.Name = "_zyn"
+zynixu.Parent = game.CoreGui
+zynixu.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 local usi = game:GetService("UserInputService")
 local uitoggled = false
 usi.InputBegan:Connect(
 	function(io, p)
 		if io.KeyCode == Enum.KeyCode.BackSlash then
 			if uitoggled == false then
-				zuvware.Enabled = false
+				zynixu.Enabled = false
 				uitoggled = true
 			else
-				zuvware.Enabled = true
+				zynixu.Enabled = true
 				uitoggled = false
 			end
 		end
@@ -103,7 +103,7 @@ coroutine.wrap(
 )()
 
 function lib:notification(textt)
-	for i, v in next, zuvware:GetChildren() do
+	for i, v in next, zynixu:GetChildren() do
 		if v.Name == "notificationframe" then
 			v:Destroy()
 		end
@@ -120,7 +120,7 @@ function lib:notification(textt)
 
 
 	notificationframe.Name = "notificationframe"
-	notificationframe.Parent = zuvware
+	notificationframe.Parent = zynixu
 	notificationframe.AnchorPoint = Vector2.new(0.5, 0.5)
 	notificationframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 	notificationframe.Position = UDim2.new(0.5, 0, 0.50856787, 0)
@@ -243,7 +243,7 @@ function lib:MainWindow(text)
 	local dragframe = Instance.new("Frame")
 
 	mainframe.Name = "mainframe"
-	mainframe.Parent = zuvware
+	mainframe.Parent = zynixu
 	mainframe.AnchorPoint = Vector2.new(0.5, 0.5)
 	mainframe.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
 	mainframe.Position = UDim2.new(0.5, 0, 0.5, 0)
@@ -270,7 +270,7 @@ function lib:MainWindow(text)
 	title.Position = UDim2.new(0.172839507, 0, 0.0558659211, 0)
 	title.Size = UDim2.new(0, 106, 0, 28)
 	title.Font = Enum.Font.GothamSemibold
-	title.Text = "ZuvWare"
+	title.Text = "Zynixu"
 	title.TextColor3 = Color3.fromRGB(255, 255, 255)
 	title.TextSize = 18.000
 	title.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
