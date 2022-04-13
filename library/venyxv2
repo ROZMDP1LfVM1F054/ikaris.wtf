@@ -7,7 +7,7 @@ local tweeninfo = TweenInfo.new
 local utility = {}
 
 -- Themes
-local objects = {}""
+local objects = {}
 local themes = {}
 
 themes = {
