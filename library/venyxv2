@@ -200,8 +200,8 @@ do
 	-- new classes
 
 	function library.new(config)
-		local config = config.Title
-		local title, icon = config.Title
+		local config = config or {}
+		local title, icon = config.Title or "Zynix"
 		local container = utility:Create("ScreenGui", {
 			Name = title,
 			Parent = game.CoreGui
