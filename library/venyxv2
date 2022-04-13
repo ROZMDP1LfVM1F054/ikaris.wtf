@@ -201,7 +201,7 @@ do
 
 	function library.new(config)
 		local config = config or {}
-		local title, icon = config.Title or "Zynix"
+		local title, icon = config.Title or "game:GetService("MarketplaceService"):GetProductInfo(game.PlaceId).Name, config.icon or 7122342585"
 		local container = utility:Create("ScreenGui", {
 			Name = title,
 			Parent = game.CoreGui
