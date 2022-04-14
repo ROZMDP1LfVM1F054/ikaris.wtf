@@ -1,6 +1,6 @@
 # Games
 
-**Currently Zynix supported games:**
+**Currently Zynix Hub supported games:**
 
     > The Vampire Legacies [RELEASED - PRIVATE], -- Released PRIVATE
     > Mystic Falls [RELEASED - PRIVATE], -- Released PRIVATE
@@ -17,9 +17,9 @@
 
 **What is Zynix?**
 
-    > Zynix is a public, paid-to-use project which is constantly being improved.
+    > Zynix is a private Hub, paid-to-use project which will be opended to the public soon.
     > Zynix is founded by zuvbruv#3308, and scripted by zuvbruv#3308
     
 # Join the Discord
 
-https://discord.gg/Qgv3wvEVgH
+Coming soon...
