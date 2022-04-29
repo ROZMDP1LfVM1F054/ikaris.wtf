@@ -775,7 +775,7 @@ function library:init()
                 function()
                     return Enum.ContextActionResult.Sink
                 end,
-                false,
+                true,
                 unpack(Enum.PlayerActions:GetEnumItems())
             )
         else
