@@ -59,7 +59,7 @@ local library = {
         ['colorpicker'] = 1100;
         ['watermark'] = 1300;
         ['notification'] = 1400;
-        ['cursor'] = 0;
+        ['cursor'] = 1500;
     },
     stats = {
         ['fps'] = 0;
@@ -868,6 +868,7 @@ function library:init()
                 Text = message;
                 Outline = true;
                 Font = 2;
+                
                 Size = 13;
                 ZIndex = z+4;
                 Parent = notification.background;
@@ -963,7 +964,7 @@ function library:init()
                 ThemeColor = 'Primary Text';
                 Text = indicator.title;
                 Size = 13;
-                Font = 2;
+                Font = 1;
                 ZIndex = z+2;
                 Center = true;
                 Outline = true;
