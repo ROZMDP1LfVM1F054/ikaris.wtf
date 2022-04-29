@@ -59,7 +59,7 @@ local library = {
         ['colorpicker'] = 1100;
         ['watermark'] = 1300;
         ['notification'] = 1400;
-        ['cursor'] = 1500;
+        ['cursor'] = 0;
     },
     stats = {
         ['fps'] = 0;
@@ -78,8 +78,8 @@ local library = {
     open = false;
     opening = false;
     hasInit = false;
-    cheatname = startupArgs.cheatname or 'octohook';
-    gamename = startupArgs.gamename or 'universal';
+    cheatname = startupArgs.cheatname or 'zynix.cc';
+    gamename = startupArgs.gamename or 'hub';
     fileext = startupArgs.fileext or '.txt';
 }
 
@@ -775,7 +775,7 @@ function library:init()
                 function()
                     return Enum.ContextActionResult.Sink
                 end,
-                true,
+                false,
                 unpack(Enum.PlayerActions:GetEnumItems())
             )
         else
@@ -4531,7 +4531,6 @@ function library:init()
     self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = newUDim2(0,15,0,325), enabled = false});
     self:SetOpen(true);
     self.hasInit = true
-    self:SendNotification(self.cheatname..' | ui initalized', 5);
 
 end
 getgenv().library = library
