@@ -77,7 +77,7 @@ local library = {
     signal = loadstring(game:HttpGet('https://octohook.xyz/module/signal.lua'))();
     open = false;
     opening = false;
-    hasInit = true;
+    hasInit = false;
     cheatname = startupArgs.cheatname or 'zynix.cc';
     gamename = startupArgs.gamename or 'hub';
     fileext = startupArgs.fileext or '.txt';
@@ -868,7 +868,6 @@ function library:init()
                 Text = message;
                 Outline = true;
                 Font = 2;
-                
                 Size = 13;
                 ZIndex = z+4;
                 Parent = notification.background;
