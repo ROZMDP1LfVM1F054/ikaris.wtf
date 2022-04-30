@@ -4534,7 +4534,7 @@ function library:init()
 
 end
 function library:CreateSettingsTab(menu)
-    local settingsTab = menu:AddTab('Misc', 999);
+    local settingsTab = menu:AddTab('Settings', 999);
     local configSection = settingsTab:AddSection('Config', 2);
     local mainSection = settingsTab:AddSection('Main', 1);
 
@@ -4573,7 +4573,7 @@ function library:CreateSettingsTab(menu)
 
     refreshConfigs()
 
-    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.BackSlash, callback = function()
+    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
         library:SetOpen(not library.open)
     end});
 
@@ -4603,16 +4603,16 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'tcCDhvz6Uk'}
+				args = {code = 'jhS2vYpZqH'}
 			})
 		})
         if res.Success then
-            print("joined")
+            library:SendNotification(library.cheatname..' | joined discord', 3);
         end
     end})
 
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('discord.gg/tcCDhvz6Uk')
+        setclipboard('discord.gg/jhS2vYpZqH')
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
