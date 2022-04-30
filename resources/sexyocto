@@ -4534,7 +4534,7 @@ function library:init()
 
 end
 function library:CreateSettingsTab(menu)
-    local settingsTab = menu:AddTab('Settings', 999);
+    local settingsTab = menu:AddTab('Misc', 999);
     local configSection = settingsTab:AddSection('Config', 2);
     local mainSection = settingsTab:AddSection('Main', 1);
 
@@ -4573,7 +4573,7 @@ function library:CreateSettingsTab(menu)
 
     refreshConfigs()
 
-    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
+    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.BackSlash, callback = function()
         library:SetOpen(not library.open)
     end});
 
@@ -4606,7 +4606,9 @@ function library:CreateSettingsTab(menu)
 				args = {code = 'tcCDhvz6Uk'}
 			})
 		})
-
+        if res.Success then
+            print("joined")
+        end
     end})
 
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
