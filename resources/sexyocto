@@ -4709,7 +4709,7 @@ function library:init()
         end
     end)
 
-    self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = newUDim2(0,15,0,325), enabled = false});
+    self.keyIndicator = self.NewIndicator({title = 'Keybinds:\nBone Breaking - T\nPain Infliction - G\nIncendia - R\nMotus - M\nImmobulus - F\nSilencio - E\n', pos = newUDim2(0,15,0,325), enabled = false});
     self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
