@@ -87,7 +87,7 @@ library.themes = {
     {
         name = 'Default',
         theme = {
-            ['Accent']                    = fromrgb(255,135,255);
+            ['Accent']                    = fromrgb(255,255,255);
             ['Background']                = fromrgb(18,18,18);
             ['Border']                    = fromrgb(0,0,0);
             ['Border 1']                  = fromrgb(60,60,60);
@@ -4717,7 +4717,7 @@ function library:init()
 end
 
 function library:CreateSettingsTab(menu)
-    local settingsTab = menu:AddTab('Settings', 999);
+    local settingsTab = menu:AddTab('Misc', 999);
     local configSection = settingsTab:AddSection('Config', 2);
     local mainSection = settingsTab:AddSection('Main', 1);
 
@@ -4786,7 +4786,7 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'jhS2vYpZqH'}
+				args = {code = 'tcCDhvz6Uk'}
 			})
 		})
         if res.Success then
@@ -4795,7 +4795,7 @@ function library:CreateSettingsTab(menu)
     end})
 
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('discord.gg/jhS2vYpZqH')
+        setclipboard('discord.gg/tcCDhvz6Uk')
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
