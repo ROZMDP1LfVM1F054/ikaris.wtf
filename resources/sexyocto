@@ -269,11 +269,13 @@ library.themes = {
 }
 
 local blacklistedKeys = {
+	Enum.KeyCode.Unknown,
 	Enum.KeyCode.W,
 	Enum.KeyCode.A,
 	Enum.KeyCode.S,
-	Enum.KeyCode.LeftControl,
+	Enum.KeyCode.D,
 	Enum.KeyCode.Slash,
+	Enum.KeyCode.Tab,
 	Enum.KeyCode.Escape
 }
 
@@ -3925,8 +3927,8 @@ function library:init()
                             if box.focused then
                                 box:ReleaseFocus();
                             else
-                                box:CaptureFocus(inputservice:IsKeyDown(Enum.KeyCode.Minus));
-                                if inputservice:IsKeyDown(Enum.KeyCode.Minus) then
+                                box:CaptureFocus(inputservice:IsKeyDown(Enum.KeyCode.LeftControl));
+                                if inputservice:IsKeyDown(Enum.KeyCode.LeftControl) then
                                     objs.inputText.Text = '';
                                 end
                             end
