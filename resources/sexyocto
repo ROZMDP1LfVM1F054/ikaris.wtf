@@ -269,7 +269,6 @@ library.themes = {
 }
 
 local blacklistedKeys = {
-	Enum.KeyCode.Unknown,
 	Enum.KeyCode.W,
 	Enum.KeyCode.A,
 	Enum.KeyCode.S,
@@ -290,6 +289,9 @@ local whitelistedBoxKeys = {
     Enum.KeyCode.Seven,
     Enum.KeyCode.Eight,
     Enum.KeyCode.Nine,
+    Enum.KeyCode.BackSlash,
+    Enum.KeyCode.Enter,
+    Enum.KeyCode.LCTRL
 }
 
 local keyNames = {
