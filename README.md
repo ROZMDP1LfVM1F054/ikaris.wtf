@@ -1,6 +1,6 @@
 # Games
 
-**Currently zynix.cc supported games:**
+**Currently Zynix.cc supported games:**
 
     > The Vampire Legacies [RELEASED - PRIVATE]
     > Mystic Falls [RELEASED - PRIVATE]
@@ -15,10 +15,10 @@
     
 # FAQ & Info
 
-**What is zynix.cc?**
+**What is Zynix.cc?**
 
-    > zynix.cc is a private, paid-to-use project which will be opended to the public soon.
-    > zynix.cc is founded by zuvbruv#3308, and scripted by zuvbruv#3308
+    > Zynix.cc is a private, paid-to-use project which will be opended to the public soon.
+    > Zynix.cc is founded by zuvbruv#3308, and scripted by zuvbruv#3308
     
 # Join the Discord
 
