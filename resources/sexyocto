@@ -274,9 +274,7 @@ local blacklistedKeys = {
 	Enum.KeyCode.S,
 	Enum.KeyCode.D,
 	Enum.KeyCode.Slash,
-	Enum.KeyCode.Tab,
 	Enum.KeyCode.LeftControl,
-        Enum.KeyCode.RightControl,
 	Enum.KeyCode.Escape
 }
 
