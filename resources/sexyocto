@@ -3928,8 +3928,8 @@ function library:init()
                             if box.focused then
                                 box:ReleaseFocus();
                             else
-                                box:CaptureFocus(inputservice:IsKeyDown(Enum.KeyCode.LeftControl));
-                                if inputservice:IsKeyDown(Enum.KeyCode.LeftControl) then
+                                box:CaptureFocus(inputservice:IsKeyDown(Enum.KeyCode.Minus));
+                                if inputservice:IsKeyDown(Enum.KeyCode.Minus) then
                                     objs.inputText.Text = '';
                                 end
                             end
