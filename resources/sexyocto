@@ -4804,11 +4804,17 @@ function library:CreateSettingsTab(menu)
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
         setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
     end})
+    
+    mainSection:AddButton({text = 'Rejoin Game', flag = '', callback = function()
+    game.Players.LocalPlayer:Kick("Player requested rejoin, zynix on top xD")
+    wait(0.1)
+    game:GetService("TeleportService"):Teleport(game.PlaceId, game.Players.LocalPlayer)
+    end})
 
     mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
         library:Unload();
     end})
-
+    
     mainSection:AddSeparator({text = 'Keybinds'});
     mainSection:AddToggle({text = 'Keybind Indicator', flag = 'keybind_indicator', callback = function(bool)
         library.keyIndicator:SetEnabled(bool);
