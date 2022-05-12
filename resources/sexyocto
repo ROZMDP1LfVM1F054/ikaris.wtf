@@ -4797,8 +4797,17 @@ function library:CreateSettingsTab(menu)
         end
     end})
 
-    mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('discord.gg/tcCDhvz6Uk')
+    mainSection:AddButton({text = 'Script Users', flag = 'copydiscord', callback = function()
+        local plrchar = game.Workspace.Players
+        local plrlocal = game.Players.LocalPlayer.Name
+
+        for i,v in pairs(plrchar:GetChildren()) do
+           if not v.Head:FindFirstChild("OriginalSize") then
+              if v.Name ~= plrlocal then
+                    Notify("zynix.cc", " | found script user: "..v.Name, 12)
+                end
+             end
+         end
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
