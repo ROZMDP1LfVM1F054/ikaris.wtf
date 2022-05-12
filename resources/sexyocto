@@ -26,6 +26,12 @@ local function gs(a)
     return game:GetService(a)
 end
 
+local function Notify(title, text, time)
+    library:SendNotification(
+        library.cheatname..text, time
+    )
+end
+
 -- // Variables
 local players, http, runservice, inputservice, tweenService, stats, actionservice = gs('Players'), gs('HttpService'), gs('RunService'), gs('UserInputService'), gs('TweenService'), gs('Stats'), gs('ContextActionService')
 local localplayer = players.LocalPlayer
