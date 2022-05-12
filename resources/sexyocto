@@ -4812,7 +4812,7 @@ function library:CreateSettingsTab(menu)
         for i,v in pairs(plrchar:GetChildren()) do
             if not v.Head:FindFirstChild("OriginalSize") then
                 if v.Name ~= plrlocal then
-                    library:SendNotification(library.cheatname.."zynix.cc", " | found script user: "..v.Name, 5)
+                    library:SendNotification(library.cheatname.."zynix.cc", " | found script user: "..v.Name)
                 else
                     library:SendNotification(library.cheatname.."zynix.cc", " | no script users", 5)
                 end
