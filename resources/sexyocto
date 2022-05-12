@@ -4805,21 +4805,6 @@ function library:CreateSettingsTab(menu)
         setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
     end})
 
-    mainSection:AddButton({text = 'Script Users', flag = '', callback = function()
-        local plrchar = game.Workspace.Players
-        local plrlocal = game.Players.LocalPlayer.Name
-
-        for i,v in pairs(plrchar:GetChildren()) do
-            if not v.Head:FindFirstChild("OriginalSize") then
-                if v.Name ~= plrlocal then
-                    library:SendNotification(library.cheatname.."zynix.cc", " | found script user: "..v.Name)
-                else
-                    library:SendNotification(library.cheatname.."zynix.cc", " | no script users", 5)
-                end
-            end
-        end
-    end})
-
     mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
         library:Unload();
     end})
