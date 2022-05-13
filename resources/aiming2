@@ -1,0 +1,35 @@
+--[[ Credits to Stefanuk12 ]]--
+
+local Aiming = loadstring(game:HttpGet("https://raw.githubusercontent.com/SpaceYes/SomeRandomStuff/Main/Aiming"))()
+Aiming.TeamCheck(false)
+
+-- // Services
+local Workspace = game:GetService("Workspace")
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local UserInputService = game:GetService("UserInputService")
+
+-- // Vars
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+local CurrentCamera = Workspace.CurrentCamera
+
+local DaHoodSettings = {
+	AimLock = true,
+	Prediction = 0.167,
+	AimLockKeybind = Enum.KeyCode.E
+}
+getgenv().DaHoodSettings = DaHoodSettings
+
+RunService:BindToRenderStep("AimLock", 0, function()
+	if (DaHoodSettings.AimLock and Aiming.Check() and UserInputService:IsKeyDown(DaHoodSettings.AimLockKeybind)) then
+		-- // Vars
+		local SelectedPart = Aiming.SelectedPart
+
+		-- // Hit to account prediction
+		local Hit = SelectedPart.CFrame + (SelectedPart.Velocity * DaHoodSettings.Prediction)
+
+		-- // Set the camera to face towards the Hit
+		CurrentCamera.CFrame = CFrame.lookAt(CurrentCamera.CFrame.Position, Hit.Position)
+	end
+end)
