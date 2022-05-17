@@ -1,0 +1,6 @@
+local Module = loadstring(game:HttpGet("https://raw.githubusercontent.com/zuvvymwa/zynixdev/main/library/joinui"))()
+
+Module.Prompt({
+    invite = "", -- required
+    name = "" -- optional
+})
