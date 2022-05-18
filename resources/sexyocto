@@ -4712,7 +4712,7 @@ function library:init()
         end
     end)
 
-    self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = newUDim2(5,15,0,325), enabled = false});
+    self.keyIndicator = self.NewIndicator({title = 'zuvhook', pos = newUDim2(5,15,0,325), enabled = false});
     self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
