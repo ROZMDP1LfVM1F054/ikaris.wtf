@@ -1110,7 +1110,7 @@ function library:init()
             })
 
             objs.border1 = utility:Draw('Square', {
-                Size = newUDim2(1,2,1,2);
+                Size = newUDim2(0, 449, 0.7, 20.5);
                 Position = newUDim2(0,-1,0,-1);
                 ThemeColor = 'Border 2';
                 Parent = objs.background;
@@ -1118,7 +1118,7 @@ function library:init()
             })
 
             objs.border2 = utility:Draw('Square', {
-                Size = newUDim2(1,2,1,2);
+                Size = newUDim2(0, 449, 0.7, 20.5);
                 Position = newUDim2(0,-1,0,-1);
                 ThemeColor = 'Border 3';
                 Parent = objs.border1;
