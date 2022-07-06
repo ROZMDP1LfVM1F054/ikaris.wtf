@@ -1,6 +1,6 @@
 # Games
 
-**Currently Zynix.cc supported games:**
+**Currently zuvhook supported games:**
 
     > The Vampire Legacies [RELEASED - PRIVATE]
     > Mystic Falls [RELEASED - PRIVATE]
@@ -17,8 +17,8 @@
 
 **What is Zynix.cc?**
 
-    > Zynix.cc is a private, paid-to-use project which will be opended to the public soon.
-    > Zynix.cc is founded by zuvbruv#3308, and scripted by zuvbruv#3308
+    > zuvhook is a private, paid-to-use project which will be opended to the public soon.
+    > zuvhook is founded by zuvbruv#3308, and scripted by zuvbruv#3308
     
 # Join the Discord
 
