@@ -15,7 +15,7 @@
     
 # FAQ & Info
 
-**What is Zynix.cc?**
+**What is zuvhook**
 
     > zuvhook is a private, paid-to-use project which will be opended to the public soon.
     > zuvhook is founded by zuvbruv#3308, and scripted by zuvbruv#3308
