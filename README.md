@@ -4,7 +4,6 @@
 
     > The Vampire Legacies [IN DEV - PRIVATE]
     > Mystic Falls [IN DEV - PRIVATE]
-    > The Mystic Diares [FINISHED - PRIVATE]
     > Charmed [IN DEV - PRIVATE]
     > The Kinetic Abilites [IN DEV - IN DEV]
     > Heroes Resurrection [IN DEV - PRIVATE]
