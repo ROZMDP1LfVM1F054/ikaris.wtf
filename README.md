@@ -4,9 +4,8 @@
 
     > The Vampire Legacies [IN DEV - PRIVATE]
     > Mystic Falls [IN DEV - PRIVATE]
-    > Charmed [IN DEV - PRIVATE]
     > The Kinetic Abilites [IN DEV - IN DEV]
-    > Heroes Resurrection [IN DEV - PRIVATE]
+    > Heroes: Online World [IN DEV - PRIVATE]
     > Da Hood [IN DEV - PRIVATE]
     > ZOぞ [IN DEV - PRIVATE]
     > Magic Training [IN DEV - PRIVATE]
