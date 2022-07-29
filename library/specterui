@@ -1,12 +1,10 @@
--- leaked by slatti#6944 and flow#4133
--- have fun skids 🚬
 repeat
     wait()
 until game:IsLoaded()
 
 local library
 do
-    local folder = "specter"
+    local folder = "arsenic"
 
     local services = setmetatable({}, {
         __index = function(_, service)
