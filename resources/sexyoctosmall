@@ -798,8 +798,8 @@ function library:init()
     end
 
     for i,v in next, self.images do
-        if not isfile(self.cheatname..'/assets/'..i..'.oh') then
-            writefile(self.cheatname..'/assets/'..i..'.oh', game:HttpGet(v))
+        if not isfile(self.cheatname..'/images/'..i..'.oh') then
+            writefile(self.cheatname..'/images/'..i..'.oh', game:HttpGet(v))
         end
         self.images[i] = readfile(self.cheatname..'/assets/'..i..'.oh');
     end
