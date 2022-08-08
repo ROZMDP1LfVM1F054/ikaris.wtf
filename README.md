@@ -20,4 +20,4 @@
     
 # Join the Discord
 
-discord.gg/lunaW
+https://discord.gg/lunaW
