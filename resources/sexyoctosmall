@@ -302,10 +302,6 @@ local keyNames = {
     [Enum.UserInputType.MouseButton3] = 'MB3';
 }
 
-for i,v in next, library.defaultTheme do
-    library.theme[i] = v;
-end
-
 library.button1down = library.signal.new()
 library.button1up   = library.signal.new()
 library.mousemove   = library.signal.new()
