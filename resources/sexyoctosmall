@@ -78,7 +78,7 @@ local library = {
     open = false;
     opening = false;
     hasInit = false;
-    cheatname = startupArgs.cheatname or 'zynix.cc';
+    cheatname = startupArgs.cheatname or 'luna';
     gamename = startupArgs.gamename or '';
     fileext = startupArgs.fileext or '.txt';
 }
@@ -4773,7 +4773,7 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'jhS2vYpZqH'}
+				args = {code = 'lunaW'}
 			})
 		})
         if res.Success then
@@ -4782,7 +4782,7 @@ function library:CreateSettingsTab(menu)
     end})
 
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('discord.gg/jhS2vYpZqH')
+        setclipboard('discord.gg/lunaW')
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
