@@ -1,6 +1,6 @@
 # Games
 
-**Currently Luna supported games:**
+**Currently Arsenic supported games:**
 
     > The Vampire Legacies [IN DEV - PRIVATE]
     > Mystic Falls [IN DEV - PRIVATE]
@@ -13,11 +13,11 @@
     
 # FAQ & Info
 
-**What is Luna**
+**What is Arsenic**
 
-    > Luna is a upcoming, paid-to-use project which will be opended to the public soon.
-    > Luna is founded by zudy#0289, and scripted by zudy#0289
+    > Arsenic is a upcoming, paid-to-use project which will be opended to the public soon.
+    > Arsenic is founded by zudy#0289, and scripted by zudy#0289
     
 # Join the Discord
 
-https://discord.gg/lunaW
+https://discord.gg/samuelhook
