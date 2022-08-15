@@ -7,7 +7,7 @@
     > The Kinetic Abilites [IN DEV - IN DEV]
     > Heroes: Online World [IN DEV - PRIVATE]
     > Da Hood [IN DEV - PRIVATE]
-    > ZOぞ [IN DEV - PRIVATE]
+    > Deepwoken [IN DEV - PRIVATE]
     > South London 2 [IN DEV - PRIVATE]
     
 # FAQ & Info
