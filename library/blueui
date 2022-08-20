@@ -774,60 +774,6 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			ButtonTitle.TextSize = 14.000
 			NewPages.CanvasSize = UDim2.new(0, 0, 0, ElementListing.AbsoluteContentSize.Y)
 		end
-		
-		function ElementHandler:Texbox(togInfo, disapper, callback)
-			togInfo = togInfo or "Toggle"
-			callback = callback or function() end
-
-			local ToggleBtn = Instance.new("TextButton")
-			local ToggleTitle = Instance.new("TextLabel")
-			local ToggleBox = Instance.new("Frame")
-			local ToggleBoxCorner = Instance.new("UICorner")
-
-			ToggleBtn.Name = "ToggleBtn"
-			ToggleBtn.Parent = NewPages
-			ToggleBtn.BackgroundColor3 = Color3.fromRGB(29, 26, 53)
-			ToggleBtn.BorderSizePixel = 0
-			ToggleBtn.Size = UDim2.new(0, 375, 0, 32)
-			ToggleBtn.AutoButtonColor = false
-			ToggleBtn.Font = Enum.Font.SourceSans
-			ToggleBtn.Text = ""
-			ToggleBtn.TextColor3 = Color3.fromRGB(0, 0, 0)
-			ToggleBtn.TextSize = 14.000
-			ToggleBtn.MouseButton1Click:Connect(function(ok)
-			    if ok then
-			        if #ToggleBtn.Text > 0 then
-			            pcall(callback, ToggleBtn.Text)
-			            if disapper then
-			                ToggleBtn.Text = ""
-			             end
-			         end
-			     end
-			end)
-			
-			ToggleTitle.Name = "ToggleTitle"
-			ToggleTitle.Parent = ToggleBtn
-			ToggleTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			ToggleTitle.BackgroundTransparency = 1.000
-			ToggleTitle.Position = UDim2.new(0.03763441, 0, 0, 0)
-			ToggleTitle.Size = UDim2.new(0.962365568, 0, 1, 0)
-			ToggleTitle.Font = Enum.Font.Gotham
-			ToggleTitle.Text = togInfo
-			ToggleTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-			ToggleTitle.TextSize = 14.000
-			ToggleTitle.TextXAlignment = Enum.TextXAlignment.Left
-
-			ToggleBox.Name = "ToggleBox"
-			ToggleBox.Parent = ToggleBtn
-			ToggleBox.BackgroundColor3 = Color3.fromRGB(74, 68, 94)
-			ToggleBox.Position = UDim2.new(0.927419364, 0, 0.15625, 0)
-			ToggleBox.Size = UDim2.new(0, 21, 0, 21)
-
-			ToggleBoxCorner.CornerRadius = UDim.new(0, 6)
-			ToggleBoxCorner.Name = "ToggleBoxCorner"
-			ToggleBoxCorner.Parent = ToggleBox
-			NewPages.CanvasSize = UDim2.new(0, 0, 0, ElementListing.AbsoluteContentSize.Y)
-		end
 
 		function ElementHandler:Toggle(togInfo, callback)
 			togInfo = togInfo or "Toggle"
