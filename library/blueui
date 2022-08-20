@@ -125,12 +125,12 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 					TweenService:Create(
 						MainFrame,
 						TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-						{Size = UDim2.new(0, 518, 0, 319)}
+						{Size = UDim2.new(0, 448, 0, 331)}
 					):Play()
 					TweenService:Create(
 						MainFrameGlow,
 						TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-						{Size = UDim2.new(0, 518, 0, 319)}
+						{Size = UDim2.new(0, 448, 0, 331)}
 					):Play()
 					TweenService:Create(
 						MainFrameGlow1,
@@ -170,7 +170,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 	MainFrameGlow.BackgroundTransparency = 1.000
 	MainFrameGlow.BorderSizePixel = 0
 	MainFrameGlow.Position = UDim2.new(0.5, 0, 0.5, 0)
-	MainFrameGlow.Size = UDim2.new(0, 518, 0, 319)
+	MainFrameGlow.Size = UDim2.new(0, 0, 0, 0)
 
 	MainFrameGlow1.Name = "MainFrameGlow1"
 	MainFrameGlow1.Parent = MainFrameGlow
@@ -201,12 +201,12 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 	TweenService:Create(
 		MainFrame,
 		TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-		{Size = UDim2.new(0, 518, 0, 319)}
+		{Size = UDim2.new(0, 448, 0, 331)}
 	):Play()
 	TweenService:Create(
 		MainFrameGlow,
 		TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-		{Size = UDim2.new(0, 518, 0, 319)}
+		{Size = UDim2.new(0, 448, 0, 331)}
 	):Play()
 	TweenService:Create(
 		MainFrameGlow1,
@@ -397,7 +397,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 	ShadowFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	ShadowFrame.BackgroundTransparency = 1.000
 	ShadowFrame.BorderSizePixel = 0
-	ShadowFrame.Size = UDim2.new(0, 518, 0, 319)
+	ShadowFrame.Size = UDim2.new(0, 448, 0, 331)
 	ShadowFrame.Position = UDim2.new(0, 0, 0, 0)
 	ShadowFrame.Visible = false
 	ShadowFrame.ZIndex = 2
@@ -602,7 +602,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 					TweenService:Create(
 						v,
 						TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-						{Size = UDim2.new(0, 425, 0, 271)}
+						{Size = UDim2.new(0, 393,0, 0)}
 					):Play()
 					v.ScrollBarThickness = 0
 				end 
@@ -624,7 +624,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			TweenService:Create(
 				NewPages,
 				TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-				{Size = UDim2.new(0, 425, 0, 271)}
+				{Size = UDim2.new(0, 393,0, 263)}
 			):Play()
 			NewPages.Visible = true
 			wait(.35)
