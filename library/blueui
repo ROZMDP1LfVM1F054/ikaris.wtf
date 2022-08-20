@@ -412,7 +412,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 	AllPages.BackgroundColor3 = Color3.fromRGB(24, 21, 48)
 	AllPages.BorderSizePixel = 0
 	AllPages.Position = UDim2.new(0.123, 0,0.139, 0)
-	AllPages.Size = UDim2.new(0, 381, 0, 271)
+	AllPages.Size = UDim2.new(0, 425, 0, 271)
 	AllPages.BackgroundTransparency = 0
 	AllPages.Visible = true
 	
