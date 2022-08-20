@@ -1,3 +1,6 @@
+if game:GetService("CoreGui"):FindFirstChild("Library") then
+    game:GetService("CoreGui").Library:Destroy()
+end
 local WindowTable = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
@@ -12,10 +15,6 @@ coroutine.wrap(
 		while wait() do
 			WindowTable.RainbowColorValue = WindowTable.RainbowColorValue + 1 / 255
 			WindowTable.HueSelectionPosition = WindowTable.HueSelectionPosition + 1
-			 game:GetService("CoreGui").Library.MainFrameGlow.Size = UDim2.new(0, 518, 0, 319)
-                         game:GetService("CoreGui").Library.MainFrameGlow.MainFrame.Size = UDim2.new(0, 518, 0, 319)
-                         game:GetService("CoreGui").Library.MainFrameGlow.MainFrame.ShadowFrame.Size = UDim2.new(0, 518, 0, 319)
-                         game:GetService("CoreGui").Library.MainFrameGlow.MainFrame.AllPages.pagesFolder.NewPages.Size = UDim2.new(0, 425, 0, 271)
 
 			if WindowTable.RainbowColorValue >= 1 then
 				WindowTable.RainbowColorValue = 0
