@@ -125,12 +125,12 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 					TweenService:Create(
 						MainFrame,
 						TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-						{Size = UDim2.new(0, 518, 0, 319)}
+						{Size = UDim2.new(0, 448, 0, 331)}
 					):Play()
 					TweenService:Create(
 						MainFrameGlow,
 						TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-						{Size = UDim2.new(0, 518, 0, 319)}
+						{Size = UDim2.new(0, 448, 0, 331)}
 					):Play()
 					TweenService:Create(
 						MainFrameGlow1,
@@ -602,7 +602,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 					TweenService:Create(
 						v,
 						TweenInfo.new(.35, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
-						{Size = UDim2.new(0, 425, 0, 271)}
+						{Size = UDim2.new(0, 393,0, 0)}
 					):Play()
 					v.ScrollBarThickness = 0
 				end 
