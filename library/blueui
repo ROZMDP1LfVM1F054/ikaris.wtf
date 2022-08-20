@@ -159,7 +159,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 	MainFrame.BackgroundColor3 = Color3.fromRGB(21, 18, 45)
 	MainFrame.BorderSizePixel = 0
 	MainFrame.Position = UDim2.new(0.5, 0,0.5, 0)
-	MainFrame.Size = UDim2.new(0, 500, 0, 331)
+	MainFrame.Size = UDim2.new(0, 0, 0, 0)
 	MainFrame.ClipsDescendants = true
 	MainFrame.BackgroundTransparency = 0
 	
@@ -170,7 +170,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 	MainFrameGlow.BackgroundTransparency = 1.000
 	MainFrameGlow.BorderSizePixel = 0
 	MainFrameGlow.Position = UDim2.new(0.5, 0, 0.5, 0)
-	MainFrameGlow.Size = UDim2.new(0, 500, 0, 331)
+	MainFrameGlow.Size = UDim2.new(0, 0, 0, 0)
 
 	MainFrameGlow1.Name = "MainFrameGlow1"
 	MainFrameGlow1.Parent = MainFrameGlow
