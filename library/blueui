@@ -1,5 +1,5 @@
-if game:GetService("CoreGui"):FindFirstChild("Library") then
-    game:GetService("CoreGui").Library:Destroy()
+if game:GetService("CoreGui"):FindFirstChild("arseniclib") then
+    game:GetService("arseniclib").Library:Destroy()
 end
 local WindowTable = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local UserInputService = game:GetService("UserInputService")
@@ -150,7 +150,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 				end
 			end
 		end)
-	Library.Name = "Library"
+	Library.Name = "arseniclib"
 	Library.Parent = game.CoreGui
 	Library.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 	Library.ResetOnSpawn = false
