@@ -1,9 +1,3 @@
-if game:GetService("CoreGui"):FindFirstChild("arseniclib") then
-    game:GetService("arseniclib").Library:Destroy()
-end
-if game.CoreGui:FindFirstChild("arsenicStatsGui") then
-    game.CoreGui.arsenicStatsGui:Destroy()
-end
 local WindowTable = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
