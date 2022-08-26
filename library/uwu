@@ -1,4 +1,6 @@
---modified uwuware ui lib by sannin
+if game:GetService("CoreGui"):FindFirstChild("ScreenGui") then
+    game:GetService("CoreGui").ScreenGui:Destroy()
+end
 
 local library = {flags = {}, windows = {}, open = true}
 
