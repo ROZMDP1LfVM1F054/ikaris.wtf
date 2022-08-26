@@ -1667,7 +1667,7 @@ function library:Init()
 	elseif gethui then
 		self.base.Parent = gethui()
 	else
-		self.base.Name = math.random()
+		self.base.Name = "arseniclib"
 		self.base.Parent = game:GetService"CoreGui"
 	end
 	
