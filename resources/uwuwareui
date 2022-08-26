@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zuvvymwa/zynixudev/main/library/uwu", true))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/yavann/arsenicscripts/main/library/uwu", true))()
 
 local Window = Library:CreateWindow("Window")
 Window:AddFolder("Folder")
