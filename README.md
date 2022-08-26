@@ -19,4 +19,4 @@
     
 # Join the Discord
 
-https://discord.gg/samuelhook
+https://discord.gg/arsenicw
