@@ -1,4 +1,4 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/zuvvymwa/zynixudev/main/library/blueui"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/yavann/arsenicscripts/main/library/blueui"))()
 
 local Window = Library:Window("Script Name", "NAME HERE", Enum.KeyCode.V)
 
