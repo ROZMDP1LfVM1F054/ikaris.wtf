@@ -806,7 +806,8 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
             TextboxHolder.BackgroundColor3 = Color3.fromRGB(29, 26, 53)
             TextboxHolder.BackgroundTransparency = 1.000
             TextboxHolder.BorderSizePixel = 0
-            TextboxHolder.Size = UDim2.new(0, 0,-0.238, 0)
+            TextboxHolder.Size = UDim2.new(0, 74, 0, 21)
+            TextboxHolder.Position = UDim2.new(0.0882352963, 0, 0, 0)
             TextboxHolder.Font = Enum.Font.SourceSans
             TextboxHolder.Text = "Text Box"
             TextboxHolder.TextColor3 = Color3.fromRGB(255, 255, 255)
