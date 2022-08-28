@@ -787,7 +787,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			local TextBoxBox = Instance.new("Frame")
 			local TextBoxCorner = Instance.new("UICorner")
 
-            MainTableTextbox.Name = "TextBox"
+            MainTableTextbox.Name = "MainTableTextbox"
             MainTableTextbox.Parent = NewPages
             MainTableTextbox.BackgroundColor3 = Color3.fromRGB(29, 26, 53)
             MainTableTextbox.BorderSizePixel = 0
@@ -797,12 +797,12 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			MainTableTextbox.TextColor3 = Color3.fromRGB(0, 0, 0)
 			MainTableTextbox.TextSize = 14.000
 
-            TextboxTitle.Name = "ToggleTitle"
-			TextboxTitle.Parent = ToggleBtn
+            TextboxTitle.Name = "TextboxTitle"
+			TextboxTitle.Parent = TextBoxBox
 			TextboxTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 			TextboxTitle.BackgroundTransparency = 1.000
 			TextboxTitle.Position = UDim2.new(0.03763441, 0, 0, 0)
-			ToggleTitle.Size = UDim2.new(0.962365568, 0, 1, 0)
+			TextboxTitle.Size = UDim2.new(0.962365568, 0, 1, 0)
 			TextboxTitle.Font = Enum.Font.Gotham
 			TextboxTitle.Text = togInfo
 			TextboxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -810,14 +810,14 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			TextboxTitle.TextXAlignment = Enum.TextXAlignment.Left
 
 			TextBoxBox.Name = "ToggleBox"
-			TextBoxBox.Parent = ToggleBtn
+			TextBoxBox.Parent = MainTableTextbox
 			TextBoxBox.BackgroundColor3 = Color3.fromRGB(74, 68, 94)
 			TextBoxBox.Position = UDim2.new(0.927419364, 0, 0.15625, 0)
 			TextBoxBox.Size = UDim2.new(0, 21, 0, 21)
 
 			TextBoxCorner.CornerRadius = UDim.new(0, 6)
-			TextBoxCorner.Name = "ToggleBoxCorner"
-			TextBoxCorner.Parent = ToggleBox
+			TextBoxCorner.Name = "TextBoxCorner"
+			TextBoxCorner.Parent = TextBoxBox
 			NewPages.CanvasSize = UDim2.new(0, 0, 0, ElementListing.AbsoluteContentSize.Y)
         end
 
