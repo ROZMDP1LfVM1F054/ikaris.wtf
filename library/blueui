@@ -829,7 +829,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
             TextboxHolder.TextColor3 = Color3.fromRGB(255, 255, 255)
             TextboxHolder.TextSize = 14.000
             TextboxHolder.TextWrapped = true
-            textboxmain.FocusLost:Connect(
+            TextboxHolder.FocusLost:Connect(
 				function(ep)
 					if ep then
 						if #TextboxHolder.Text > 0 then
