@@ -782,42 +782,53 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
             callback = callback or function() end
             TBTitle = TBTitle or "Text Box"
 
-            local MainTableTextbox = Instance.new("TextBox")
-            local TextboxTitle = Instance.new("TextLabel")
-			local TextBoxBox = Instance.new("Frame")
-			local TextBoxCorner = Instance.new("UICorner")
+            local TextboxFrame = Instance.new("Frame")
+            local Textbox = Instance.new("Frame")
+            local TextboxUICorner = Instance.new("UICorner")
+            local TextboxHolder = Instance.new("TextBox")
+            local TexboxTitle = Instance.new("TextLabel")
+            
+            TextboxFrame.Name = "TextboxFrame"
+            TextboxFrame.Parent = NewPages
+            TextboxFrame.BackgroundColor3 = Color3.fromRGB(29, 26, 53)
+            TextboxFrame.BorderSizePixel = 0
+            TextboxFrame.Position = UDim2.new(0, 814, 0.464500606, 0)
+            TextboxFrame.Size = UDim2.new(0, 375, 0, 32)
+            
+            Textbox.Name = "Textbox"
+            Textbox.Parent = TextboxFrame
+            Textbox.BackgroundColor3 = Color3.fromRGB(74, 68, 94)
+            Textbox.Position = UDim2.new(0.802085936, 0, 0.15625, 0)
+            Textbox.Size = UDim2.new(0, 68, 0, 21)
+            
+            TextboxHolder.Name = "Box"
+            TextboxHolder.Parent = Textbox
+            TextboxHolder.BackgroundColor3 = Color3.fromRGB(29, 26, 53)
+            TextboxHolder.BackgroundTransparency = 1.000
+            TextboxHolder.BorderSizePixel = 0
+            TextboxHolder.Size = UDim2.new(0, 72,0, 26)
+            TextboxHolder.Font = Enum.Font.SourceSans
+            TextboxHolder.Text = "Text Box"
+            TextboxHolder.TextColor3 = Color3.fromRGB(255, 255, 255)
+            TextboxHolder.TextSize = 14.000
+            TextboxHolder.UDim2.new(0, 0,-0.238, 0)
+            TextboxHolder.TextWrapped = true
+            
+            TexboxTitle.Name = "TexboxTitle"
+            TexboxTitle.Parent = TextboxFrame
+            TexboxTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            TexboxTitle.BackgroundTransparency = 1.000
+            TexboxTitle.Position = UDim2.new(0.03763441, 0, 0, 0)
+            TexboxTitle.Size = UDim2.new(0.962365568, 0, 1, 0)
+            TexboxTitle.Font = Enum.Font.Gotham
+            TexboxTitle.Text = TBTitle
+            TexboxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+            TexboxTitle.TextSize = 14.000
+            TexboxTitle.TextXAlignment = Enum.TextXAlignment.Left
 
-            MainTableTextbox.Name = "MainTableTextbox"
-            MainTableTextbox.Parent = NewPages
-            MainTableTextbox.BackgroundColor3 = Color3.fromRGB(29, 26, 53)
-            MainTableTextbox.BorderSizePixel = 0
-			MainTableTextbox.Size = UDim2.new(0, 375, 0, 32)
-			MainTableTextbox.Font = Enum.Font.SourceSans
-			MainTableTextbox.Text = ""
-			MainTableTextbox.TextColor3 = Color3.fromRGB(0, 0, 0)
-			MainTableTextbox.TextSize = 14.000
-
-            TextboxTitle.Name = "TextboxTitle"
-			TextboxTitle.Parent = TextBoxBox
-			TextboxTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			TextboxTitle.BackgroundTransparency = 1.000
-			TextboxTitle.Position = UDim2.new(0.03763441, 0, 0, 0)
-			TextboxTitle.Size = UDim2.new(0.962365568, 0, 1, 0)
-			TextboxTitle.Font = Enum.Font.Gotham
-			TextboxTitle.Text = togInfo
-			TextboxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-			TextboxTitle.TextSize = 14.000
-			TextboxTitle.TextXAlignment = Enum.TextXAlignment.Left
-
-			TextBoxBox.Name = "ToggleBox"
-			TextBoxBox.Parent = MainTableTextbox
-			TextBoxBox.BackgroundColor3 = Color3.fromRGB(74, 68, 94)
-			TextBoxBox.Position = UDim2.new(0.927419364, 0, 0.15625, 0)
-			TextBoxBox.Size = UDim2.new(0, 21, 0, 21)
-
-			TextBoxCorner.CornerRadius = UDim.new(0, 6)
-			TextBoxCorner.Name = "TextBoxCorner"
-			TextBoxCorner.Parent = TextBoxBox
+            TextboxUICorner.CornerRadius = UDim.new(0, 6)
+            TextboxUICorner.Name = "TextBoxCorner"
+            TextboxUICorner.Parent = Textbox
 			NewPages.CanvasSize = UDim2.new(0, 0, 0, ElementListing.AbsoluteContentSize.Y)
         end
 
