@@ -794,6 +794,22 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
             TextboxFrame.BorderSizePixel = 0
             TextboxFrame.Position = UDim2.new(0, 814, 0.464500606, 0)
             TextboxFrame.Size = UDim2.new(0, 375, 0, 32)
+            TextboxFrame.MouseEnter:Connect(
+				function(enter)
+					TweenService:Create(
+						TextboxFrame,
+						TweenInfo.new(.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
+						{BackgroundColor3 = Color3.fromRGB(33, 31, 56)}
+				):Play()
+			end)
+			TextboxFrame.MouseLeave:Connect(
+				function(enter)
+					TweenService:Create(
+						TextboxFrame,
+						TweenInfo.new(.3, Enum.EasingStyle.Quart, Enum.EasingDirection.Out),
+						{BackgroundColor3 = Color3.fromRGB(29, 26, 53)}
+				):Play()
+			end)
             
             Textbox.Name = "Textbox"
             Textbox.Parent = TextboxFrame
