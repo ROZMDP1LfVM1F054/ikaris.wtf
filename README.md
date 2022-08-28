@@ -15,7 +15,7 @@
 **What is Arsenic**
 
     > Arsenic is a upcoming, paid-to-use project which will be opended to the public soon.
-    > Arsenic is founded by zudy#0289, and scripted by zudy#0289
+    > Arsenic is founded by auon#0289, and scripted by auon#0289
     
 # Join the Discord
 
