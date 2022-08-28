@@ -778,9 +778,9 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			NewPages.CanvasSize = UDim2.new(0, 0, 0, ElementListing.AbsoluteContentSize.Y)
 		end
 
-        function ElementHandler:Button(TBTitle, disapper, callback)
+        function ElementHandler:TextBox(TBTitle, disapper, callback)
             callback = callback or function() end
-            TBTitle = btnTTBTitleext or "Text Box"
+            TBTitle = TBTitle or "Text Box"
 
             local MainTableTextbox = Instance.new("TextBox")
             local TextboxTitle = Instance.new("TextLabel")
@@ -792,11 +792,33 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
             MainTableTextbox.BackgroundColor3 = Color3.fromRGB(29, 26, 53)
             MainTableTextbox.BorderSizePixel = 0
 			MainTableTextbox.Size = UDim2.new(0, 375, 0, 32)
-			MainTableTextbox.AutoButtonColor = false
 			MainTableTextbox.Font = Enum.Font.SourceSans
 			MainTableTextbox.Text = ""
 			MainTableTextbox.TextColor3 = Color3.fromRGB(0, 0, 0)
 			MainTableTextbox.TextSize = 14.000
+
+            TextboxTitle.Name = "ToggleTitle"
+			TextboxTitle.Parent = ToggleBtn
+			TextboxTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			TextboxTitle.BackgroundTransparency = 1.000
+			TextboxTitle.Position = UDim2.new(0.03763441, 0, 0, 0)
+			ToggleTitle.Size = UDim2.new(0.962365568, 0, 1, 0)
+			TextboxTitle.Font = Enum.Font.Gotham
+			TextboxTitle.Text = togInfo
+			TextboxTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+			TextboxTitle.TextSize = 14.000
+			TextboxTitle.TextXAlignment = Enum.TextXAlignment.Left
+
+			TextBoxBox.Name = "ToggleBox"
+			TextBoxBox.Parent = ToggleBtn
+			TextBoxBox.BackgroundColor3 = Color3.fromRGB(74, 68, 94)
+			TextBoxBox.Position = UDim2.new(0.927419364, 0, 0.15625, 0)
+			TextBoxBox.Size = UDim2.new(0, 21, 0, 21)
+
+			TextBoxCorner.CornerRadius = UDim.new(0, 6)
+			TextBoxCorner.Name = "ToggleBoxCorner"
+			TextBoxCorner.Parent = ToggleBox
+			NewPages.CanvasSize = UDim2.new(0, 0, 0, ElementListing.AbsoluteContentSize.Y)
         end
 
 		function ElementHandler:Toggle(togInfo, callback)
