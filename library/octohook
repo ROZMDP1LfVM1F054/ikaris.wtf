@@ -4712,7 +4712,7 @@ function library:init()
         end
     end)
 
-    self.keyIndicator = self.NewIndicator({title = 'zuvhook', pos = UDim2.new(0, 449, 0.7, 20.5), enabled = false});
+    self.keyIndicator = self.NewIndicator({title = 'arsenic', pos = UDim2.new(0,15,0,325), enabled = false});
     self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
