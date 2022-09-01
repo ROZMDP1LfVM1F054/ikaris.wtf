@@ -1,15 +1,3 @@
---[[
-
-    Library Made for https://octohook.xyz/
-    Developed by liam#4567
-
-    Ik this code is really shit in some places lol
-    will rewrite again i was just using some rly old stuff that i was lazy to rewrite
-    could've been a lot better and more optimized in some places and some things arent done as they should've been
-    got lazy when trying to make disable all roblox input when ui is open sooo that will be added later =)
-
-]]
-
 -- // Load
 
 local startupArgs = ({...})[1] or {}
@@ -30,6 +18,7 @@ end
 local players, http, runservice, inputservice, tweenService, stats, actionservice = gs('Players'), gs('HttpService'), gs('RunService'), gs('UserInputService'), gs('TweenService'), gs('Stats'), gs('ContextActionService')
 local localplayer = players.LocalPlayer
 
+local setByConfig = false
 local floor, ceil, huge, pi, clamp = math.floor, math.ceil, math.huge, math.pi, math.clamp
 local c3new, fromrgb, fromhsv = Color3.new, Color3.fromRGB, Color3.fromHSV
 local next, newInstance, newUDim2, newVector2 = next, Instance.new, UDim2.new, Vector2.new
@@ -66,20 +55,20 @@ local library = {
         ['ping'] = 0;
     };
     images = {
-        ['gradientp90'] = 'https://raw.githubusercontent.com/zunzw/octopngs/main/octohook-main/images/gradientp90.png';
-        ['gradientp45'] = 'https://raw.githubusercontent.com/zunzw/octopngs/main/octohook-main/images/gradientP45.png';
-        ['colorhue'] = 'https://raw.githubusercontent.com/zunzw/octopngs/main/octohook-main/images/hue.png';
+        ['gradientp90'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/gradientp90.png';
+        ['gradientp45'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/gradientP45.png';
+        ['colorhue'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/hue.png';
         ['colorsat1'] = 'https://t5.rbxcdn.com/b6ce2f465dbe0ca4bf88d45ac4be1362';
         ['colorsat2'] = 'https://t4.rbxcdn.com/0c51aa9d7f2ede5c635c2f44f66be88f';
-        ['colortrans'] = 'https://raw.githubusercontent.com/zunzw/octopngs/main/octohook-main/images/transparency.png';
+        ['colortrans'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/transparency.png';
     };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
-    signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/zunzw/lunadev/main/resources/octosignal'))();
+    signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/auonn/arsenicscripts/main/resources/octosignal'))();
     open = false;
     opening = false;
     hasInit = false;
-    cheatname = startupArgs.cheatname or 'zynix.cc';
-    gamename = startupArgs.gamename or '';
+    cheatname = startupArgs.cheatname or 'arsenic';
+    gamename = startupArgs.gamename or 'universal';
     fileext = startupArgs.fileext or '.txt';
 }
 
@@ -87,7 +76,7 @@ library.themes = {
     {
         name = 'Default',
         theme = {
-            ['Accent']                    = fromrgb(255,255,255);
+            ['Accent']                    = fromrgb(154, 130, 255, 25);
             ['Background']                = fromrgb(18,18,18);
             ['Border']                    = fromrgb(0,0,0);
             ['Border 1']                  = fromrgb(60,60,60);
@@ -269,14 +258,14 @@ library.themes = {
 }
 
 local blacklistedKeys = {
-	Enum.KeyCode.Unknown,
-	Enum.KeyCode.W,
-	Enum.KeyCode.A,
-	Enum.KeyCode.S,
-	Enum.KeyCode.D,
-	Enum.KeyCode.Slash,
-	Enum.KeyCode.Tab,
-	Enum.KeyCode.Escape
+    Enum.KeyCode.Unknown,
+    Enum.KeyCode.W,
+    Enum.KeyCode.A,
+    Enum.KeyCode.S,
+    Enum.KeyCode.D,
+    Enum.KeyCode.Slash,
+    Enum.KeyCode.Tab,
+    Enum.KeyCode.Escape
 }
 
 local whitelistedBoxKeys = {
@@ -289,7 +278,7 @@ local whitelistedBoxKeys = {
     Enum.KeyCode.Six,
     Enum.KeyCode.Seven,
     Enum.KeyCode.Eight,
-    Enum.KeyCode.Nine,
+    Enum.KeyCode.Nine
 }
 
 local keyNames = {
@@ -319,71 +308,6 @@ do
         return c
     end
 
-    function utility:CloneTable(t)
-        local clone = {}
-        for i,v in next, t do
-            clone[i] = v;
-        end
-        return clone
-    end
-
-    function utility:SetProperties(t, props)
-        for i,v in next, props do
-            t[i] = v;
-        end
-        return t
-    end
-
-    function utility:CFrameToViewport(cf)
-        local cam = workspace.CurrentCamera;
-        return cam:WorldToViewportPoint((cf * (cf - cf.p):ToObjectSpace(cam.CFrame - cam.CFrame.p)).p);
-    end
-
-    function utility:HasCharacter(plr, minhealth)
-        if plr.Character ~= nil and plr.Character:FindFirstChild('HumanoidRootPart') and plr.Character:FindFirstChild('Humanoid') and plr.Character.Humanoid.Health > (minhealth or 0) then
-            return true, plr.Character;
-        end
-        return false;
-    end
-
-    function utility:Raycast(a,b,c)
-        c = typeof(c) == 'table' and c or {}
-        local params = RaycastParams.new();
-        params.IgnoreWater = true;
-        params.FilterType = Enum.RaycastFilterType.Blacklist;
-        params.FilterDescendantsInstances = c;
-    
-        local ray = workspace:Raycast(a,b,params);
-        if ray ~= nil then -- it was erroring without 2 if statements lol idk why
-            if ray.Instance.Transparency >= .25 or not ray.Instance.CanCollide then
-                table.insert(c, ray.Instance);
-                local newray = self:Raycast(a,b,c)
-                if newray ~= nil then
-                    ray = newray
-                end
-            end
-        end
-        return ray
-    end
-
-    function utility:EnableConnections(connection, ignoresynapse)
-        for i,v in next, getconnections(connection) do
-            if v.Function ~= nil and ignoresynapse and isexecutorclosure(v.Function) then
-                return
-            end
-            v:Enable()
-        end
-    end
-
-    function utility:DisableConnections(connection, ignoresynapse)
-        for i,v in next, getconnections(connection) do
-            if v.Function ~= nil and ignoresynapse and isexecutorclosure(v.Function) then
-                return
-            end
-            v:Disable()
-        end
-    end
-
     function utility:Instance(class, properties)
         local inst = newInstance(class)
         for prop, val in next, properties or {} do
@@ -394,22 +318,11 @@ do
                 printconsole(e, 255,0,0)
             end
         end
-        table.insert(library.instances, inst);
         return inst
     end
 
     function utility:HasProperty(obj, prop)
         return ({(pcall(function() local a = obj[prop] end))})[1]
-    end
-
-    function utility:CheckEnum(enum,enumitem)
-        if typeof(enumitem) == 'EnumItem' then
-            return ({pcall(function()
-                local a = enum[enumitem.Name]
-            end)})[1]
-        else
-            return false
-        end
     end
 
     function utility:ToRGB(c3)
@@ -433,21 +346,8 @@ do
         return newVector2(x,y)
     end
 
-    function utility:Vector2ToUDim2(a,b)
-        local x,y
-        x = self:ConvertNumberRange(a.X, 0, b.X, 0, 1)
-        y = self:ConvertNumberRange(a.Y, 0, b.Y, 0, 1)
-        return newUDim2(x,0,y,0)
-    end
-
     function utility:Lerp(a,b,c)
         return a + (b-a) * c
-    end
-
-    function utility:Bezier(p1,p2,p3,t)
-        local a = self:Lerp(p1, p2, t);
-        local b = self:Lerp(p2, p3, t);
-        return self:Lerp(a, b, t)
     end
 
     function utility:Tween(obj, prop, val, time, direction, style)
@@ -706,13 +606,6 @@ function library:init()
     makefolder(self.cheatname..'/assets')
     makefolder(self.cheatname..'/'..self.gamename)
     makefolder(self.cheatname..'/'..self.gamename..'/configs');
-    writefile(self.cheatname..'/'..self.gamename..'/waypoints.txt', '');
-    if not isfile(self.cheatname..'_friendlist.txt') then
-        writefile(self.cheatname..'_friendlist.txt', http:JSONEncode({}))
-    end
-    if not isfile(self.cheatname..'_enemylist.txt') then
-        writefile(self.cheatname..'_enemylist.txt', http:JSONEncode({}))
-    end
 
     function self:SetTheme(theme)
         for i,v in next, theme do
@@ -735,6 +628,7 @@ function library:init()
         end
 
         local s,e = pcall(function()
+            setByConfig = true
             for flag,value in next, http:JSONDecode(cfg) do
                 local option = library.options[flag]
                 if option ~= nil then
@@ -749,9 +643,12 @@ function library:init()
                         option:SetTrans(value == nil and 1 or value[4]);
                     elseif option.class == 'list' then
                         option:Select(value == nil and '' or value);
+                    elseif option.class == 'box' then
+                        option:SetInput(value == nil and '' or value)
                     end
                 end
             end
+            setByConfig = false
         end)
 
         if s then
@@ -785,6 +682,8 @@ function library:init()
                     }
                 elseif option.class == 'list' then
                     cfg[flag] = option.selected;
+                elseif option.class == 'box' then
+                    cfg[flag] = option.input
                 end
             end
             writefile(self.cheatname..'/'..self.gamename..'/configs/'..name..self.fileext, http:JSONEncode(cfg));
@@ -811,16 +710,16 @@ function library:init()
         self.cursor2.Visible = self.open
         if self.cursor1.Visible then
             local pos = inputservice:GetMouseLocation();
-	    inputservice.MouseIconEnabled = false
             self.cursor1.PointA = pos;
             self.cursor1.PointB = pos + newVector2(16,5);
             self.cursor1.PointC = pos + newVector2(5,16);
             self.cursor2.PointA = self.cursor1.PointA + newVector2(0, 0)
             self.cursor2.PointB = self.cursor1.PointB + newVector2(1, 1)
             self.cursor2.PointC = self.cursor1.PointC + newVector2(1, 1)
-	else
-	    inputservice.MouseIconEnabled = true
-	end
+            else
+                inputservice.MouseIconEnabled = true
+            end
+        end
     end
 
     local screenGui = Instance.new('ScreenGui');
@@ -840,50 +739,44 @@ function library:init()
         screenGui:Destroy()
     end)
 
-    local namecall; namecall = hookmetamethod(game, '__namecall', function(obj, ...)
-        if getnamecallmethod() == 'Destroy' and library.instances[obj] ~= nil then
-            library.instances[obj] = nil;
-        end
-        return namecall(obj, ...)
-    end)
-
     utility:Connection(inputservice.InputBegan, function(input, gpe)
         if self.hasInit then
-            local hoverObj = utility:GetHoverObject();
-            local hoverObjData = library.drawings[hoverObj];
-
-            if input.KeyCode == self.toggleKey and not library.opening then
+            if input.KeyCode == self.toggleKey and not library.opening and not gpe then
                 self:SetOpen(not self.open)
                 task.spawn(function()
                     library.opening = true;
                     task.wait(.15);
                     library.opening = false;
                 end)
-            elseif input.UserInputType == Enum.UserInputType.MouseButton1 then
-                mb1down = true;
-                button1down:Fire()
-                if hoverObj and hoverObjData then
-                    hoverObjData.MouseButton1Down:Fire(inputservice:GetMouseLocation())
-                end
+            end
+            if library.open then
+                local hoverObj = utility:GetHoverObject();
+                local hoverObjData = library.drawings[hoverObj];
+                if input.UserInputType == Enum.UserInputType.MouseButton1 then
+                    mb1down = true;
+                    button1down:Fire()
+                    if hoverObj and hoverObjData then
+                        hoverObjData.MouseButton1Down:Fire(inputservice:GetMouseLocation())
+                    end
 
-                -- // Update Sliders Click
-                if library.draggingSlider ~= nil then
-                    local rel = inputservice:GetMouseLocation() - library.draggingSlider.objects.background.Object.Position;
-                    local val = utility:ConvertNumberRange(rel.X, 0 , library.draggingSlider.objects.background.Object.Size.X, library.draggingSlider.min, library.draggingSlider.max);
-                    library.draggingSlider:SetValue(val)
-                end
+                    -- // Update Sliders Click
+                    if library.draggingSlider ~= nil then
+                        local rel = inputservice:GetMouseLocation() - library.draggingSlider.objects.background.Object.Position;
+                        local val = utility:ConvertNumberRange(rel.X, 0 , library.draggingSlider.objects.background.Object.Size.X, library.draggingSlider.min, library.draggingSlider.max);
+                        library.draggingSlider:SetValue(val)
+                    end
 
-            elseif input.UserInputType == Enum.UserInputType.MouseButton2 then
-                if hoverObj and hoverObjData then
-                    hoverObjData.MouseButton2Down:Fire(inputservice:GetMouseLocation())
+                elseif input.UserInputType == Enum.UserInputType.MouseButton2 then
+                    if hoverObj and hoverObjData then
+                        hoverObjData.MouseButton2Down:Fire(inputservice:GetMouseLocation())
+                    end
                 end
             end
-
         end
     end)
 
     utility:Connection(inputservice.InputEnded, function(input, gpe)
-        if self.hasInit then
+        if self.hasInit and library.open then
             local hoverObj = utility:GetHoverObject();
             local hoverObjData = library.drawings[hoverObj];
 
@@ -903,39 +796,39 @@ function library:init()
 
     utility:Connection(inputservice.InputChanged, function(input, gpe)
         if input.UserInputType == Enum.UserInputType.MouseMovement then
+            if library.open then
+                mousemove:Fire(inputservice:GetMouseLocation());
+                updateCursor();
 
-            mousemove:Fire(inputservice:GetMouseLocation());
-            updateCursor();
-
-            if library.CurrentTooltip ~= nil then
-                local mousePos = inputservice:GetMouseLocation()
-                tooltipObjects.background.Position = UDim2.new(0,mousePos.X + 15,0,mousePos.Y + 15)
-                tooltipObjects.background.Size = UDim2.new(0,tooltipObjects.text.TextBounds.X + 6 + (library.CurrentTooltip.risky and 60 or 0),0,tooltipObjects.text.TextBounds.Y + 2)
-            end
-
-            local hoverObj = utility:GetHoverObject();
-            for _,v in next, library.drawings do
-                local hover = hoverObj == v.Object;
-                if hover and not v.Hover then
-                    v.Hover = true;
-                    v.MouseEnter:Fire(inputservice:GetMouseLocation());
-                elseif not hover and v.Hover then
-                    v.Hover = false;
-                    v.MouseLeave:Fire(inputservice:GetMouseLocation());
-                end
-            end
-
-            if mb1down then
-
-                -- // Update Sliders Drag
-                if library.draggingSlider ~= nil then
-                    local rel = inputservice:GetMouseLocation() - library.draggingSlider.objects.background.Object.Position;
-                    local val = utility:ConvertNumberRange(rel.X, 0 , library.draggingSlider.objects.background.Object.Size.X, library.draggingSlider.min, library.draggingSlider.max);
-                    library.draggingSlider:SetValue(val)
+                if library.CurrentTooltip ~= nil then
+                    local mousePos = inputservice:GetMouseLocation()
+                    tooltipObjects.background.Position = UDim2.new(0,mousePos.X + 15,0,mousePos.Y + 15)
+                    tooltipObjects.background.Size = UDim2.new(0,tooltipObjects.text.TextBounds.X + 6 + (library.CurrentTooltip.risky and 60 or 0),0,tooltipObjects.text.TextBounds.Y + 2)
                 end
 
-            end
+                local hoverObj = utility:GetHoverObject();
+                for _,v in next, library.drawings do
+                    local hover = hoverObj == v.Object;
+                    if hover and not v.Hover then
+                        v.Hover = true;
+                        v.MouseEnter:Fire(inputservice:GetMouseLocation());
+                    elseif not hover and v.Hover then
+                        v.Hover = false;
+                        v.MouseLeave:Fire(inputservice:GetMouseLocation());
+                    end
+                end
 
+                if mb1down then
+
+                    -- // Update Sliders Drag
+                    if library.draggingSlider ~= nil then
+                        local rel = inputservice:GetMouseLocation() - library.draggingSlider.objects.background.Object.Position;
+                        local val = utility:ConvertNumberRange(rel.X, 0 , library.draggingSlider.objects.background.Object.Size.X, library.draggingSlider.min, library.draggingSlider.max);
+                        library.draggingSlider:SetValue(val)
+                    end
+
+                end
+            end
         end
     end)
     
@@ -959,7 +852,10 @@ function library:init()
         updateCursor();
         for _,window in next, self.windows do
             window:SetOpen(bool);
-         end
+        end
+
+        library.CurrentTooltip = nil;
+        tooltipObjects.background.Visible = false
     end
 
     function self.UpdateThemeColors()
@@ -1089,7 +985,7 @@ function library:init()
         local indicator = {
             title = data.title or 'indicator',
             enabled = data.enabled or false,
-            position = data.position or newUDim2(0,55,0,300),
+            position = data.position or newUDim2(0,15,0,300),
             values = {},
             objects = {valueObjects = {}},
             spacing = '   ',
@@ -1157,7 +1053,7 @@ function library:init()
             for _,v in next, self.values do
                 v.objects.keyLabel.Text = tostring(v.key);
                 v.objects.valueLabel.Text = tostring(v.value);
-               
+            
                 v.objects.valueLabel.Position = newUDim2(1,-(v.objects.valueLabel.TextBounds.X + 3),0,0)
                 v.objects.background.Position = newUDim2(0,0,1,3 + yPos)
                 v.objects.background.Visible = v.enabled
@@ -1539,14 +1435,14 @@ function library:init()
 
                 objs.sat1 = utility:Draw('Image', {
                     Size = newUDim2(1,0,1,0);
-                    Data = library.images.colorsat1;
+                    Data = syn.crypt.base64.decode"iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkCAQAAADURZm+AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQflBwwSLzK3wl3KAAADrElEQVR42u3TORLCMBBFwT+6/50hMqXSZgonBN0BWCDGYPwqeSWVZPWYVHd0Pc5H86v9areu4Sz9u7XZXT/vvtZtu6dtJtYw525iGya05afnWW17ltPE8fzfTZy/yf3vmCes59xf0Sf/42l3lnvGOyyH+y/bo/X689wCPCYkEBIICYQECAmEBEICIQFCAiGBkEBIgJBASCAkEBIgJBASCAmEBAgJhARCAiEBQgIhgZAAIYGQQEggJEBIICQQEggJEBIICYQEQgKEBEICIYGQACGBkEBIICRASCAkEBIICRASCAmEBAgJhARCAiEBQgIhgZBASICQQEggJBASICQQEggJhAQICYQEQgIhAUICIYGQQEguAQgJhARCAoQEQgIhgZAAIYGQQEggJEBIICQQEggJEBIICYQEQgKEBEICIYGQACGBkEBIgJBASCAkEBIgJBASCAmEBAgJhARCAiEBQgIhgZBASICQQEggJBASICQQEggJhAQICYQEQgKEBEICIYGQACGBkEBIICRASCAkEBIICRASCAmEBEIChARCAiGBkAAhgZBASCAkQEggJBASICQQEggJhAQICYQEQgIhAUICIYGQQEiAkEBIICQQEiAkEBIICYQECAmEBEIChARCAiGBkAAhgZBASCAkQEggJBASCAkQEggJhARCAoQEQgIhgZAAIYGQQEggJEBIICQQEiAkEBIICYQECAmEBEICIQFCAiGBkEBIgJBASCAkEBIgJBASCAmEBAgJhARCAiEBQgIhgZAAIYGQQEggJEBIICQQEggJEBIICYQEQgKEBEICIYGQACGBkEBIICRASCAkEBIgJBASCAmEBAgJhARCAiEBQgIhgZBASICQQEggJBASICQQEggJhAQICYQEQgIhAUICIYGQACGBkEBIICRASCAkEBIICRASCAmEBEIChARCAiGBkAAhgZBASCAkQEggJBASCAkQEggJhAQICYQEQgIhAUICIYGQQEiAkEBIICQQEiAkEBIICYQECAmEBEICIQFCAiGBkEBILgEICYQEQgKEBEICIYGQACGBkEBIICRASCAkEBIICRASCAmEBEIChARCAiGBkAAhgZBASICQQEggJBASICQQEggJhAQICYQEQgIhAUICIYGQQEiAkEBIICQQEiAkEBIICYQECAmEBEIChARCAiGBkAAhgZBASCAkQEggJBASCAkQEggJhARCAoQEQgIhgZAAIYGQQEggJEBIICQQEiAkEBL8lzft9AVFFzN+ywAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wNy0xMlQxODo0Nzo1MCswMDowMIxlM90AAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDctMTJUMTg6NDc6NTArMDA6MDD9OIthAAAAAElFTkSuQmCC";
                     ZIndex = z+3;
                     Parent = objs.mainColor;
                 })
 
                 objs.sat2 = utility:Draw('Image', {
                     Size = newUDim2(1,0,1,0);
-                    Data = library.images.colorsat2;
+                    Data = syn.crypt.base64.decode"iVBORw0KGgoAAAANSUhEUgAAAaQAAAGkCAQAAADURZm+AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JQAAgIMAAPn/AACA6QAAdTAAAOpgAAA6mAAAF2+SX8VGAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQflBwwSLyBEeyyCAAAD4klEQVR42u3YwQnAQAhFQTek/5pz9eBtEYzMlBD4PDcRADDBieMjwK3HJwBDghFepx0oEhgSOO0ARQJDAqcdKBJgSGBI4I0EhgQ47cCQwJDAGwlQJDAkcNqBIgGKBIoEhgROO0CRQJFAkQBDAqcdGBI47QBFAkUCQwKnHaBIoEigSKBIgCKBIYHTDhQJUCQwJHDagSIBigSGBE47UCRAkcCQwGkHKBIoEigSGBLgtANDAkMCbyTAkMBpB4oEigQoEhgSOO1AkQBDAqcdKBIoEqBIYEjgtANFUiRQJFAkMCTAaQeKBIoEigQYEjjtQJFAkQBFAkMCpx0oEmBI4LQDRQJFAhQJDAmcdqBIgCKBIoEhAU47UCRQJFAkwJDAaQeKBIYEOO1AkUCRYHuRTAmcduC0A0UCFAkUCQwJnHaAIoEigSKBIQFOO2gvkimBIoE3EhgS4LQDRQJDAqcdoEigSKBIYEiAIYEhwXx+NoAigSGB0w5QJDAkMCQwJKDiZwMoEhgSOO0ARQJFgnlFMiVw2oHTDhQJUCRQJDAkcNoBVZFMCRQJvJHAkACnHSgSKBIoElANSZPAaQdOOzAkwGkHigSGBIYEGBK08LMBFAkUCRQJMCQwJDAkWMjPBlAkMCRw2gG5SKYEigTeSGBIgNMOFAkMCQwJMCRo4WcDKBIYEjjtgFwkUwJFAm8kMCTAaQeKBIoEigRUQ9IkcNqB0w4MCXDagSKBIsHCIpkSOO3AaQeKBCgSKBIYEhgSYEjQws8GUCQwJHDaAblIpgSKBN5IYEiA0w4UCQwJDAkwJGjhZwMoEhgSOO0ARQJDAkMCQwIqfjaAIoEigSIBhgROO5hXJFMCpx047UCRAEUCRQJDAqcdUBXJlECRwBsJDAlw2oEigSKBIgGGBIYEhgSL+dkAigSGBE47QJHAkMBpB4oEGBIYEhgSrOZnAygSKBIoEmBI4LQDRQJFAhQJDAmcdrC8SKYEigTeSGBIgNMOFAkMCZx2gCKBIoEigSEBTjtQJFAkUCTAkMBpB4oEigQoEhgSOO1AkQBDAqcdKBKgSKBIYEjgtAMUCRQJFAkMCXDagSKBIoEiAYYETjtQJFAkQJHAkMBpB4oEGBI47UCRQJEARQJDAqcdoEigSGBI4LQDFAkUCRQJFAkwJHDagSKBIQFOOzAkMCTwRgIMCZx2oEigSIAigSKBIYHTzkcARQJFAkMCnHZgSGBI4I0EGBI47UCRQJEAQwKnHSgSKBKgSGBI4LQDRQIUCRQJDAmcdoAigSGB0w5QJFAkUCQwJMBpB4oEhgROO0CRwJDAkMAbCVAkMCT4gw/reQYigE05fAAAACV0RVh0ZGF0ZTpjcmVhdGUAMjAyMS0wNy0xMlQxODo0NzozMiswMDowMN2VK3MAAAAldEVYdGRhdGU6bW9kaWZ5ADIwMjEtMDctMTJUMTg6NDc6MzIrMDA6MDCsyJPPAAAAAElFTkSuQmCC";
                     ZIndex = z+4;
                     Parent = objs.mainColor;
                 })
@@ -1800,12 +1696,14 @@ function library:init()
                 end)
 
                 utility:Connection(mousemove, function(pos)
-                    if draggingSat then
-                        updateSatVal(pos)
-                    elseif draggingHue then
-                        updateHue(pos)
-                    elseif draggingTrans then
-                        updateTrans(pos)
+                    if library.open then
+                        if draggingSat then
+                            updateSatVal(pos)
+                        elseif draggingHue then
+                            updateHue(pos)
+                        elseif draggingTrans then
+                            updateTrans(pos)
+                        end
                     end
                 end)
 
@@ -2023,7 +1921,6 @@ function library:init()
                         end)
                     end
                 end
-
             end
         end
 
@@ -2331,12 +2228,15 @@ function library:init()
 
                         local x, y = 0, 0
                         for i,option in next, self.options do
-                            if option.class == 'color' or option.class == 'bind' then
-                                option.objects.holder.Position = newUDim2(1,-option.objects.holder.Object.Size.X-x,0,0);
-                                x = x + option.objects.holder.Object.Size.X;
-                            elseif option.class == 'slider' or option.class == 'list' then
-                                option.objects.holder.Position = newUDim2(0,0,1,-option.objects.holder.Object.Size.Y-y);
-                                y = y + option.objects.holder.Object.Size.Y;
+                            option.objects.holder.Visible = option.enabled
+                            if option.enabled then
+                                if option.class == 'color' or option.class == 'bind' then
+                                    option.objects.holder.Position = newUDim2(1,-option.objects.holder.Object.Size.X-x,0,0);
+                                    x = x + option.objects.holder.Object.Size.X;
+                                elseif option.class == 'slider' or option.class == 'list' then
+                                    option.objects.holder.Position = newUDim2(0,0,1,-option.objects.holder.Object.Size.Y-y);
+                                    y = y + option.objects.holder.Object.Size.Y;
+                                end
                             end
                         end
 
@@ -2354,7 +2254,7 @@ function library:init()
                             tooltip = '';
                             order = #self.options+1;
                             callback = function() end;
-                            color = Color3.new(1,.995,.995);
+                            color = Color3.new(1,1,1);
                             trans = 0;
                             open = false;
                             enabled = true;
@@ -2522,6 +2422,18 @@ function library:init()
                         if bind.flag then
                             library.options[bind.flag] = bind;
                         end
+
+                        if bind.bind == 'none' then
+                            bind.state = true
+                            if bind.flag then
+                                library.flags[bind.flag] = bind.state;
+                            end
+                            bind.callback(true)
+                            local display = bind.state; if bind.invertindicator then display = not bind.state; end
+                            bind.indicatorValue:SetEnabled(display and not bind.noindicator);
+                            bind.indicatorValue:SetKey((bind.text == nil or bind.text == '') and (bind.flag == nil and 'unknown' or bind.flag) or bind.text); -- this is so dumb
+                            bind.indicatorValue:SetValue('[Always]');
+                        end
     
                         --- Create Objects ---
                         do
@@ -2562,7 +2474,6 @@ function library:init()
                         ----------------------
     
                         local c
-    
                         function bind:SetBind(keybind)
                             if c then
                                 c:Disconnect();
@@ -2575,13 +2486,32 @@ function library:init()
                             self.bind = (keybind and keybind) or keybind or self.bind
                             if self.bind == Enum.KeyCode.Backspace then
                                 self.bind = 'none';
+                                bind.state = true
+                                if bind.flag then
+                                    library.flags[bind.flag] = bind.state;
+                                end
+                                self.callback(true)
+                                local display = bind.state; if bind.invertindicator then display = not bind.state; end
+                                bind.indicatorValue:SetEnabled(display and not bind.noindicator);
                             else
                                 keyName = keyNames[keybind] or keybind.Name or keybind
+                            end
+                            if self.bind ~= 'none' then
+                                bind.state = false
+                                if bind.flag then
+                                    library.flags[bind.flag] = bind.state;
+                                end
+                                self.callback(false)
+                                local display = bind.state; if bind.invertindicator then display = not bind.state; end
+                                bind.indicatorValue:SetEnabled(display and not bind.noindicator);
                             end
                             self.keycallback(self.bind);
                             self:SetKeyText(keyName:upper());
                             self.indicatorValue:SetKey((self.text == nil or self.text == '') and (self.flag == nil and 'unknown' or self.flag) or self.text); -- this is so dumb
                             self.indicatorValue:SetValue('['..keyName:upper()..']');
+                            if self.bind == 'none' then
+                                self.indicatorValue:SetValue('[Always]');
+                            end
                             self.objects.keyText.ThemeColor = self.objects.holder.Hover and 'Accent' or 'Option Text 3';
                         end
     
@@ -2600,6 +2530,11 @@ function library:init()
                                 local key = (table.find({Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2, Enum.UserInputType.MouseButton3}, inp.UserInputType) and not bind.nomouse) and inp.UserInputType
                                 bind:SetBind(key or (not table.find(blacklistedKeys, inp.KeyCode)) and inp.KeyCode)
                                 bind.binding = false
+                            elseif not bind.binding and self.bind == 'none' then
+                                bind.state = true
+                                library.flags[bind.flag] = bind.state
+                                local display = bind.state; if bind.invertindicator then display = not bind.state; end
+                                bind.indicatorValue:SetEnabled(display and not bind.noindicator)
                             elseif (inp.KeyCode == bind.bind or inp.UserInputType == bind.bind) and not bind.binding then
                                 if bind.mode == 'toggle' then
                                     bind.state = not bind.state
@@ -2670,7 +2605,7 @@ function library:init()
                                 slider[i] = v;
                             end
                         end
-                   
+                
                         table.insert(self.options, slider)
 
                         if slider.flag then
@@ -2763,7 +2698,7 @@ function library:init()
                                             if library.numberStrings[inp.KeyCode.Name] then
                                                 local number = library.numberStrings[inp.KeyCode.Name];
                                                 inputNumber = inputNumber..tostring(number);
-						                        objs.text.Text = string.format("%.14g", slider.value) .. tostring(slider.suffix) .. "/" .. slider.max .. tostring(slider.suffix) .. " [" .. inputNumber .. "]";
+                                                objs.text.Text = string.format("%.14g", slider.value) .. tostring(slider.suffix) .. "/" .. slider.max .. tostring(slider.suffix) .. " [" .. inputNumber .. "]";
                                             elseif inp.KeyCode == Enum.KeyCode.Backspace then
                                                 inputNumber = inputNumber:sub(1,-2);
                                                 objs.text.Text = string.format("%.14g", slider.value)..tostring(slider.suffix)..'/'..slider.max..tostring(slider.suffix)..' ['..inputNumber..']';
@@ -3282,7 +3217,7 @@ function library:init()
                             button[i] = v;
                         end
                     end
-           
+        
                     table.insert(self.options, button)
 
                     if button.flag then
@@ -3417,7 +3352,7 @@ function library:init()
                                 button[i] = v;
                             end
                         end
-               
+            
                         table.insert(self.subbuttons, button)
     
                         if button.flag then
@@ -3587,7 +3522,7 @@ function library:init()
                             separator[i] = v;
                         end
                     end
-           
+        
                     table.insert(self.options, separator)
 
                     --- Create Objects ---
@@ -3672,7 +3607,7 @@ function library:init()
                         tooltip = '';
                         order = #self.options+1;
                         callback = function() end;
-                        color = Color3.new(1,.995,.995);
+                        color = Color3.new(1,1,1);
                         trans = 0;
                         open = false;
                         enabled = true;
@@ -3929,7 +3864,16 @@ function library:init()
                         utility:Connection(objs.holder.MouseButton1Down, function()
                             if box.focused then
                                 box:ReleaseFocus();
+                                actionservice:UnbindAction('FreezeMovement');
                             else
+                                actionservice:BindAction(
+                                    'FreezeMovement',
+                                    function()
+                                        return Enum.ContextActionResult.Sink
+                                    end,
+                                    false,
+                                    unpack(Enum.PlayerActions:GetEnumItems())
+                                )
                                 box:CaptureFocus(inputservice:IsKeyDown(Enum.KeyCode.LeftControl));
                                 if inputservice:IsKeyDown(Enum.KeyCode.LeftControl) then
                                     objs.inputText.Text = '';
@@ -3980,11 +3924,40 @@ function library:init()
                             elseif inp.KeyCode == Enum.KeyCode.Backspace then
                                 input = input:sub(1,-2);
                                 self.objects.inputText.Text = input;
-                            elseif #inp.KeyCode.Name == 1 or table.find(whitelistedBoxKeys, inp.KeyCode) or inp.KeyCode.Name ==  'Space' then
+                            elseif #inp.KeyCode.Name == 1 or table.find(whitelistedBoxKeys, inp.KeyCode) or inp.KeyCode.Name == 'Space' or inp.KeyCode.Name == 'Minus' or inp.KeyCode.Name == 'Equals' or inp.KeyCode.Name == 'Backquote' then
                                 local wlIdx = table.find(whitelistedBoxKeys, inp.KeyCode)
-                                local keyString = inp.KeyCode.Name == 'Space' and ' ' or wlIdx ~= nil and tostring(wlIdx-1) or inp.KeyCode.Name
-                                if not (inputservice:IsKeyDown(Enum.KeyCode.LeftShift) or inputservice:IsKeyDown(Enum.KeyCode.RightShift)) then
+                                local keyString = inp.KeyCode.Name == 'Space' and ' ' or inp.KeyCode.Name == 'Minus' and '_' or inp.KeyCode.Name == 'Equals' and '+' or inp.KeyCode.Name == 'Backquote' and '~' or wlIdx ~= nil and tostring(wlIdx-1) or inp.KeyCode.Name
+                                if not (inputservice:IsKeyDown(Enum.KeyCode.LeftShift) and not inputservice:IsKeyDown(Enum.KeyCode.RightShift)) then
                                     keyString = keyString:lower();
+                                    if inp.KeyCode.Name == 'Minus' then
+                                        keyString = '-'
+                                    elseif inp.KeyCode.Name == 'Equals' then
+                                        keyString = '='
+                                    elseif inp.KeyCode.Name == 'Backquote' then
+                                        keyString = '`'
+                                    end
+                                else
+                                    if keyString == '1' then
+                                        keyString = '!'
+                                    elseif keyString == '2' then
+                                        keyString = '@'
+                                    elseif keyString == '3' then
+                                        keyString = '#'
+                                    elseif keyString == '4' then
+                                        keyString = '$'
+                                    elseif keyString == '5' then
+                                        keyString = '%'
+                                    elseif keyString == '6' then
+                                        keyString = '^'
+                                    elseif keyString == '7' then
+                                        keyString = '&'
+                                    elseif keyString == '8' then
+                                        keyString = '*'
+                                    elseif keyString == '9' then
+                                        keyString = '('
+                                    elseif keyString == '0' then
+                                        keyString = ')'
+                                    end
                                 end
                                 input = input..keyString;
                                 self.objects.inputText.Text = input;
@@ -4137,6 +4110,9 @@ function library:init()
                             local key = (table.find({Enum.UserInputType.MouseButton1, Enum.UserInputType.MouseButton2, Enum.UserInputType.MouseButton3}, inp.UserInputType) and not bind.nomouse) and inp.UserInputType
                             bind:SetBind(key or (not table.find(blacklistedKeys, inp.KeyCode)) and inp.KeyCode)
                             bind.binding = false
+                        elseif not bind.binding and self.bind == 'none' then
+                            bind.state = true
+                            library.flags[bind.flag] = bind.state
                         elseif (inp.KeyCode == bind.bind or inp.UserInputType == bind.bind) and not bind.binding then
                             if bind.mode == 'toggle' then
                                 bind.state = not bind.state
@@ -4596,9 +4572,7 @@ function library:init()
             objects = {};
             text = {
                 {self.cheatname, true},
-                {localplayer.Name, false},
-                {localplayer.DisplayName, false},
-                {'dev', true},
+                {self.gamename, true},
                 {'0 fps', true},
                 {'0ms', true},
                 {'00:00:00', true},
@@ -4616,12 +4590,10 @@ function library:init()
                 local daySuffix = math.floor(date[2]%10)
                 date[2] = date[2]..(daySuffix == 1 and 'st' or daySuffix == 2 and 'nd' or daySuffix == 3 and 'rd' or 'th')
 
-                self.text[2][1] = localplayer.Name
-                self.text[3][1] = localplayer.DisplayName
-                self.text[5][1] = library.stats.fps..' fps'
-                self.text[6][1] = floor(library.stats.ping)..'ms'
-                self.text[7][1] = os.date('%X', os.time())
-                self.text[8][1] = table.concat(date, ', ')
+                self.text[4][1] = library.stats.fps..' fps'
+                self.text[5][1] = floor(library.stats.ping)..'ms'
+                self.text[6][1] = os.date('%X', os.time())
+                self.text[7][1] = table.concat(date, ', ')
 
                 local text = {};
                 for _,v in next, self.text do
@@ -4712,12 +4684,10 @@ function library:init()
         end
     end)
 
-    self.keyIndicator = self.NewIndicator({title = 'zuvhook', pos = UDim2.new(0, 449, 0.7, 20.5), enabled = false});
+    self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = newUDim2(0,15,0,325), enabled = false});
     self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
-
-end
 
 function library:CreateSettingsTab(menu)
     local settingsTab = menu:AddTab('Settings', 999);
@@ -4759,7 +4729,7 @@ function library:CreateSettingsTab(menu)
 
     refreshConfigs()
 
-    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.BackSlash, callback = function()
+    mainSection:AddBind({text = 'Open / Close', flag = 'togglebind', nomouse = true, noindicator = true, bind = Enum.KeyCode.End, callback = function()
         library:SetOpen(not library.open)
     end});
 
@@ -4780,29 +4750,41 @@ function library:CreateSettingsTab(menu)
 
     mainSection:AddButton({text = 'Join Discord', flag = 'joindiscord', confirm = true, callback = function()
         local res = syn.request({
-			Url = 'http://127.0.0.1:6463/rpc?v=1',
-			Method = 'POST',
-			Headers = {
-				['Content-Type'] = 'application/json',
-				Origin = 'https://discord.com'
-			},
-			Body = game:GetService('HttpService'):JSONEncode({
-				cmd = 'INVITE_BROWSER',
-				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'tcCDhvz6Uk'}
-			})
-		})
+            Url = 'http://127.0.0.1:6463/rpc?v=1',
+            Method = 'POST',
+            Headers = {
+                ['Content-Type'] = 'application/json',
+                Origin = 'https://discord.com'
+            },
+            Body = game:GetService('HttpService'):JSONEncode({
+                cmd = 'INVITE_BROWSER',
+                nonce = game:GetService('HttpService'):GenerateGUID(false),
+                args = {code = 'arsenic'}
+            })
+        })
         if res.Success then
             library:SendNotification(library.cheatname..' | joined discord', 3);
         end
     end})
-
+    
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('discord.gg/tcCDhvz6Uk')
+        setclipboard('discord.gg/arsenic')
+    end})
+
+    mainSection:AddButton({text = 'Rejoin Server', confirm = true, callback = function()
+        game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, game.JobId);
+    end})
+
+    mainSection:AddButton({text = 'Rejoin Game', confirm = true, callback = function()
+        game:GetService("TeleportService"):Teleport(game.PlaceId);
+    end})
+
+    mainSection:AddButton({text = 'Copy Join Script', callback = function()
+        setclipboard(([[game:GetService("TeleportService"):TeleportToPlaceInstance(%s, "%s")]]):format(game.PlaceId, game.JobId))
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
-        setclipboard('Roblox.GameLauncher.joinGameInstance('..game.PlaceId..',"'..game.JobId..'")')
+        setclipboard(([[Roblox.GameLauncher.joinGameInstance(%s, "%s"))]]):format(game.PlaceId, game.JobId))
     end})
 
     mainSection:AddButton({text = 'Unload', confirm = true, callback = function()
@@ -4817,25 +4799,40 @@ function library:CreateSettingsTab(menu)
     mainSection:AddSlider({text = 'Custom X', flag = 'watermark_x', suffix = '%', min = 0, max = 100, increment = .1});
     mainSection:AddSlider({text = 'Custom Y', flag = 'watermark_y', suffix = '%', min = 0, max = 100, increment = .1});
 
-    local themeStrings = {};
+    local themeStrings = {"Custom"};
     for _,v in next, library.themes do
         table.insert(themeStrings, v.name)
     end
-    local themeSection = settingsTab:AddSection('Theme', 2);
+    local themeTab = menu:AddTab('Theme', 990);
+    local themeSection = themeTab:AddSection('Theme', 1);
+    local setByPreset = false
 
-    themeSection:AddColor({text = 'Accent', flag = 'theme_accent', callback = function(c3)
-        library.theme.Accent = c3
-        library:SetTheme(library.theme)
-    end});
     themeSection:AddList({text = 'Presets', flag = 'preset_theme', values = themeStrings, callback = function(newTheme)
+        if newTheme == "Custom" then return end
+        setByPreset = true
         for _,v in next, library.themes do
             if v.name == newTheme then
-                library.options.theme_accent:SetColor(v.theme.Accent);
+                for x, d in pairs(library.options) do
+                    if v.theme[tostring(x)] ~= nil then
+                        d:SetColor(v.theme[tostring(x)])
+                    end
+                end
                 library:SetTheme(v.theme)
                 break
             end
         end
+        setByPreset = false
     end}):Select('Default');
+
+    for i, v in pairs(library.theme) do
+        themeSection:AddColor({text = i, flag = i, color = library.theme[i], callback = function(c3)
+            library.theme[i] = c3
+            library:SetTheme(library.theme)
+            if not setByPreset and not setByConfig then 
+                library.options.preset_theme:Select('Custom')
+            end
+        end});
+    end
 
     return settingsTab;
 end
