@@ -19,4 +19,4 @@
     
 # Join the Discord
 
-https://discord.gg/arsenicw
+https://discord.gg/arsenic
