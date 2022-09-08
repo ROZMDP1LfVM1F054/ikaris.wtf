@@ -74,7 +74,7 @@ local library = {
         ['colortrans'] = 'https://raw.githubusercontent.com/zuvvymwa/octopngs/main/octohook-main/images/transparency.png';
     };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
-    signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/LSUDEV/LSU-Public/main/Utils/signalrewrite.lua'))();
+    signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/auonn/arsenicscripts/main/resources/octosignal'))();
     open = false;
     opening = false;
     hasInit = false;
