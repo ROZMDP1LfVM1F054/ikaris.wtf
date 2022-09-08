@@ -550,20 +550,7 @@ function lib:Window(text, preset, closebind)
             
             UICorner_2.CornerRadius = UDim.new(0, 5)
             UICorner_2.Parent = StatGui1_2
-            
-            StateTitle.Name = "StateTitle"
-            StateTitle.Parent = MainFrame
-            StateTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            StateTitle.BackgroundTransparency = 1.000
-            StateTitle.BorderSizePixel = 0
-            StateTitle.Position = UDim2.new(0.0533333346, 0, 0, 0)
-            StateTitle.Size = UDim2.new(0, 134, 0, 36)
-            StateTitle.Font = Enum.Font.Gotham
-            StateTitle.Text = title
-            StateTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-            StateTitle.TextSize = 14.000
-            StateTitle.TextWrapped = true
-            
+  
             coroutine.wrap(
                 function()
                     while wait() do
