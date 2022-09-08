@@ -156,6 +156,7 @@ function lib:Window(text, preset, closebind)
                 if uitoggled == false then
                     Main:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
                     uitoggled = true
+                    game:GetService("Lighting").Blur:Destroy()
                     wait(.5)
                     knixhub.Enabled = false
                 else
@@ -168,6 +169,7 @@ function lib:Window(text, preset, closebind)
                     )
                     knixhub.Enabled = true
                     uitoggled = false
+                    local blur = Instance.new("BlurEffect", game.Lighting)
                 end
             end
         end
