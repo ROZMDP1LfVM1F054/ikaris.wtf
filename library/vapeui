@@ -494,7 +494,7 @@ function lib:Window(text, preset, closebind)
 
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
-        function tabcontent:Newindicator(title, value)
+        function tabcontent:Newindicator(value)
             local arsenicStatGui = Instance.new("ScreenGui")
             local MainFrame = Instance.new("Frame")
             local StatColorGui = Instance.new("Frame")
@@ -530,17 +530,6 @@ function lib:Window(text, preset, closebind)
             StatColorGui.Position = UDim2.new(-0.0384415686, 14, 0.178378373, 0)
             StatColorGui.Size = UDim2.new(0, 134, 0, 2)
             
-            StatGui1.Name = "StatGui1"
-            StatGui1.Parent = MainFrame
-            StatGui1.Active = true
-            StatGui1.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-            StatGui1.BorderSizePixel = 0
-            StatGui1.Position = UDim2.new(0, 8, 0.71069181, 0)
-            StatGui1.Size = UDim2.new(0, 134, 0, 31)
-            
-            UIsCorner.CornerRadius = UDim.new(0, 5)
-            UIsCorner.Parent = StatGui1
-            
             StatsTitle2.Name = "StatsTitle2"
             StatsTitle2.Parent = StatGui1
             StatsTitle2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -556,7 +545,7 @@ function lib:Window(text, preset, closebind)
             StatGui1_2.Parent = MainFrame
             StatGui1_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
             StatGui1_2.BorderSizePixel = 0
-            StatGui1_2.Position = UDim2.new(0, 8, 0.227027029, 0)
+            StatGui1_2.Position = UDim2.new(0, 8, 0.71069181, 0)
             StatGui1_2.Size = UDim2.new(0, 134, 0, 31)
             
             UICorner_2.CornerRadius = UDim.new(0, 5)
@@ -574,6 +563,14 @@ function lib:Window(text, preset, closebind)
             StateTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
             StateTitle.TextSize = 14.000
             StateTitle.TextWrapped = true
+            
+            coroutine.wrap(
+                function()
+                    while wait() do
+                        StatColorGui.BackgroundColor3 = PresetColor
+                    end
+                end
+            )()
         end
         function tabcontent:Toggle(text,default, callback)
             local toggled = false
