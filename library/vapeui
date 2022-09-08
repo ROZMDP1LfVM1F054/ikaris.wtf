@@ -15,6 +15,7 @@ ui.Name = "arsenicui"
 ui.Parent = game.CoreGui
 ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+
 coroutine.wrap(
     function()
         while wait() do
@@ -98,6 +99,11 @@ function lib:Window(text, preset, closebind)
     local Title = Instance.new("TextLabel")
     local TabFolder = Instance.new("Folder")
     local DragFrame = Instance.new("Frame")
+    local UICorner = Instance.new("UICorner")
+    
+    UICorner.Name = "UICorner"
+    UICorner.Parent = Main
+    UICorner.CornerRadius = UDim.new(0, 3)
 
     Main.Name = "Main"
     Main.Parent = ui
