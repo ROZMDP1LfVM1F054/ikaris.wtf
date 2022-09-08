@@ -494,63 +494,77 @@ function lib:Window(text, preset, closebind)
 
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
-        function tabcontent:Newindicator(value)
+        function tabcontent:Newindicator(title, value)
             local arsenicStatGui = Instance.new("ScreenGui")
-            local MainFrame = Instance.new("Frame")
+            local Main = Instance.new("Frame")
             local StatColorGui = Instance.new("Frame")
             local StatGui1 = Instance.new("Frame")
-            local UIsCorner = Instance.new("UICorner")
-            local StatsTitle2 = Instance.new("TextLabel")
-            local StatGui1_2 = Instance.new("Frame")
-            local UICorner_2 = Instance.new("UICorner")
+            local UICorner = Instance.new("UICorner")
             local StatsTitle1 = Instance.new("TextLabel")
-            local StatGui2 = Instance.new("Frame")
-            local UICorner_3 = Instance.new("UICorner")
-            local StatsTitle3 = Instance.new("TextLabel")
-            local UICorner_4 = Instance.new("UICorner")
+            local UICorner_2 = Instance.new("UICorner")
             local StateTitle = Instance.new("TextLabel")
+            local UICorner_3 = Instance.new("UICorner")
             
             arsenicStatGui.Name = "arsenicStatGui"
             arsenicStatGui.Parent = game:GetService("CoreGui")
             arsenicStatGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
             
-            MainFrame.Name = "Main"
-            MainFrame.Parent = arsenicStatGui
-            MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
-            MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-            MainFrame.BorderSizePixel = 0
-            MainFrame.ClipsDescendants = true
-            MainFrame.Position = UDim2.new(1.18528402, -447, 0.313736349, 150)
-            MainFrame.Size = UDim2.new(0, 150, 0, 159)
+            Main.Name = "Main"
+            Main.Parent = arsenicStatGui
+            Main.AnchorPoint = Vector2.new(0.5, 0.5)
+            Main.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+            Main.BorderSizePixel = 0
+            Main.ClipsDescendants = true
+            Main.Position = UDim2.new(1.18528402, -447, 0.313736349, 150)
+            Main.Size = UDim2.new(0, 150, 0, 159)
             
             StatColorGui.Name = "StatColorGui"
-            StatColorGui.Parent = MainFrame
+            StatColorGui.Parent = Main
             StatColorGui.BackgroundColor3 = PresetColor
             StatColorGui.BorderSizePixel = 0
             StatColorGui.Position = UDim2.new(-0.0384415686, 14, 0.178378373, 0)
             StatColorGui.Size = UDim2.new(0, 134, 0, 2)
             
-            StatsTitle2.Name = "StatsTitle2"
-            StatsTitle2.Parent = StatGui1
-            StatsTitle2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            StatsTitle2.BackgroundTransparency = 1.000
-            StatsTitle2.Position = UDim2.new(0, -2, -0.0322580636, 0)
-            StatsTitle2.Size = UDim2.new(0, 59, 0, 31)
-            StatsTitle2.Font = Enum.Font.Gotham
-            StatsTitle2.Text = value
-            StatsTitle2.TextColor3 = Color3.fromRGB(255, 255, 255)
-            StatsTitle2.TextSize = 14.000
+            StatGui1.Name = "StatGui1"
+            StatGui1.Parent = Main
+            StatGui1.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+            StatGui1.BorderSizePixel = 0
+            StatGui1.Position = UDim2.new(0, 8, 0.227027029, 0)
+            StatGui1.Size = UDim2.new(0, 134, 0, 31)
             
-            StatGui1_2.Name = "StatGui1"
-            StatGui1_2.Parent = MainFrame
-            StatGui1_2.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-            StatGui1_2.BorderSizePixel = 0
-            StatGui1_2.Position = UDim2.new(0, 8, 0.71069181, 0)
-            StatGui1_2.Size = UDim2.new(0, 134, 0, 31)
+            UICorner.CornerRadius = UDim.new(0, 5)
+            UICorner.Parent = StatGui1
             
-            UICorner_2.CornerRadius = UDim.new(0, 5)
-            UICorner_2.Parent = StatGui1_2
-  
+            StatsTitle1.Name = "StatsTitle1"
+            StatsTitle1.Parent = StatGui1
+            StatsTitle1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            StatsTitle1.BackgroundTransparency = 1.000
+            StatsTitle1.Position = UDim2.new(0.0149253728, 4, 0, 0)
+            StatsTitle1.Size = UDim2.new(0, 68, 0, 31)
+            StatsTitle1.Font = Enum.Font.Gotham
+            StatsTitle1.Text = value
+            StatsTitle1.TextColor3 = Color3.fromRGB(255, 255, 255)
+            StatsTitle1.TextSize = 14.000
+            StatsTitle1.TextXAlignment = Enum.TextXAlignment.Left
+            
+            UICorner_2.CornerRadius = UDim.new(0, 3)
+            UICorner_2.Parent = Main
+            
+            StateTitle.Name = "StateTitle"
+            StateTitle.Parent = Main
+            StateTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+            StateTitle.BackgroundTransparency = 1.000
+            StateTitle.BorderSizePixel = 0
+            StateTitle.Position = UDim2.new(0.0533333346, 0, 0, 0)
+            StateTitle.Size = UDim2.new(0, 134, 0, 36)
+            StateTitle.Font = Enum.Font.Gotham
+            StateTitle.Text = title
+            StateTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+            StateTitle.TextSize = 14.000
+            StateTitle.TextWrapped = true
+            
+            UICorner_3.CornerRadius = UDim.new(0, 3)
+            UICorner_3.Parent = arsenicStatGui
             coroutine.wrap(
                 function()
                     while wait() do
