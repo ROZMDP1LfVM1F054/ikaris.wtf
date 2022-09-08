@@ -1,6 +1,9 @@
 if game:GetService("CoreGui"):FindFirstChild("arsenicui") then
     game:GetService("CoreGui"):FindFirstChild("arsenicui"):Destroy()
 end
+if game:GetService("CoreGui"):FindFirstChild("AkaliNotif") then
+    game:GetService("CoreGui"):FindFirstChild("AkaliNotif"):Destroy()
+end
 local lib = {RainbowColorValue = 0, HueSelectionPosition = 0}
 local UserInputService = game:GetService("UserInputService")
 local TweenService = game:GetService("TweenService")
