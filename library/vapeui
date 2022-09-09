@@ -12,12 +12,12 @@ local CloseBind = Enum.KeyCode.RightControl
 
 local UICornder = Instance.new("UICorner")
 UICornder.Name = "UICorner"
-UICornder.Parent = Main
+UICornder.Parent = game:GetService("CoreGui").arsenicui.Main
 UICornder.CornerRadius = UDim.new(0, 3)
 
 local ui = Instance.new("ScreenGui")
 ui.Name = "arsenicui"
-ui.Parent = game.CoreGui
+ui.Parent = game:GetService("CoreGui")
 ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 coroutine.wrap(
