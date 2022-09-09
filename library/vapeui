@@ -10,6 +10,11 @@ local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
 local CloseBind = Enum.KeyCode.RightControl
 
+local UICornder = Instance.new("UICorner")
+UICornder.Name = "UICorner"
+UICornder.Parent = Main
+UICornder.CornerRadius = UDim.new(0, 3)
+
 local ui = Instance.new("ScreenGui")
 ui.Name = "arsenicui"
 ui.Parent = game.CoreGui
