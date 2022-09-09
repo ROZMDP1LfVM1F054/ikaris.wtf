@@ -250,10 +250,9 @@ function lib:Window(text, preset, closebind)
         local StatGui = Instance.new("Frame")
         local statCorner = Instance.new("UICorner")
         local StatsTitle = Instance.new("TextLabel")
-        local MainFrame = Instance.new("Frame")
 
         StatGui.Name = "StatGui"
-        StatGui.Parent = MainFrame
+        StatGui.Parent = game:GetService("CoreGui").arsenicStatGui.MainFrame
         StatGui.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
         StatGui.BorderSizePixel = 0
         StatGui.Position = UDim2.new(-0.0316901393, 6, 0.0514705889, 0)
