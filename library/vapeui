@@ -1573,78 +1573,90 @@ function lib:Window(text, preset, closebind)
             Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
         end
         function tabcontent:Bind(text, keypreset, callback)
-            local binding = false
-            local Key = keypreset.Name
-            local Bind = Instance.new("TextButton")
-            local BindCorner = Instance.new("UICorner")
-            local BindTitle = Instance.new("TextLabel")
-            local BindText = Instance.new("TextLabel")
+			local binding = false
+			local Key = keypreset.Name
+			local Bind = Instance.new('TextButton')
+			local BindCorner = Instance.new('UICorner')
+			local BindTitle = Instance.new('TextLabel')
+			local BindText = Instance.new('TextLabel')
 
-            Bind.Name = "Bind"
-            Bind.Parent = Tab
-            Bind.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
-            Bind.Size = UDim2.new(0, 363, 0, 42)
-            Bind.AutoButtonColor = false
-            Bind.Font = Enum.Font.SourceSans
-            Bind.Text = ""
-            Bind.TextColor3 = Color3.fromRGB(0, 0, 0)
-            Bind.TextSize = 14.000
+			Bind.Name = 'Bind'
+			Bind.Parent = Tab
+			Bind.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
+			Bind.Size = UDim2.new(0, 363, 0, 42)
+			Bind.AutoButtonColor = false
+			Bind.Font = Enum.Font.SourceSans
+			Bind.Text = ''
+			Bind.TextColor3 = Color3.fromRGB(0, 0, 0)
+			Bind.TextSize = 14.000
 
-            BindCorner.CornerRadius = UDim.new(0, 5)
-            BindCorner.Name = "BindCorner"
-            BindCorner.Parent = Bind
+			BindCorner.CornerRadius = UDim.new(0, 5)
+			BindCorner.Name = 'BindCorner'
+			BindCorner.Parent = Bind
 
-            BindTitle.Name = "BindTitle"
-            BindTitle.Parent = Bind
-            BindTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            BindTitle.BackgroundTransparency = 1.000
-            BindTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
-            BindTitle.Size = UDim2.new(0, 187, 0, 42)
-            BindTitle.Font = Enum.Font.Gotham
-            BindTitle.Text = text
-            BindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
-            BindTitle.TextSize = 14.000
-            BindTitle.TextXAlignment = Enum.TextXAlignment.Left
+			BindTitle.Name = 'BindTitle'
+			BindTitle.Parent = Bind
+			BindTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			BindTitle.BackgroundTransparency = 1.000
+			BindTitle.Position = UDim2.new(0.0358126722, 0, 0, 0)
+			BindTitle.Size = UDim2.new(0, 187, 0, 42)
+			BindTitle.Font = Enum.Font.Gotham
+			BindTitle.Text = text
+			BindTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
+			BindTitle.TextSize = 14.000
+			BindTitle.TextXAlignment = Enum.TextXAlignment.Left
 
-            BindText.Name = "BindText"
-            BindText.Parent = Bind
-            BindText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-            BindText.BackgroundTransparency = 1.000
-            BindText.Position = UDim2.new(0.0358126722, 0, 0, 0)
-            BindText.Size = UDim2.new(0, 337, 0, 42)
-            BindText.Font = Enum.Font.Gotham
-            BindText.Text = Key
-            BindText.TextColor3 = Color3.fromRGB(255, 255, 255)
-            BindText.TextSize = 14.000
-            BindText.TextXAlignment = Enum.TextXAlignment.Right
+			BindText.Name = 'BindText'
+			BindText.Parent = Bind
+			BindText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			BindText.BackgroundTransparency = 1.000
+			BindText.Position = UDim2.new(0.0358126722, 0, 0, 0)
+			BindText.Size = UDim2.new(0, 337, 0, 42)
+			BindText.Font = Enum.Font.Gotham
+			BindText.Text = Key
+			BindText.TextColor3 = Color3.fromRGB(255, 255, 255)
+			BindText.TextSize = 14.000
+			BindText.TextXAlignment = Enum.TextXAlignment.Right
 
-            Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
+			Tab.CanvasSize = UDim2.new(0, 0, 0, TabLayout.AbsoluteContentSize.Y)
 
-            Bind.MouseButton1Click:Connect(
-                function()
-                    BindText.Text = "..."
-                    binding = true
-                    local inputwait = game:GetService("UserInputService").InputBegan:wait()
-                    if inputwait.KeyCode.Name ~= "Unknown" then
-                        BindText.Text = inputwait.KeyCode.Name
-                        Key = inputwait.KeyCode.Name
-                        binding = false
-                    else
-                        binding = false
-                    end
-                end
-            )
+			Bind.MouseButton1Click:Connect(
+				function()
+					BindText.Text = '...'
+					binding = true
+					local inputwait = UserInputService.InputBegan:wait()
+					if inputwait.KeyCode.Name ~= 'Unknown' then
+						BindText.Text = inputwait.KeyCode.Name
+						Key = inputwait.KeyCode.Name
+						binding = false
+					else
+						binding = false
+					end
+				end
+			)
 
-            game:GetService("UserInputService").InputBegan:connect(
-                function(current, pressed)
-                    if not pressed then
-                        if current.KeyCode.Name == Key and binding == false then
-                            pcall(callback)
-                        end
-                    end
-                end
-            )
-        end
+			UserInputService.InputBegan:connect(
+			function(current, pressed)
+				if not pressed then
+					if current.KeyCode.Name == Key and binding == false then
+						pcall(callback)
+					end
+				end
+			end
+			)
+
+			return {
+				Set = function(NewKeybind)
+					if NewKeybind.KeyCode.Name ~= 'Unknown' then
+						BindText.Text = NewKeybind.KeyCode.Name
+						Key = NewKeybind.KeyCode.Name
+						binding = false
+					else
+						binding = false
+					end
+				end;
+			}
+		end
         return tabcontent
     end
     return tabhold
