@@ -190,12 +190,12 @@ function lib:Window(text, preset, closebind)
         local elementsPadding = Instance.new("UIPadding")
         local StatColorGui = Instance.new("Frame")
         local StateTitle = Instance.new("TextLabel")
-        
+
         arsenicStatGui.Name = "arsenicStatGui"
         arsenicStatGui.Parent = game:GetService("CoreGui")
         arsenicStatGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
         arsenicStatGui.ResetOnSpawn = false
-        
+
         MainFrame.Name = "MainFrame"
         MainFrame.Parent = arsenicStatGui
         MainFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
@@ -220,11 +220,11 @@ function lib:Window(text, preset, closebind)
 
         StatColorGui.Name = "StatColorGui"
         StatColorGui.Parent = MainFrame
-        StatColorGui.BackgroundColor3 = PresetColor
+        StatColorGui.BackgroundColor3 = Color3.fromRGB(44, 120, 224)
         StatColorGui.BorderSizePixel = 0
         StatColorGui.Position = UDim2.new(0, 4, 0, 0)
         StatColorGui.Size = UDim2.new(0, 136, 0, 2)
-        
+
         StateTitle.Name = "StateTitle"
         StateTitle.Parent = StatColorGui
         StateTitle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -238,29 +238,24 @@ function lib:Window(text, preset, closebind)
         StateTitle.TextSize = 14.000
         StateTitle.TextWrapped = true
         coroutine.wrap(
-            function()
-                while wait() do
-                    StatColorGui.BackgroundColor3 = PresetColor
-                end
+        function()
+            while wait() do
+                StatColorGui.BackgroundColor3 = PresetColor
             end
-        )()
+        end
+    )()
     end
     
     function lib:createIndicator(value)
         local StatGui = Instance.new("Frame")
-        local statCorner = Instance.new("UICorner")
         local StatsTitle = Instance.new("TextLabel")
 
         StatGui.Name = "StatGui"
-        StatGui.Parent = game:GetService("CoreGui").arsenicStatGui.MainFrame
+        StatGui.Parent = MainFrame
         StatGui.BackgroundColor3 = Color3.fromRGB(34, 34, 34)
         StatGui.BorderSizePixel = 0
         StatGui.Position = UDim2.new(-0.0316901393, 6, 0.0514705889, 0)
         StatGui.Size = UDim2.new(0, 137, 0, 31)
-
-        statCorner.CornerRadius = UDim.new(0, 3)
-        statCorner.Name = "statCorner"
-        statCorner.Parent = StatGui
 
         StatsTitle.Name = "StatsTitle"
         StatsTitle.Parent = StatGui
