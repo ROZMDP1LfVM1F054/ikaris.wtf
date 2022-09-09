@@ -250,6 +250,7 @@ function lib:Window(text, preset, closebind)
         local StatGui = Instance.new("Frame")
         local statCorner = Instance.new("UICorner")
         local StatsTitle = Instance.new("TextLabel")
+        local MainFrame = Instance.new("Frame")
 
         StatGui.Name = "StatGui"
         StatGui.Parent = MainFrame
