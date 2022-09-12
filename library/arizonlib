@@ -635,7 +635,7 @@ end
                     local title10 = Instance.new("TextLabel")
                     title10.Name = "title10"
                     title10.Font = Enum.Font.Gotham
-                    title10.Text = "Aimbot"
+                    title10.Text = title
                     title10.TextColor3 = Color3.fromRGB(195, 195, 195)
                     title10.TextSize = 11
                     title10.TextXAlignment = Enum.TextXAlignment.Left
