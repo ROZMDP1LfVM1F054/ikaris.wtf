@@ -189,30 +189,6 @@ end
 
         --// Menu Events
         
-    local uitoggled = false
-    UserInputService.InputBegan:Connect(
-        function(io, p)
-            if io.KeyCode == Enum.KeyCode.BackSlash then
-                if uitoggled == false then
-                    main:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
-                    uitoggled = true
-                    wait(.5)
-                    arizon.Enabled = false
-                else
-                    Main:TweenSize(
-                        UDim2.new(0, 560, 0, 319),
-                        Enum.EasingDirection.Out,
-                        Enum.EasingStyle.Quart,
-                        .6,
-                        true
-                    )
-                    arizon.Enabled = true
-                    uitoggled = false
-                end
-            end
-        end
-    )
-        
         menu.MouseEnter:Connect(function()
             game:GetService('TweenService'):Create(menu, TweenInfo.new(0.2), {ImageTransparency = 0}):Play()
         end)
@@ -243,6 +219,30 @@ end
         close.MouseLeave:Connect(function()
             game:GetService('TweenService'):Create(close, TweenInfo.new(0.2), {ImageColor3 = Color3.fromRGB(126, 126, 126)}):Play()
         end)
+        
+            local uitoggled = false
+    UserInputService.InputBegan:Connect(
+        function(io, p)
+            if io.KeyCode == Enum.KeyCode.BackSlash then
+                if uitoggled == false then
+                    main:TweenSize(UDim2.new(0, 0, 0, 0), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .6, true)
+                    uitoggled = true
+                    wait(.5)
+                    arizon.Enabled = false
+                else
+                    Main:TweenSize(
+                        UDim2.new(0, 560, 0, 319),
+                        Enum.EasingDirection.Out,
+                        Enum.EasingStyle.Quart,
+                        .6,
+                        true
+                    )
+                    arizon.Enabled = true
+                    uitoggled = false
+                end
+            end
+        end
+    )
 
         close.MouseButton1Click:Connect(function()
             arizon:Destroy()
