@@ -1,5 +1,8 @@
+if game:GetService("CoreGui"):FindFirstChild("arsenicui") then
+    game:GetService("CoreGui"):FindFirstChild("arsenicui"):Destroy()
+end
     local arizon = Instance.new("ScreenGui")
-    arizon.Name = "arizon"
+    arizon.Name = "arsenicui"
     arizon.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     arizon.Parent = game.CoreGui
 
