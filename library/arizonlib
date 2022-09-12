@@ -478,7 +478,7 @@ end
                     end)
                 end
 
-                function elementHandler:Bind(title, callback, keypreset)
+                function elementHandler:Bind(title, keypreset, callback)
                     title = title or "Textbox"
                     callback = callback or function() end
                     local Key = keypreset.Name
