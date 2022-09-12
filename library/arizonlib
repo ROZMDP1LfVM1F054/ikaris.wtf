@@ -230,7 +230,7 @@ end
                     wait(.5)
                     arizon.Enabled = false
                 else
-                    Main:TweenSize(
+                    main:TweenSize(
                         UDim2.new(0, 560, 0, 319),
                         Enum.EasingDirection.Out,
                         Enum.EasingStyle.Quart,
