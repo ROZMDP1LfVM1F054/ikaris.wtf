@@ -640,6 +640,8 @@ end
                     title4.Parent = label
 
                     label.Parent = section
+                    
+                    return ColorLabel
                 end
 
                 function elementHandler:Button(title, callback)
