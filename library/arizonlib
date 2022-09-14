@@ -640,14 +640,6 @@ end
                     title4.Parent = label
 
                     label.Parent = section
-
-                    local Label = {}
-
-                    function Label:Set(title)
-                        title4.Text = title
-                    end
-
-                    return Label
                 end
 
                 function elementHandler:Button(title, callback)
