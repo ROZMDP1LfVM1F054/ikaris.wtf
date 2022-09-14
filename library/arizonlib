@@ -641,7 +641,7 @@ end
 
                     label.Parent = section
                     
-                    return ColorLabel
+                    return title4
                 end
 
                 function elementHandler:Button(title, callback)
