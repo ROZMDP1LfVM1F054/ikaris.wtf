@@ -594,7 +594,7 @@ end
                     title4.Name = "title4"
                     title4.Font = Enum.Font.Gotham
                     title4.Text = title
-                    title4.TextColor3 = Color3.new(195, 195, 195)
+                    title4.TextColor3 = Color3.fromRGB(195, 195, 195)
                     title4.TextSize = 11
                     title4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
                     title4.BackgroundTransparency = 1
