@@ -3,7 +3,7 @@
 **Currently Lunar supported games:**
 
     > The Vampire Origins [IN DEV - PRIVATE]
-    > Heroes: Online World [IN DEV - PRIVATE]
+    > Heroes: Online World [FINISHED - PRIVATE]
     > Deepwoken [IN DEV - PRIVATE]
     > South London 2 [IN DEV - PRIVATE]
     
