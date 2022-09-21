@@ -676,7 +676,7 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     return title4
                 end
 
-                function elementHandler:Notification(title, desc)
+                function AriLibrary:Notification(title, desc)
                     Notify:New(title,desc)
                 end
 
@@ -1045,6 +1045,7 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     end
                 end
             end
+            return AriLibrary
         end)
         return tabHandler
     end
