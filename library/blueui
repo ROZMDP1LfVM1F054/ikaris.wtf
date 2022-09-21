@@ -824,10 +824,10 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
             TextboxHolder.BorderSizePixel = 0
             TextboxHolder.Size = UDim2.new(0, 74, 0, 21)
             TextboxHolder.Position = UDim2.new(0,-2, 0, 0)
-            TextboxHolder.Font = Enum.Font.SourceSans
+            TextboxHolder.Font = Enum.Font.Gotham
             TextboxHolder.Text = ""
             TextboxHolder.TextColor3 = Color3.fromRGB(255, 255, 255)
-            TextboxHolder.TextSize = 14.000
+            TextboxHolder.TextSize = 15.000
             TextboxHolder.TextWrapped = true
             TextboxHolder.FocusLost:Connect(
 				function(ep)
