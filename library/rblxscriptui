@@ -622,7 +622,7 @@ function Forums.new(newName)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
@@ -697,13 +697,13 @@ function Forums.new(newName)
             txtbox.Name = "txtbox"
             txtbox.Parent = textboxFrame
             txtbox.BackgroundColor3 = Color3.fromRGB(109, 43, 43)
-            txtbox.BorderColor3 = Color3.fromRGB(109, 43, 43)
+            txtbox.BorderColor3 = Color3.fromRGB(36, 36, 36)
             txtbox.Position = UDim2.new(0.549000025, 0, 0.172999993, 0)
             txtbox.Size = UDim2.new(0, 176, 0, 20)
 
             TextBox.Parent = txtbox
-            TextBox.BackgroundColor3 = Color3.fromRGB(109, 43, 43)
-            TextBox.BorderColor3 = Color3.fromRGB(109, 43, 43)
+            TextBox.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+            TextBox.BorderColor3 = Color3.fromRGB(36, 36, 36)
             TextBox.ClipsDescendants = true
             TextBox.Position = UDim2.new(0.0340909101, 0, 0, 0)
             TextBox.Size = UDim2.new(0, 149, 0, 20)
@@ -729,7 +729,7 @@ function Forums.new(newName)
             local btn = textboxFrame
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
@@ -830,14 +830,14 @@ function Forums.new(newName)
             sliderText_2.ZIndex = 5
             sliderText_2.Font = Enum.Font.Gotham
             sliderText_2.Text = minvalue
-            sliderText_2.TextColor3 = Color3.fromRGB(235, 93, 93)
+            sliderText_2.TextColor3 = Color3.fromRGB(255, 255, 255)
             sliderText_2.TextSize = 14.000
             sliderText_2.TextXAlignment = Enum.TextXAlignment.Right
 
             SliderButton.Name = "SliderButton"
             SliderButton.Parent = sliderFrame
             SliderButton.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-            SliderButton.BorderColor3 = Color3.fromRGB(109, 43, 43)
+            SliderButton.BorderColor3 = Color3.fromRGB(36, 36, 36)
             SliderButton.Position = UDim2.new(0.397000015, 0, 0.405999988, 0)
             SliderButton.Size = UDim2.new(0, 215, 0, 6)
             SliderButton.AutoButtonColor = false
@@ -848,7 +848,7 @@ function Forums.new(newName)
 
             sliderDrag.Name = "sliderDrag"
             sliderDrag.Parent = SliderButton
-            sliderDrag.BackgroundColor3 = Color3.fromRGB(109, 43, 43)
+            sliderDrag.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
             sliderDrag.BorderSizePixel = 0
             sliderDrag.Position = UDim2.new(0, 0, -0.166666672, 0)
             sliderDrag.Size = UDim2.new(0, 0, 0, 8)
@@ -892,7 +892,7 @@ function Forums.new(newName)
             local btn = sliderFrame
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
@@ -1017,7 +1017,7 @@ function Forums.new(newName)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
@@ -1131,7 +1131,7 @@ function Forums.new(newName)
 
             dropOpen.MouseEnter:Connect(function()
                 game.TweenService:Create(dropOpen, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             dropOpen.MouseLeave:Connect(function()
@@ -1268,7 +1268,7 @@ function Forums.new(newName)
 
                 btn.MouseEnter:Connect(function()
                     game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                        BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                        BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                     }):Play()
                 end)
                 btn.MouseLeave:Connect(function()
@@ -1362,7 +1362,7 @@ function Forums.new(newName)
 
                     btn.MouseEnter:Connect(function()
                         game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                            BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                            BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                         }):Play()
                     end)
                     btn.MouseLeave:Connect(function()
