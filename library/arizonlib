@@ -23,16 +23,16 @@ end
     local NotificationFrame = game:GetObjects("rbxassetid://6924028278")[1]
     NotificationFrame.ZIndex = 4
     NotificationFrame.Parent = NotificationHolder
+    script = NotificationFrame.NotifScript
+local Notify = loadstring(NotificationFrame.NotifScript.Source)()
+
+
 
     function updateCanvasSize(scroll, list, padding)
         local size = list.AbsoluteContentSize;
     
         size = size + Vector2.new(0, padding.PaddingBottom.Offset + padding.PaddingTop.Offset);
         scroll.CanvasSize = UDim2.new(0, size.X, 0, size.Y)
-    end
-    
-    function ArizonLib:Notification(title, desc)
-        Notify:New(title,desc)
     end
 
     function Library:Create(table)
@@ -676,6 +676,10 @@ end
                     return title4
                 end
 
+                function elementHandler:Notification(title, desc)
+                    Notify:New(title,desc)
+                end
+
                 function elementHandler:Button(title, callback)
                     local uIButton = Instance.new("TextButton")
                     uIButton.Name = "uIButton"
@@ -1041,7 +1045,6 @@ end
                     end
                 end
             end
-            return ArizonLib
         end)
         return tabHandler
     end
