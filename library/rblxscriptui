@@ -746,19 +746,6 @@ function Forums.new(newName)
                     TextBox.Text = ""  
                 end
             end)
-            function BoxFunctions:Update(textB)
-                if txtboxText.Text ~= textB then
-                    game.TweenService:Create(txtboxText, TweenInfo.new(0.14, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                        TextTransparency = 1
-                    }):Play()
-                    wait(0.14)
-                    txtboxText.Text = textB
-                    game.TweenService:Create(txtboxText, TweenInfo.new(0.14, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                        TextTransparency = 0
-                    }):Play()
-                end
-            end
-            return BoxFunctions
         end
         function fElements:NewSlider(title, minvalue, maxvalue, callback)
             title = title or ""
