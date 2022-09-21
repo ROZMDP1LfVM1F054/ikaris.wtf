@@ -14,12 +14,25 @@ end
     local LocalPlayer = Players.LocalPlayer
     local Mouse = LocalPlayer:GetMouse()
     local HTTPService = game:GetService("HttpService")
+    
+    local NotificationHolder = Instance.new("ScreenGui")
+    NotificationHolder.Name = tostring(math.random())
+    NotificationHolder.Parent = game.CoreGui
+    NotificationHolder.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+    
+    local NotificationFrame = game:GetObjects("rbxassetid://6924028278")[1]
+    NotificationFrame.ZIndex = 4
+    NotificationFrame.Parent = NotificationHolder
 
     function updateCanvasSize(scroll, list, padding)
         local size = list.AbsoluteContentSize;
     
         size = size + Vector2.new(0, padding.PaddingBottom.Offset + padding.PaddingTop.Offset);
         scroll.CanvasSize = UDim2.new(0, size.X, 0, size.Y)
+    end
+    
+    function Library:Notification(title, desc)
+        Notify:New(title,desc)
     end
 
     function Library:Create(table)
