@@ -823,7 +823,7 @@ function Forums.new(newName)
 
             SliderButton.Name = "SliderButton"
             SliderButton.Parent = sliderFrame
-            SliderButton.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
+            SliderButton.BackgroundColor3 = Color3.fromRGB(0, 32, 96)
             SliderButton.BorderColor3 = Color3.fromRGB(36, 36, 36)
             SliderButton.Position = UDim2.new(0.397000015, 0, 0.405999988, 0)
             SliderButton.Size = UDim2.new(0, 215, 0, 6)
