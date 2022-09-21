@@ -141,7 +141,7 @@ function lib:newIndicator(title)
         StatsTitle1.TextSize = 19.000
         StatsTitle1.TextWrapped = true
         StatsTitle1.TextXAlignment = Enum.TextXAlignment.Left
-        return StatsTitle, StatsTitle
+        return StatsTitle, StatsTitle1
     end
     return libaray
 end
