@@ -696,7 +696,7 @@ function Forums.new(newName)
 
             txtbox.Name = "txtbox"
             txtbox.Parent = textboxFrame
-            txtbox.BackgroundColor3 = Color3.fromRGB(109, 43, 43)
+            txtbox.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             txtbox.BorderColor3 = Color3.fromRGB(36, 36, 36)
             txtbox.Position = UDim2.new(0.549000025, 0, 0.172999993, 0)
             txtbox.Size = UDim2.new(0, 176, 0, 20)
@@ -710,7 +710,7 @@ function Forums.new(newName)
             TextBox.ZIndex = 2
             TextBox.ClearTextOnFocus = false
             TextBox.Font = Enum.Font.Gotham
-            TextBox.PlaceholderColor3 = Color3.fromRGB(255, 101, 101)
+            TextBox.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
             TextBox.PlaceholderText = "Type Here"
             TextBox.Text = ""
             TextBox.TextColor3 = Color3.fromRGB(255, 255, 255)
@@ -1067,7 +1067,7 @@ function Forums.new(newName)
 
             dropFrame.Name = "dropFrame"
             dropFrame.Parent = sectionMain
-            dropFrame.BackgroundColor3 = Color3.fromRGB(84, 33, 33)
+            dropFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             dropFrame.BorderColor3 = Color3.fromRGB(33, 33, 33)
             dropFrame.ClipsDescendants = true
             dropFrame.Position = UDim2.new(0.0113402065, 0, 0.593175828, 0)
@@ -1182,7 +1182,7 @@ function Forums.new(newName)
             expand_more.Size = UDim2.new(0, 25, 0, 25)
             expand_more.ZIndex = 55
             expand_more.Image = "rbxassetid://3926305904"
-            expand_more.ImageColor3 = Color3.fromRGB(235, 93, 93)
+            expand_more.ImageColor3 = Color3.fromRGB(36, 36, 36)
             expand_more.ImageRectOffset = Vector2.new(564, 284)
             expand_more.ImageRectSize = Vector2.new(36, 36)
 
