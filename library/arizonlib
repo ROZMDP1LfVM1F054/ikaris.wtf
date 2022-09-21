@@ -200,6 +200,10 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
         main.Position = UDim2.new(0.5,0,0.5,0)
         shadow.Position = UDim2.new(0.5,0,0.5,0)
 
+        function Library:Notification(title, desc)
+            Notify:New(title,desc)
+        end
+
         --// Menu Events
         
         menu.MouseEnter:Connect(function()
@@ -676,10 +680,6 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     return title4
                 end
 
-                function AriLibrary:Notification(title, desc)
-                    Notify:New(title,desc)
-                end
-
                 function elementHandler:Button(title, callback)
                     local uIButton = Instance.new("TextButton")
                     uIButton.Name = "uIButton"
@@ -1045,7 +1045,6 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     end
                 end
             end
-            return AriLibrary
         end)
         return tabHandler
     end
