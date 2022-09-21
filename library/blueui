@@ -1025,7 +1025,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			SlideCircle.Position = UDim2.new((start or 0)/max, -6,-0.93499995, 0)
 			SlideCircle.Size = UDim2.new(0, 8, 0, 8)
 			SlideCircle.Image = "rbxassetid://3570695787"
-			SlideCircle.ImageTransparency = 0
+			SlideCircle.ImageTransparency = 1
 			SlideCircle.ImageColor3 = Color3.fromRGB(255, 255, 255)
 
 			Value.Name = "Value"
