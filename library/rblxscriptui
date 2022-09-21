@@ -120,7 +120,7 @@ function Forums.new(newName)
     Main.Size = UDim2.new(0,0,0,0) --0, 486, 0, 283
     header.Name = "header"
     header.Parent = Main
-    header.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+    header.BackgroundColor3 = Color3.fromRGB(16, 42, 220)
     header.BorderSizePixel = 0
     header.ClipsDescendants = true
     header.Size = UDim2.new(1.00000012, 0, -0.00295740133, 36)
@@ -147,7 +147,7 @@ function Forums.new(newName)
     triangle1.Position = UDim2.new(-0.302344143, 0, -0.483461976, 0)
     triangle1.Size = UDim2.new(0, 283, 0, 81)
     triangle1.Image = "http://www.roblox.com/asset/?id=6676220228"
-    triangle1.ImageColor3 = Color3.fromRGB(130, 51, 51)
+    triangle1.ImageColor3 = Color3.fromRGB(0, 32, 96)
 
     triangle.Name = "triangle"
     triangle.Parent = header
@@ -158,7 +158,7 @@ function Forums.new(newName)
     triangle.Position = UDim2.new(0.824735582, 0, -0.483461976, 0)
     triangle.Size = UDim2.new(0, 148, 0, 81)
     triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-    triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+    triangle.ImageColor3 = Color3.fromRGB(0, 32, 96)
 
     close.Name = "close"
     close.Parent = header
@@ -209,11 +209,11 @@ function Forums.new(newName)
     newPage.Parent = pages
     newPage.Active = true
     newPage.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
-    newPage.BackgroundTransparency = 1.000
-    newPage.BorderColor3 = Color3.fromRGB(27, 27, 27)
+    newPage.BackgroundTransparency = 0
+    newPage.BorderColor3 = Color3.fromRGB(36, 36, 36)
     newPage.Size = UDim2.new(1, 0, 1, 0)
     newPage.ScrollBarThickness = 3
-    newPage.ScrollBarImageColor3 = Color3.fromRGB(193, 76, 76)
+    newPage.ScrollBarImageColor3 = Color3.fromRGB(36, 36, 36)
     sectionList:GetPropertyChangedSignal("AbsoluteContentSize"):Connect(function()
         newPage.CanvasSize = UDim2.new(0,0,0,sectionList.AbsoluteContentSize.Y) 
     end)
@@ -311,7 +311,7 @@ function Forums.new(newName)
 
             btnFrame.Name = "btnFrame"
             btnFrame.Parent = sectionMain
-            btnFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            btnFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             btnFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             btnFrame.ClipsDescendants = true
             btnFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -345,7 +345,7 @@ function Forums.new(newName)
             triangle.Size = UDim2.new(0, 132, 0, 81)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(36, 36, 36)
 
             Sample.Name = "Sample"
             Sample.Parent = btnFrame
@@ -353,7 +353,7 @@ function Forums.new(newName)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(36, 36, 36)
             Sample.ImageTransparency = 0.600
 
             local ms = game.Players.LocalPlayer:GetMouse()
@@ -382,12 +382,12 @@ function Forums.new(newName)
             end)
             btn.MouseEnter:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(121, 48, 48)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             function ButtonFunctions:Update(textB)
@@ -426,7 +426,7 @@ function Forums.new(newName)
 
             toggleFrame.Name = "toggleFrame"
             toggleFrame.Parent = sectionMain
-            toggleFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            toggleFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             toggleFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             toggleFrame.ClipsDescendants = true
             toggleFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -460,7 +460,7 @@ function Forums.new(newName)
             triangle.Size = UDim2.new(0, 132, 0, 81)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(36, 36, 36)
 
             checkedFramesFrame.Name = "checkedFramesFrame"
             checkedFramesFrame.Parent = toggleFrame
@@ -507,7 +507,7 @@ function Forums.new(newName)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(36, 36, 36)
             Sample.ImageTransparency = 0.600
 
             circle1.Name = "circle1"
@@ -627,7 +627,7 @@ function Forums.new(newName)
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             function ToggleFunctions:Update(textT)
@@ -659,7 +659,7 @@ function Forums.new(newName)
 
             textboxFrame.Name = "textboxFrame"
             textboxFrame.Parent = sectionMain
-            textboxFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            textboxFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             textboxFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             textboxFrame.ClipsDescendants = true
             textboxFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -692,7 +692,7 @@ function Forums.new(newName)
             triangle.Size = UDim2.new(0, 132, 0, 81)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(36, 36, 36)
 
             txtbox.Name = "txtbox"
             txtbox.Parent = textboxFrame
@@ -723,7 +723,7 @@ function Forums.new(newName)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(36, 36, 36)
             Sample.ImageTransparency = 0.600
 
             local btn = textboxFrame
@@ -734,7 +734,7 @@ function Forums.new(newName)
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
             TextBox.FocusLost:Connect(function(EnterPressed)
@@ -776,7 +776,7 @@ function Forums.new(newName)
 
             sliderFrame.Name = "sliderFrame"
             sliderFrame.Parent = sectionMain
-            sliderFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            sliderFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             sliderFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             sliderFrame.ClipsDescendants = true
             sliderFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -793,7 +793,7 @@ function Forums.new(newName)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(36, 36, 36)
             Sample.ImageTransparency = 0.600
 
             triangle.Name = "triangle"
@@ -806,7 +806,7 @@ function Forums.new(newName)
             triangle.Size = UDim2.new(0, 132, 0, 81)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(36, 36, 36)
 
             sliderText.Name = "sliderText"
             sliderText.Parent = sliderFrame
@@ -836,7 +836,7 @@ function Forums.new(newName)
 
             SliderButton.Name = "SliderButton"
             SliderButton.Parent = sliderFrame
-            SliderButton.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            SliderButton.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             SliderButton.BorderColor3 = Color3.fromRGB(109, 43, 43)
             SliderButton.Position = UDim2.new(0.397000015, 0, 0.405999988, 0)
             SliderButton.Size = UDim2.new(0, 215, 0, 6)
@@ -897,7 +897,7 @@ function Forums.new(newName)
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
         end
@@ -915,7 +915,7 @@ function Forums.new(newName)
 
             keybindFrame.Name = "keybindFrame"
             keybindFrame.Parent = sectionMain
-            keybindFrame.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            keybindFrame.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             keybindFrame.BorderColor3 = Color3.fromRGB(27, 27, 27)
             keybindFrame.ClipsDescendants = true
             keybindFrame.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -949,7 +949,7 @@ function Forums.new(newName)
             triangle.Size = UDim2.new(0, 132, 0, 81)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(36, 36, 36)
 
             Sample.Name = "Sample"
             Sample.Parent = keybindFrame
@@ -957,7 +957,7 @@ function Forums.new(newName)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(36, 36, 36)
             Sample.ImageTransparency = 0.600
 
             currentKey.Name = "currentKey"
@@ -1022,7 +1022,7 @@ function Forums.new(newName)
             end)
             btn.MouseLeave:Connect(function()
                 game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
 
@@ -1075,7 +1075,7 @@ function Forums.new(newName)
 
             dropOpen.Name = "dropOpen"
             dropOpen.Parent = dropFrame
-            dropOpen.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            dropOpen.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             dropOpen.BorderColor3 = Color3.fromRGB(27, 27, 27)
             dropOpen.ClipsDescendants = true
             dropOpen.Position = UDim2.new(0.00720164599, 0, 0.241830066, 0)
@@ -1136,7 +1136,7 @@ function Forums.new(newName)
             end)
             dropOpen.MouseLeave:Connect(function()
                 game.TweenService:Create(dropOpen, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                    BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 }):Play()
             end)
 
@@ -1163,7 +1163,7 @@ function Forums.new(newName)
             triangle.Size = UDim2.new(0, 132, 0, 81)
             triangle.ZIndex = 5
             triangle.Image = "http://www.roblox.com/asset/?id=6676220228"
-            triangle.ImageColor3 = Color3.fromRGB(130, 51, 51)
+            triangle.ImageColor3 = Color3.fromRGB(36, 36, 36)
 
             Sample.Name = "Sample"
             Sample.Parent = dropOpen
@@ -1171,7 +1171,7 @@ function Forums.new(newName)
             Sample.BackgroundTransparency = 1.000
             Sample.ZIndex = 2
             Sample.Image = "http://www.roblox.com/asset/?id=4560909609"
-            Sample.ImageColor3 = Color3.fromRGB(71, 27, 27)
+            Sample.ImageColor3 = Color3.fromRGB(36, 36, 36)
             Sample.ImageTransparency = 0.600
 
             expand_more.Name = "expand_more"
@@ -1199,7 +1199,7 @@ function Forums.new(newName)
 
                 dropOption.Name = "dropOption"
                 dropOption.Parent = dropFrame
-                dropOption.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                dropOption.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                 dropOption.BorderColor3 = Color3.fromRGB(30, 30, 30)
                 dropOption.ClipsDescendants = true
                 dropOption.Position = UDim2.new(0, 0, 0.25179857, 0)
@@ -1229,7 +1229,7 @@ function Forums.new(newName)
                 Sample_2.BackgroundTransparency = 1.000
                 Sample_2.ZIndex = 2
                 Sample_2.Image = "http://www.roblox.com/asset/?id=4560909609"
-                Sample_2.ImageColor3 = Color3.fromRGB(71, 27, 27)
+                Sample_2.ImageColor3 = Color3.fromRGB(36, 36, 36)
                 Sample_2.ImageTransparency = 0.600
 
                 local btn = dropOption
@@ -1273,7 +1273,7 @@ function Forums.new(newName)
                 end)
                 btn.MouseLeave:Connect(function()
                     game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                        BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                        BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                     }):Play()
                 end)
             end
@@ -1291,7 +1291,7 @@ function Forums.new(newName)
 
                     dropOption.Name = "dropOption"
                     dropOption.Parent = dropFrame
-                    dropOption.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                    dropOption.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                     dropOption.BorderColor3 = Color3.fromRGB(30, 30, 30)
                     dropOption.ClipsDescendants = true
                     dropOption.Position = UDim2.new(0, 0, 0.25179857, 0)
@@ -1321,7 +1321,7 @@ function Forums.new(newName)
                     Sample_2.BackgroundTransparency = 1.000
                     Sample_2.ZIndex = 2
                     Sample_2.Image = "http://www.roblox.com/asset/?id=4560909609"
-                    Sample_2.ImageColor3 = Color3.fromRGB(71, 27, 27)
+                    Sample_2.ImageColor3 = Color3.fromRGB(36, 36, 36)
                     Sample_2.ImageTransparency = 0.600
 
                     local btn = dropOption
@@ -1367,7 +1367,7 @@ function Forums.new(newName)
                     end)
                     btn.MouseLeave:Connect(function()
                         game.TweenService:Create(btn, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {
-                            BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+                            BackgroundColor3 = Color3.fromRGB(36, 36, 36)
                         }):Play()
                     end)
                 end
@@ -1402,7 +1402,7 @@ function Forums.new(newName)
 
             seperator.Name = "seperator"
             seperator.Parent = sectionMain
-            seperator.BackgroundColor3 = Color3.fromRGB(141, 56, 56)
+            seperator.BackgroundColor3 = Color3.fromRGB(36, 36, 36)
             seperator.BorderColor3 = Color3.fromRGB(27, 27, 27)
             seperator.Size = UDim2.new(0, 474, 0, 2)
         end
