@@ -1321,7 +1321,7 @@ function Forums.new(newName)
                     Sample_2.BackgroundTransparency = 1.000
                     Sample_2.ZIndex = 2
                     Sample_2.Image = "http://www.roblox.com/asset/?id=4560909609"
-                    Sample_2.ImageColor3 = Color3.fromRGB(36, 36, 36)
+                    Sample_2.ImageColor3 = Color3.fromRGB(255, 255, 255)
                     Sample_2.ImageTransparency = 0.600
 
                     local btn = dropOption
