@@ -1,5 +1,7 @@
 -- MADE BY AUON GIVE CREDIT IF YOUR USING IT --
 
+-- MADE BY AUON GIVE CREDIT IF YOUR USING IT --
+
 local lib = {}
 
 function lib:newIndicator(title)
@@ -50,7 +52,7 @@ function lib:newIndicator(title)
     StatsTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
     StatsTitle.TextSize = 19.000
     StatsTitle.TextWrapped = true
-    
+
     TitleLine.Name = "TitleLine"
     TitleLine.Parent = MainFrame
     TitleLine.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
@@ -139,7 +141,8 @@ function lib:newIndicator(title)
         StatsTitle1.TextSize = 19.000
         StatsTitle1.TextWrapped = true
         StatsTitle1.TextXAlignment = Enum.TextXAlignment.Left
-        return lib
+        return StatsTitle, StatsTitle
     end
     return libaray
 end
+return lib
