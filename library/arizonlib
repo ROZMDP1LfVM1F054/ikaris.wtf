@@ -686,7 +686,7 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     local UICorner = Instance.new("UICorner")
                     local BText = Instance.new("TextLabel")
 
-                    textButton1.Name = "textButton1"
+                    textButton1.Name = "Bind"
                     textButton1.Parent = section
                     textButton1.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
                     textButton1.LayoutOrder = -1
@@ -699,17 +699,17 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     textButton1.TextSize = 14.000
 
                     title6.Name = "title6"
-                    title6.Parent = textButton1
-                    title6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                    title6.BackgroundTransparency = 1.000
-                    title6.LayoutOrder = -1
-                    title6.Position = UDim2.new(0.0187999997, 0, 0.218999997, 0)
-                    title6.Size = UDim2.new(0, 20, 0, 20)
                     title6.Font = Enum.Font.Gotham
                     title6.Text = title
                     title6.TextColor3 = Color3.fromRGB(195, 195, 195)
-                    title6.TextSize = 11.000
+                    title6.TextSize = 11
                     title6.TextXAlignment = Enum.TextXAlignment.Left
+                    title6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    title6.BackgroundTransparency = 1
+                    title6.LayoutOrder = -1
+                    title6.Position = UDim2.fromScale(0.0188, 0.219)
+                    title6.Size = UDim2.fromOffset(83, 18)
+                    title6.Parent = textButton1
 
                     UICorner.CornerRadius = UDim.new(0, 5)
                     UICorner.Parent = textButton1
