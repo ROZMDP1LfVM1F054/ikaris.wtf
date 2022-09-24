@@ -679,6 +679,57 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     
                     return title4
                 end
+                
+                function elementHandler:Bind(title, key, callback)
+                    local textButton1 = Instance.new("TextButton")
+                    local title6 = Instance.new("TextLabel")
+                    local UICorner = Instance.new("UICorner")
+                    local BText = Instance.new("TextLabel")
+
+                    textButton1.Name = "textButton1"
+                    textButton1.Parent = section
+                    textButton1.BackgroundColor3 = Color3.fromRGB(32, 32, 32)
+                    textButton1.LayoutOrder = -1
+                    textButton1.Position = UDim2.new(0, 730, 0.462593526, 0)
+                    textButton1.Size = UDim2.new(0, 342, 0, 32)
+                    textButton1.AutoButtonColor = false
+                    textButton1.Font = Enum.Font.SourceSans
+                    textButton1.Text = ""
+                    textButton1.TextColor3 = Color3.fromRGB(0, 0, 0)
+                    textButton1.TextSize = 14.000
+
+                    title6.Name = "title6"
+                    title6.Parent = textButton1
+                    title6.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    title6.BackgroundTransparency = 1.000
+                    title6.LayoutOrder = -1
+                    title6.Position = UDim2.new(0.0187999997, 0, 0.218999997, 0)
+                    title6.Size = UDim2.new(0, 20, 0, 20)
+                    title6.Font = Enum.Font.Gotham
+                    title6.Text = title
+                    title6.TextColor3 = Color3.fromRGB(195, 195, 195)
+                    title6.TextSize = 11.000
+                    title6.TextXAlignment = Enum.TextXAlignment.Left
+
+                    UICorner.CornerRadius = UDim.new(0, 5)
+                    UICorner.Parent = textButton1
+
+                    BText.Name = "BText"
+                    BText.Parent = textButton1
+                    BText.AnchorPoint = Vector2.new(1, 0)
+                    BText.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                    BText.BackgroundTransparency = 1.000
+                    BText.Position = UDim2.new(1, -10, 0, 0)
+                    BText.Selectable = true
+                    BText.Size = UDim2.new(0, 20, 0, 27)
+                    BText.Font = Enum.Font.Gotham
+                    BText.Text = key
+                    BText.TextColor3 = Color3.fromRGB(195, 195, 195)
+                    BText.TextSize = 11.000
+                    BText.TextXAlignment = Enum.TextXAlignment.Right
+                    
+                    return BText
+                end
 
                 function elementHandler:Button(title, callback)
                     local uIButton = Instance.new("TextButton")
