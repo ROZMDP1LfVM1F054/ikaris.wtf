@@ -595,8 +595,12 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     return Slider
                 end
                 
-                function elementHandler:Bind(title, callback)
+                function elementHandler:Bind(title, keypreset, callback)
                     title = title or "Bind"
+                    
+                    local binding = false
+                    local Key = keypreset.Name
+                    
                     callback = callback or function() end
 
                     local bindbox = Instance.new("Frame")
@@ -623,7 +627,7 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     title2.Position = UDim2.fromScale(0.0188, 0.219)
                     title2.Size = UDim2.fromOffset(83, 18)
                     title2.Parent = textbox
-
+                    
                     local status = Instance.new("Frame")
                     status.Name = "status"
                     status.BackgroundColor3 = Color3.fromRGB(31, 152, 82)
@@ -645,10 +649,9 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     frame1.Parent = status
 
                     local Bind = Instance.new("TextBox")
-                    Bind.Name = "textBox"
+                    Bind.Name = "bindBox"
                     Bind.Font = Enum.Font.Gotham
                     Bind.PlaceholderColor3 = Color3.fromRGB(178, 178, 178)
-                    Bind.PlaceholderText = "placeholder text"
                     Bind.Text = ""
                     Bind.TextColor3 = Color3.fromRGB(195, 195, 195)
                     Bind.TextSize = 10
@@ -672,6 +675,26 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
         
                     bindbox.FocusLost:Connect(function()
                         callback(bindbox.Text)
+                    end)
+                    
+                    Bind.MouseButton1Click:Connect(function()
+                        Bind.Text = "..."
+                        binding = true
+                        local inputwait = game:GetService("UserInputService").InputBegan:wait()
+                        if inputwait.KeyCode.Name ~= "Unknown" then
+                            Bind.Text = "..."
+                            Key = inputwait.KeyCode.Name
+                            binding = false
+                        else
+                            binding = false
+                        end
+                    end)
+                    game:GetService("UserInputService").InputBegan:Connect(function(current, pressed)
+                        if not pressed then
+                            if current.KeyCode.Name == Key and binding == false then
+                                pcall(callback)
+                            end
+                        end
                     end)
                 end
                 
