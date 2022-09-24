@@ -678,7 +678,7 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                         binding = true
                         local inputwait = game:GetService("UserInputService").InputBegan:wait()
                         if inputwait.KeyCode.Name ~= "Unknown" then
-                            Bind.Text = "nil"
+                            Bind.Text = inputwait.KeyCode.Name
                             Key = inputwait.KeyCode.Name
                             binding = false
                         else
