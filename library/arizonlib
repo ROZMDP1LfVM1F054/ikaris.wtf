@@ -672,10 +672,6 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                     bindbox.MouseLeave:Connect(function()
                         game:GetService('TweenService'):Create(bindbox, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(32, 32, 32)}):Play()
                     end)
-        
-                    bindbox.FocusLost:Connect(function()
-                        callback(bindbox.Text)
-                    end)
                     
                     Bind.MouseButton1Click:Connect(function()
                         Bind.Text = "..."
