@@ -125,7 +125,7 @@ function lib:newIndicator(title)
         StatsTitle1.Size = UDim2.new(0, 117, 0, 27)
         StatsTitle1.Font = Enum.Font.Gotham
         StatsTitle1.Text = value
-        StatsTitle1.TextColor3 = Color3.fromRGB(255, 255, 255)
+        StatsTitle1.TextColor3 = Color3.fromRGB(195, 195, 195)
         StatsTitle1.TextSize = 14.000
         StatsTitle1.TextWrapped = true
         StatsTitle1.TextXAlignment = Enum.TextXAlignment.Left
