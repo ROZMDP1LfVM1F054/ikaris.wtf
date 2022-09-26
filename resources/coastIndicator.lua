@@ -2,6 +2,10 @@
 
 -- MADE BY AUON GIVE CREDIT IF YOUR USING IT --
 
+if game:GetService("CoreGui"):FindFirstChild("arsenicStatsGui") then
+    game:GetService("CoreGui"):FindFirstChild("arsenicStatsGui"):Destroy()
+end
+
 local lib = {}
 
 function lib:newIndicator(title)
