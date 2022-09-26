@@ -63,7 +63,7 @@ function lib:newIndicator(title)
     TitleLine.BackgroundTransparency = 0.100
     TitleLine.BorderSizePixel = 0
     TitleLine.Position = UDim2.new(0.106666669, 0, 0.172635287, 0)
-    TitleLine.Size = UDim2.new(0, 117, 0, 2)
+    TitleLine.Size = UDim2.new(0, 117, 0, 1)
     
     MainFrameCorner_2.CornerRadius = UDim.new(0, 3)
     MainFrameCorner_2.Name = "MainFrameCorner"
