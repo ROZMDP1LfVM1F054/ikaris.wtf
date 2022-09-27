@@ -3,7 +3,7 @@
 -- MADE BY AUON GIVE CREDIT IF YOUR USING IT --
 
 if game:GetService("CoreGui"):FindFirstChild("arsenicStatsGui") then
-    game:GetService("CoreGui"):FindFirstChild("arsenicStatsGui"):Destroy()
+    game:GetService("CoreGui").arsenicStatsGui:Destroy()
 end
 
 local lib = {}
