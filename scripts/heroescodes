@@ -1,2 +1,2 @@
-game:GetService("ReplicatedStorage").Knit.Services.CodesService.RF.Redeem:InvokeServer(unpack({[1] = "THANKYOUSIR"}))
+game:GetService("ReplicatedStorage").Knit.Services.CodesService.RF.Redeem:InvokeServer(unpack({[1] = "RIVENWANTSMUSAOMG2"}))
 game:GetService("ReplicatedStorage").Knit.Services.CodesService.RF.Redeem:InvokeServer(unpack({[1] = "KAMSIFIED_2"}))
