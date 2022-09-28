@@ -673,7 +673,7 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                         game:GetService('TweenService'):Create(bindbox, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(32, 32, 32)}):Play()
                     end)
                     
-                    _G.Bindings = Bind.MouseButton1Click:Connect(function()
+                    Bind.MouseButton1Click:Connect(function()
                         Bind.Text = "..."
                         binding = true
                         local inputwait = game:GetService("UserInputService").InputBegan:wait()
@@ -686,7 +686,7 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                             binding = false
                         end
                     end)
-                    game:GetService("UserInputService").InputBegan:Connect(function(current, pressed)
+                    _G.Bindings = game:GetService("UserInputService").InputBegan:Connect(function(current, pressed)
                         if not pressed then
                             if current.KeyCode.Name == Key and binding == false then
                                 pcall(callback)
