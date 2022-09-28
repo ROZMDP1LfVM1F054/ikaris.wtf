@@ -681,7 +681,6 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                             Bind.Text = inputwait.KeyCode.Name
                             Key = inputwait.KeyCode.Name
                             binding = false
-                            break;
                         else
                             binding = false
                         end
