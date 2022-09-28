@@ -673,14 +673,15 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                         game:GetService('TweenService'):Create(bindbox, TweenInfo.new(0.2), {BackgroundColor3 = Color3.fromRGB(32, 32, 32)}):Play()
                     end)
                     
-                    Bind.MouseButton1Click:Connect(function()
+                    _G.Bindings = Bind.MouseButton1Click:Connect(function()
                         Bind.Text = "..."
                         binding = true
                         local inputwait = game:GetService("UserInputService").InputBegan:wait()
                         if inputwait.KeyCode.Name ~= "Unknown" then
                             Bind.Text = inputwait.KeyCode.Name
                             Key = inputwait.KeyCode.Name
-                            binding = true
+                            binding = false
+                            _G.Bindings:Disconnect()
                         else
                             binding = false
                         end
