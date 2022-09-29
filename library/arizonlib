@@ -681,13 +681,12 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                             Bind.Text = inputwait.KeyCode.Name
                             Key = inputwait.KeyCode.Name
                             binding = false
-                            _G.Bindings:Disconnect()
                         else
                             binding = false
                         end
                     end)
-                    _G.Bindings = game:GetService("UserInputService").InputBegan:Connect(function(current, pressed)
-                        if not pressed then
+                    game:GetService("UserInputService").InputBegan:Connect(function(current, pressed)
+                        if pressed then
                             if current.KeyCode.Name == Key and binding == false then
                                 pcall(callback)
                             end
