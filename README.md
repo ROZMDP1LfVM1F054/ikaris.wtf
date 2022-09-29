@@ -16,4 +16,4 @@
     
 # Join the Discord
 
-https://discord.gg/lunarscripts
+https://discord.gg/lunarW
