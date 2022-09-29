@@ -686,10 +686,8 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
                         end
                     end)
                     game:GetService("UserInputService").InputBegan:Connect(function(current, pressed)
-                        if pressed then
-                            if current.KeyCode.Name == Key and binding == false then
-                                pcall(callback)
-                            end
+                        if current.KeyCode.Name == Key and binding == false then
+                            pcall(callback)
                         end
                     end)
                 end
