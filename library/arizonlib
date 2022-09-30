@@ -116,6 +116,7 @@ local Notify = loadstring(NotificationFrame.NotifScript.Source)()
         tabContainer.Name = "tabContainer"
         tabContainer.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
         tabContainer.BackgroundTransparency = 0.7
+        tabContainer.BorderSizePixel = 0
         tabContainer.Size = UDim2.fromOffset(361, 246)
         tabContainer.Visible = false
 
