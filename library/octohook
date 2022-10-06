@@ -65,14 +65,14 @@ local library = {
         ['fps'] = 0;
         ['ping'] = 0;
     };
-        images = {
-            ['gradientp90'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/gradientp90.png';
-            ['gradientp45'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/unknown.png';
-            ['colorhue'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/colorhue.png';
-            ['colortrans'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/unknown%20(43).png';
-            ['colorsat1'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/colorsat1.png';
-            ['colorsat2'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/colorsat2.png';
-        };
+    images = {
+        ['gradientp90'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/gradientp90.png';
+        ['gradientp45'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/gradientP45.png';
+        ['colorhue'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/hue.png';
+        ['colorsat1'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/colorsat1.png';
+        ['colorsat2'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/colorsat2.png';
+        ['colortrans'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/images/transparency.png';
+    };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
     signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/auonn/lunarscripts/main/resources/octosignal'))();
     open = false;
@@ -799,22 +799,9 @@ function library:init()
 
     for i,v in next, self.images do
         if not isfile(self.cheatname..'/assets/'..i..'.oh') then
-            printconsole('downloading '..i..' to image cache')
-            writefile(self.cheatname..'/assets/'..i..'.oh',
-                syn.crypt.custom.encrypt(
-                    'aes-ctr',
-                    game:HttpGet(v),
-                    '4XGudgFuutoHUM2Ctwsq4YrQ',
-                    'zP5JJWPSIbf5Xuuy'
-                )
-            )
+            writefile(self.cheatname..'/assets/'..i..'.oh', game:HttpGet(v))
         end
-        self.images[i] = syn.crypt.custom.decrypt(
-            'aes-ctr',
-            readfile(self.cheatname..'/assets/'..i..'.oh'),
-            '4XGudgFuutoHUM2Ctwsq4YrQ',
-            'zP5JJWPSIbf5Xuuy'
-        )
+        self.images[i] = readfile(self.cheatname..'/assets/'..i..'.oh');
     end
 
     self.cursor1 = utility:Draw('Triangle', {Filled = true, Color = fromrgb(255,255,255), ZIndex = self.zindexOrder.cursor});
@@ -4725,7 +4712,7 @@ function library:init()
         end
     end)
 
-    self.keyIndicator = self.NewIndicator({title = 'arsenic', pos = UDim2.new(0,15,0,325), enabled = false});
+    self.keyIndicator = self.NewIndicator({title = 'lunar', pos = UDim2.new(0,15,0,325), enabled = false});
     self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
@@ -4802,7 +4789,7 @@ function library:CreateSettingsTab(menu)
 			Body = game:GetService('HttpService'):JSONEncode({
 				cmd = 'INVITE_BROWSER',
 				nonce = game:GetService('HttpService'):GenerateGUID(false),
-				args = {code = 'arsenic'}
+				args = {code = 'undetected'}
 			})
 		})
         if res.Success then
@@ -4811,7 +4798,7 @@ function library:CreateSettingsTab(menu)
     end})
 
     mainSection:AddButton({text = 'Copy Discord', flag = 'copydiscord', callback = function()
-        setclipboard('discord.gg/arsenic')
+        setclipboard('discord.gg/undetected')
     end})
 
     mainSection:AddButton({text = 'Copy Game Invite', callback = function()
