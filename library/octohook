@@ -65,14 +65,14 @@ local library = {
         ['fps'] = 0;
         ['ping'] = 0;
     };
-    images = {
-        ['gradientp90'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/assets/gradientp90.png';
-        ['gradientp45'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/assets/gradientP45.png';
-        ['colorhue'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/assets/hue.png';
-        ['colorsat1'] = 'https://t5.rbxcdn.com/b6ce2f465dbe0ca4bf88d45ac4be1362';
-        ['colorsat2'] = 'https://t4.rbxcdn.com/0c51aa9d7f2ede5c635c2f44f66be88f';
-        ['colortrans'] = 'https://raw.githubusercontent.com/auonn/octopngs/main/octohook-main/assets/transparency.png';
-    };
+        images = {
+            ['gradientp90'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/gradientp90.png';
+            ['gradientp45'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/unknown.png';
+            ['colorhue'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/colorhue.png';
+            ['colortrans'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/unknown%20(43).png';
+            ['colorsat1'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/colorsat1.png';
+            ['colorsat2'] = 'https://raw.githubusercontent.com/tehtestedd/fonts/main/colorsat2.png';
+        };
     numberStrings = {['Zero'] = 0, ['One'] = 1, ['Two'] = 2, ['Three'] = 3, ['Four'] = 4, ['Five'] = 5, ['Six'] = 6, ['Seven'] = 7, ['Eight'] = 8, ['Nine'] = 9};
     signal = loadstring(game:HttpGet('https://raw.githubusercontent.com/auonn/lunarscripts/main/resources/octosignal'))();
     open = false;
