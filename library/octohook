@@ -4712,11 +4712,12 @@ function library:init()
         end
     end)
 
-    self.keyIndicator = self.NewIndicator({title = 'lunar', pos = UDim2.new(0,15,0,325), enabled = false});
+    library.keyIndicator = library.NewIndicator({title = 'Keybinds', pos = UDim2.new(0,15,0,325), enabled = true})
+    local DashKeybind = library.keyIndicator:AddValue({value = "nil", key = "Dash Bind", enabled = true})
+    local KickKeybind = library.keyIndicator:AddValue({value = "nil", key = "Kick Bind", enabled = true})    
     self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
-
 end
 
 function library:CreateSettingsTab(menu)
