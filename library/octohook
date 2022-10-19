@@ -4713,8 +4713,6 @@ function library:init()
     end)
 
     self.keyIndicator = self.NewIndicator({title = 'Keybinds', pos = UDim2.new(0,15,0,325), enabled = true})
-    self.DashBind = self.keyIndicator:AddValue({key = 'Dash Bind', value = 'nil'})
-    self.KickBind = self.keyIndicator:AddValue({key = 'Kick Bind', value = 'nil'})
     self:SetTheme(library.theme);
     self:SetOpen(true);
     self.hasInit = true
