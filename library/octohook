@@ -18,6 +18,8 @@ if getgenv().library ~= nil then
     getgenv().library:Unload();
 end
 
+library.keyIndicator:SetEnabled(false)
+
 if not game:IsLoaded() then
     game.Loaded:Wait()
 end
@@ -4846,4 +4848,3 @@ end
 
 getgenv().library = library
 return library
-library.keyIndicator:SetEnabled(false)
