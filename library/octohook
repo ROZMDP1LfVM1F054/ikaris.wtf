@@ -4846,3 +4846,4 @@ end
 
 getgenv().library = library
 return library
+library.keyIndicator:SetEnabled(false)
