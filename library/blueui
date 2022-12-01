@@ -836,6 +836,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
                         pcall(callback, TextboxHolder.Text)
 						if disapper then
                             TextboxHolder.Text = ""
+                            TextboxHolder.Text:TweenSize(UDim2.new(0, TextboxHolder.Text.TextBounds.X + 18, 0, 21), Enum.EasingDirection.Out, Enum.EasingStyle.Quart, .4, true)
 						end
 					end
 				end
@@ -853,7 +854,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
             TexboxTitle.TextSize = 14.000
             TexboxTitle.TextXAlignment = Enum.TextXAlignment.Left
 
-            TextboxUICorner.CornerRadius = UDim.new(0, 6)
+            TextboxUICorner.CornerRadius = UDim.new(0, 3)
             TextboxUICorner.Name = "TextBoxCorner"
             TextboxUICorner.Parent = Textbox
 			NewPages.CanvasSize = UDim2.new(0, 0, 0, ElementListing.AbsoluteContentSize.Y)
@@ -935,7 +936,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			ToggleBox.Position = UDim2.new(0.927419364, 0, 0.15625, 0)
 			ToggleBox.Size = UDim2.new(0, 21, 0, 21)
 
-			ToggleBoxCorner.CornerRadius = UDim.new(0, 6)
+			ToggleBoxCorner.CornerRadius = UDim.new(0, 3)
 			ToggleBoxCorner.Name = "ToggleBoxCorner"
 			ToggleBoxCorner.Parent = ToggleBox
 			NewPages.CanvasSize = UDim2.new(0, 0, 0, ElementListing.AbsoluteContentSize.Y)
@@ -1052,7 +1053,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 				Value.Size = UDim2.new(0, 38, 0, 21)
 			end
 
-			ValueCorner.CornerRadius = UDim.new(0, 4)
+			ValueCorner.CornerRadius = UDim.new(0, 3)
 			ValueCorner.Name = "ValueCorner"
 			ValueCorner.Parent = Value  
 
@@ -1458,7 +1459,7 @@ function WindowTable:Window(Htitle,GMtitle,toclose)
 			CurrentColor.Position = UDim2.new(0.927419364, 0, 0.15625, 0)
 			CurrentColor.Size = UDim2.new(0, 21, 0, 21)
 
-			ColorUICorner.CornerRadius = UDim.new(0, 6)
+			ColorUICorner.CornerRadius = UDim.new(0, 3)
 			ColorUICorner.Name = "ColorUICorner"
 			ColorUICorner.Parent = CurrentColor
 			local ColorpickerFrame = Instance.new("TextButton")
