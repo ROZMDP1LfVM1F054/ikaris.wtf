@@ -8,9 +8,21 @@ $hwidTypes = array("Syn-Fingerprint", "Exploit-Guid", "Proto-User-Identifier", "
 
 $database = array(
 	array(
+		"key" => "key_sentinel",
+		"hwid" => "",
+	),
+	array(
+		"key" => "key_sirhurt",
+		"hwid" => "81ECAE2DD1AAADA537121E61D5C0280C"
+	),
+	array(
+		"key" => "key_protosmasher",
+		"hwid" => ""
+	),
+	array(
 		"key" => "key_synapse",
 		"hwid" => "fb78cf2dc8240577ae1819d36d87179fb073347d7f59092375e9e841087103d6d0799ae237c95112dd1e44308d7976fe536015ade95c407bc21ac8d8fbe5f8e4"
-	)
+	),
 );
 
 function fetch_hwid($headers) {
