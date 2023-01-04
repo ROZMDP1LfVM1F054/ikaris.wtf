@@ -9,18 +9,6 @@ $hwidTypes = array("Syn-Fingerprint", "Krnl-Fingerprint");
 $database = array(
 	array(
 		"key" => "key_synapse",
-		"hwid" => "b985e7f0bcd3fc319df2b43b198e8e0722a936193bb3c13ed3c86ce0702f8f3faf2dca45757518a2ca9f858b1854a61f0d87036ce464d8bcd9a0bd7e9742d24b"
-	),
-	array(
-		"key" => "key_synapse",
-		"hwid" => "58205ff13965f5759b70039268e16e42b149fc34f18c40b23f3f6f46563a53970a88f7cd45a5647818f95ec712863a46007cc7c40d4761976cffb1320f8d97e3"
-	),
-	array(
-		"key" => "key_krnl",
-		"hwid" => ""
-	),
-	array(
-		"key" => "key_synapse",
 		"hwid" => "fb78cf2dc8240577ae1819d36d87179fb073347d7f59092375e9e841087103d6d0799ae237c95112dd1e44308d7976fe536015ade95c407bc21ac8d8fbe5f8e4"
 	),
 );
