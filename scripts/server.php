@@ -13,11 +13,11 @@ $database = array(
 	),
 	array(
 		"key" => "key_sirhurt",
-		"hwid" => "81ECAE2DD1AAADA537121E61D5C0280C"
+		"hwid" => ""
 	),
 	array(
-		"key" => "key_protosmasher",
-		"hwid" => ""
+		"key" => "key_synapse",
+		"hwid" => "58205ff13965f5759b70039268e16e42b149fc34f18c40b23f3f6f46563a53970a88f7cd45a5647818f95ec712863a46007cc7c40d4761976cffb1320f8d97e3"
 	),
 	array(
 		"key" => "key_synapse",
