@@ -1,6 +1,6 @@
-local Module = loadstring(game:HttpGet("https://raw.githubusercontent.com/zuvvymwa/zynixdev/main/library/joinui"))()
+local Inviter = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Discord%20Inviter/Source.lua"))()
 
-Module.Prompt({
-    invite = "", -- required
-    name = "" -- optional
+Inviter.Prompt({
+    name = "",
+    invite = "",
 })
