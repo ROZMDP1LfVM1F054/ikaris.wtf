@@ -3809,4 +3809,5 @@ do
     function library:Init()
         library:Initialize()
     end
+    return library
 end
