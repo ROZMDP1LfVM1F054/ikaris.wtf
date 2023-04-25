@@ -183,10 +183,6 @@ function UILibrary.Load(GUITitle)
 	NewInstance.Name = GUITitle
 	NewInstance.Parent = TargetedParent
 	
-	if game.CoreGui:FindFirstChild(GUITitle) then
-           game.CoreGui[GUITitle]:Destroy()
-        end
-	
 	ContainerFrame = Frame()
 	ContainerFrame.Name = "ContainerFrame"
 	ContainerFrame.Size = UDim2.new(0,500,0,300)
