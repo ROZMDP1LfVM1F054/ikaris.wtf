@@ -2,7 +2,8 @@ local startUpArgs = getgenv().startUpArgs or { 'universal', 'public' }
 -- [[
     --obleus remake
     --ignore the shitty code
-    --made by Portal#4849
+    --made by Portal#4849e
+    --edited & decoded by eternal ikaris#2588
 --]]
 
 local drawing  = loadstring(syn.request({Url = 'https://raw.githubusercontent.com/privatestand/ikarisbooth/main/config/drawing_extension.lua', Method = 'GET'}).Body)()
