@@ -281,7 +281,7 @@ function utility.dragify(main, dragoutline, object)
 end;
 --
 local images = {
-    ['gradient'] = loadstring(syn.request({Url = 'https://raw.githubusercontent.com/privatestand/ikarisbooth/main/config/download.png'}));
+    ['gradient'] = 'https://raw.githubusercontent.com/privatestand/ikarisbooth/main/config/download.png'
 }
 
 -- // Functions
