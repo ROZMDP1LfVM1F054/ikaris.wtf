@@ -6241,7 +6241,7 @@ function library:createwatermark(info)
             return
         end
         watermark.update()
-    end
+    ends
     function watermark.update()
         if watermark.objects.holder.Visible then
             watermark.objects.text3.Text = title
