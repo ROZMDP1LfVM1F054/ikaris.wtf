@@ -6,8 +6,8 @@ local startUpArgs = getgenv().startUpArgs or { 'universal', 'public' }
     --edited & decoded by eternal ikaris#2588
 --]]
 
-local drawing  = loadstring(syn.request({Url = 'https://raw.githubusercontent.com/privatestand/ikarisbooth/main/config/drawing_extension.lua', Method = 'GET'}).Body)()
-local tween = loadstring(syn.request({Url = 'https://raw.githubusercontent.com/privatestand/ikarisbooth/main/config/customtween.lua', Method = 'GET'}).Body)()
+local drawing  = loadstring(game:HttpGet('https://raw.githubusercontent.com/privatestand/ikarisbooth/main/config/drawing_extension.lua'));
+local tween = loadstring(game:HttpGet('https://raw.githubusercontent.com/privatestand/ikarisbooth/main/config/customtween.lua'));
 local services = setmetatable({}, {
     __index = function(_, k)
         k = (k == "InputService" and "UserInputService") or k
