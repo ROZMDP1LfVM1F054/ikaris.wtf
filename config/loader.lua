@@ -35,6 +35,10 @@ function MakeUiLoader()
 	SendEffects(Logo, {ImageTransparency = 1}, 0.3)
 	SendEffects(Blur, {Size = 0}, 0.3)
 	wait(0.3)
+
+	wait(5.2)
+
+	ScreenGUI:Destroy()
 end
 
 -- Load the loader
