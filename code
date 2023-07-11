@@ -6250,8 +6250,14 @@ function library:createwatermark(info)
             watermark.objects.holder.Position = position;
         end
     end
-    watermark.setstate(false)
+    watermark.setstate(true)
     return watermark
 end
+
+local watermark = library:createwatermark({
+  title = "Your Watermark Title",
+  position = Vector2.new(30, 101)
+})
+
 
 return library;
