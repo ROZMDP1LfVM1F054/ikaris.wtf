@@ -6255,9 +6255,4 @@ function library:createwatermark(info)
     return watermark
 end
 
-local watermark = library:createwatermark({
-  title = "",
-  position = Vector2.new()
-})
-
 return library;
