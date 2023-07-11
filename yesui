@@ -354,7 +354,7 @@ screenGui.Parent = game:GetService('CoreGui');
 screenGui.Enabled = true;
 library:instance('ImageButton', {
     Parent = screenGui,
-    Visible = true,
+    Visible = false,
     Modal = true,
     Size = UDim2.new(1,0,1,0),
     ZIndex = math.huge,
