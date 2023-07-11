@@ -6185,7 +6185,7 @@ function library:notify(info)
     library.notiflist.reposition()
 end;
 
-function library:createwatermark()
+function library:createwatermark(info)
     local title = info.title or 'watermark'
     title = utility.findtriggers(title)
     local position = info.position or UDim2.new(0, 9.5, 0, 22)
@@ -6255,7 +6255,9 @@ function library:createwatermark()
     return watermark
 end
 
-library:createwatermark()
-
+local watermark = library:createwatermark({
+  title = "",
+  position = Vector2.new()
+})
 
 return library;
