@@ -3073,7 +3073,7 @@ function library:new(cfg)
             left.Position = UDim2.new(0,0,0,275);
             right.Position = UDim2.new(0.5, 14,0,275);
 
-            return window_title
+            return window_title.Text
 
         end;
         function page:server_list(cfg)
