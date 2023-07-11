@@ -2687,36 +2687,58 @@ function library:new(cfg)
     utility.dragify(window_drag, dragoutline, window_outline);
     local name_white = "Title" -- Set an initial value for the name
 
-    local quotes = {
-        "Quote 1",
-        "Quote 2",
-        "Quote 3",
+      local quotes = {
+        {title = name_white, quote = "Quote 1"},
+        {title = name_white, quote = "Quote 2"},
+        {title = name_white, quote = "Quote 3"},
         -- Add more quotes as needed
       }
+            
+      -- Typewriter effect function
+      local function typewriterEffect()
+        local quoteIndex = 1 -- Index to iterate through the quotes table
+        local quoteData = quotes[quoteIndex] -- Initial quote data
       
-    -- Typewriter effect function
-   function typewriterEffect()
-      local quoteIndex = 1 -- Index to iterate through the quotes table
-      local quote = quotes[quoteIndex] -- Initial quote
-    
-      while true do
-        for i = 1, #quote do
-          local partialQuote = quote:sub(1, i) -- Get the partial quote up to the current index
-          window_title.Text = partialQuote -- Update the window title with the partial quote
-          wait(0.05) -- Adjust the delay to control the typewriter speed
+        while true do
+          local title = quoteData.title
+          local quote = quoteData.quote
+      
+          -- Typewriter effect for window title and quote
+          for i = 1, #title do
+            window_title.Text = name_white .. " - " .. title:sub(1, i) -- Update the window title with the partial title
+            wait(0.05) -- Adjust the delay to control the typewriter speed
+          end
+      
+          window_title.Text = name_white .. " - " .. title -- Set the final window title with the complete title
+      
+          wait(1) -- Pause before typing the quote
+      
+          -- Typewriter effect for the quote
+          for i = 1, #quote do
+            window_title_accent.Text = quote:sub(1, i) -- Update the window accent with the partial quote
+            wait(0.05) -- Adjust the delay to control the typewriter speed
+          end
+      
+          window_title_accent.Text = quote -- Set the final window accent with the complete quote
+      
+          wait(2) -- Pause before deleting the quote
+      
+          -- Delete the quote text one character at a time
+          for i = #quote, 1, -1 do
+            window_title_accent.Text = quote:sub(1, i) -- Update the window accent with the partial quote
+            wait(0.05) -- Adjust the delay to control the typewriter speed
+          end
+      
+          quoteIndex = quoteIndex + 1
+          if quoteIndex > #quotes then
+            quoteIndex = 1 -- Start from the beginning of the quotes table
+          end
+          quoteData = quotes[quoteIndex] -- Get the next quote data
         end
-    
-        wait(1) -- Pause between quotes
-    
-        quoteIndex = quoteIndex + 1
-        if quoteIndex > #quotes then
-          quoteIndex = 1 -- Start from the beginning of the quotes table
-        end
-        quote = quotes[quoteIndex] -- Get the next quote
       end
-    end
-    
-    coroutine.wrap(typewriterEffect)() -- Start the typewriter effect in a coroutine
+      
+      coroutine.wrap(typewriterEffect)() -- Start the typewriter effect in a coroutine
+      
     
     -- // Pages
 
