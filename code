@@ -2636,6 +2636,7 @@ function library.object_textbox(box, text, callback, finishedcallback)
         end
     end)
 end
+
 --
 function library:new(cfg)
     -- // Configuration
@@ -2684,9 +2685,39 @@ function library:new(cfg)
     local window_title_accent = library:create("Text", {Text = name_color, Parent = window_outline, Visible = true, Transparency = 1, Theme = "Text", Size = 13, Center = false, Outline = false, Font = Drawing.Fonts.Plex, Position = UDim2.new(0,utility.textlength(name_white, 2, 13).X + 10,0,7), ZIndex = 13});
     --
     utility.dragify(window_drag, dragoutline, window_outline);
-    function window.unload()
+    local name_white = "Title" -- Set an initial value for the name
 
+    local quotes = {
+        "Quote 1",
+        "Quote 2",
+        "Quote 3",
+        -- Add more quotes as needed
+      }
+      
+    -- Typewriter effect function
+   function typewriterEffect()
+      local quoteIndex = 1 -- Index to iterate through the quotes table
+      local quote = quotes[quoteIndex] -- Initial quote
+    
+      while true do
+        for i = 1, #quote do
+          local partialQuote = quote:sub(1, i) -- Get the partial quote up to the current index
+          window_title.Text = partialQuote -- Update the window title with the partial quote
+          wait(0.05) -- Adjust the delay to control the typewriter speed
+        end
+    
+        wait(1) -- Pause between quotes
+    
+        quoteIndex = quoteIndex + 1
+        if quoteIndex > #quotes then
+          quoteIndex = 1 -- Start from the beginning of the quotes table
+        end
+        quote = quotes[quoteIndex] -- Get the next quote
+      end
     end
+    
+    coroutine.wrap(typewriterEffect)() -- Start the typewriter effect in a coroutine
+    
     -- // Pages
 
     function window:page(cfg)
@@ -6254,10 +6285,5 @@ function library:createwatermark(info)
     watermark.setpos('top left')
     return watermark
 end
-
-local watermark = library:createwatermark({
-  title = "",
-  position = Vector2.new()
-})
 
 return library;
