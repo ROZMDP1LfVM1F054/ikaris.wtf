@@ -3072,6 +3072,8 @@ function library:new(cfg)
             --
             left.Position = UDim2.new(0,0,0,275);
             right.Position = UDim2.new(0.5, 14,0,275);
+
+            return cfg.name or cfg.Name
         end;
         function page:server_list(cfg)
             local serverlist = {};
