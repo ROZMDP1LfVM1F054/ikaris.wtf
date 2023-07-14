@@ -280,6 +280,21 @@ function library:create(class, properties, ignore)
 
     return obj
 end;
+
+function library:connect(signal, callback)
+    local connection = signal:Connect(callback)
+    table.insert(library.connections, connection)
+
+    return connection
+end;
+function library:disconnect(connection)
+    local index = table.find(library.connections, connection)
+    connection:Disconnect()
+
+    if index then
+        table.remove(library.connections, index)
+    end
+end;
 local cursor1 = library:create('Quad', { Filled = true, Theme = 'Accent', ZIndex = 1500 });
 local cursor2 = library:create('Quad', { Filled = true, Color = Color3.new(), ZIndex = 1499 });
 
@@ -297,20 +312,6 @@ library:connect(game:GetService('RunService').RenderStepped, function()
         cursor2.PointD = cursor1.PointD + Vector2.new(1, 1)
     end
 end)
-function library:connect(signal, callback)
-    local connection = signal:Connect(callback)
-    table.insert(library.connections, connection)
-
-    return connection
-end;
-function library:disconnect(connection)
-    local index = table.find(library.connections, connection)
-    connection:Disconnect()
-
-    if index then
-        table.remove(library.connections, index)
-    end
-end;
 function library:set_open(bool)
     if typeof(bool) == 'boolean' then
         self.open = bool;
