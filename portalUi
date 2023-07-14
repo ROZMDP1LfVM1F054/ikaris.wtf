@@ -234,12 +234,6 @@ end;
 local images = {
     ['gradient'] = "https://raw.githubusercontent.com/portallol/luna/main/Gradient.png";
 }
-for i,v in next, images do
-    if not isfile(library.settings.folder_name..'/assets/'..i..'.ln') then
-        writefile(library.settings.folder_name..'/assets/'..i..'.ln', 'aes-ctr',game:HttpGet(v),'4XGudgFuutoHUM2Ctwsq4YrQ','zP5JJWPSIbf5Xuuy')
-    end
-    images[i] = 'aes-ctr',readfile(library.settings.folder_name..'/assets/'..i..'.ln'),'4XGudgFuutoHUM2Ctwsq4YrQ','zP5JJWPSIbf5Xuuy'
-end
 -- // Functions
 function library:outline(obj, color, zin, ignore)
     local outline = drawing:new("Square")
