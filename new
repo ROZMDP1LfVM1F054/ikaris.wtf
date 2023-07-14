@@ -2792,12 +2792,13 @@ function library:new(cfg)
                 local min = cfg.min or cfg.minimum or 0;
                 local max = cfg.max or cfg.maximum or 100;
                 local allow = cfg.animation or false;
-                local fade_min = cfg.fade_min or 0;
-                local fade_max = cfg.fade_max or 100;
+                local fade_min = cfg.fade_min or min;
+                local fade_max = cfg.fade_max or max;
                 local suffix = cfg.suffix or cfg.Suffix or "";
                 local text = cfg.text or ("[value]"..suffix);
                 local float = cfg.float or 1;
                 local default = cfg.default and math.clamp(cfg.default, min, max) or min;
+                
                 local flag = cfg.flag or utility.nextflag();
                 local callback = cfg.callback or function() end;
                 -- // Drawings
@@ -2818,28 +2819,28 @@ function library:new(cfg)
                 --
                 local slider_drag = library:create("Square", {Parent = slider_frame, Visible = true, Transparency = 0, Size = UDim2.new(1,0,1,0), Thickness = 1, Filled = true, ZIndex = 14, Position = UDim2.new(0,0,0,0)});
                 --
-                
+
                 -- functions
                 local function set(value)
                     value = math.clamp(utility.round(value, float), min, max)
-            
+
                     slider_value.Text = text:gsub("%[value%]", string.format("%.14g", value))
-            
+
                     local sizeX = ((value - min) / (max - min))
                     slider_fill.Size = UDim2.new(sizeX, 0, 1, 0)
-            
+
                     library.flags[flag] = value
                     callback(value)
                 end
-            
+                flags[flag] = set
                 set(default)
-            
+
                 local sliding = false
-            
+
                 local function slide(input)
                     local sizeX = (input.Position.X - slider_frame.AbsolutePosition.X) / slider_frame.AbsoluteSize.X
                     local value = ((max - min) * sizeX) + min
-            
+
                     set(value)
                 end
 
@@ -2850,33 +2851,33 @@ function library:new(cfg)
                 holder.MouseLeave:Connect(function()
                     library:change_object_theme(slider_frame, "Toggle Background")
                 end)
-            
+
                 library:connect(slider_drag.InputBegan, function(input)
                     if input.UserInputType == Enum.UserInputType.MouseButton1 then
                         sliding = true
                         slide(input)
                     end
                 end)
-            
+
                 library:connect(slider_drag.InputEnded, function(input)
                     if input.UserInputType == Enum.UserInputType.MouseButton1 then
                         sliding = false
                     end
                 end)
-            
+
                 library:connect(slider_fill.InputBegan, function(input)
                     if input.UserInputType == Enum.UserInputType.MouseButton1 then
                         sliding = true
                         slide(input)
                     end
                 end)
-            
+
                 library:connect(slider_fill.InputEnded, function(input)
                     if input.UserInputType == Enum.UserInputType.MouseButton1 then
                         sliding = false
                     end
                 end)
-            
+
                 library:connect(services.InputService.InputChanged, function(input)
                     if input.UserInputType == Enum.UserInputType.MouseMovement then
                         if sliding then
@@ -2898,7 +2899,7 @@ function library:new(cfg)
                         Transparency = 0,
                         ZIndex = 29,
                     })
-    
+
                     local slider_window = library:create("Square", {
                         Filled = true,
                         Thickness = 0,
@@ -2909,10 +2910,11 @@ function library:new(cfg)
                         Position = UDim2.new(1, -185, 1, 6),
                         ZIndex = 29,
                     })
-    
+                    table.insert(fadethings, slider_window)
+
                     local outline3 = library:outline(slider_window, Color3.fromRGB(44,44,44))
                     library:outline(outline3, Color3.fromRGB(0,0,0))
-    
+
                     local windowback = library:create("Square", {
                         Filled = true,
                         Thickness = 0,
@@ -2923,7 +2925,7 @@ function library:new(cfg)
                         Position = UDim2.new(0, 1, 0, 1),
                         ZIndex = 29,
                     })
-    
+
                     local window_page = library:create("Square", {
                         Filled = false,
                         Thickness = 0,
@@ -2936,8 +2938,8 @@ function library:new(cfg)
                         ZIndex = 29
                     })
                     window_page:AddListLayout(3)
-    
-    
+
+
                     local slider_button = library:create("Square", {
                         Filled = true,
                         Thickness = 0,
@@ -2948,25 +2950,30 @@ function library:new(cfg)
                         Visible = true,
                         ZIndex = 29,
                     })
-    
+
                     local isfading = false;
-    
+
                     local fadetext = library:create("Text", {Text = "fading", Parent = slider_button, Visible = true, Transparency = 1, Theme = "Text", Size = 13, Center = true, Outline = false, Font = Drawing.Fonts.Plex, Position = UDim2.new(0.5, 0, 0, 1), ZIndex = 29});
-    
+
                     local outline3 = library:outline(slider_window, Color3.fromRGB(44,44,44))
                     library:outline(outline3, Color3.fromRGB(0,0,0))
-        
+
                     local startslide = library.createslider({parent = window_page, name = "start", flag = library.flags[flag .. "_FADING_START"], min = fade_min, max = fade_max, default = 0, callback = function(state) library.flags[flag .. "_FADING_START"] = state end})
-                
+
                     local endslide = library.createslider({parent = window_page, name = "end", flag = library.flags[flag .. "_FADING_END"], min = fade_min, max = fade_max, default = 0, callback = function(state) library.flags[flag .. "_FADING_END"] = state end})
-                
+
                     local speedslide = library.createslider({parent = window_page, name = "speed", flag = library.flags[flag .. "_FADING_SPEED"], min = 0, max = 500, default = 100, callback = function(state) library.flags[flag .. "_FADING_SPEED"] = state end});
 
                     local function setfade(state)
                         library.flags[flag.."_FADING"] = state
                     end
-    
+
                     question_button.MouseButton1Click:Connect(function()
+                        for i,v in next, fadethings do
+                            if v ~= slider_window then
+                                v.Visible = false
+                            end
+                        end;
                         slider_window.Visible = not slider_window.Visible
                     end)
                     question_button.MouseEnter:Connect(function()
@@ -2985,7 +2992,7 @@ function library:new(cfg)
                             local val = nil
                             if library.flags[flag .. "_FADING"] then
                                 local sinwave = math.abs(math.sin(os.clock() * (library.flags[flag .. "_FADING_SPEED"] / 50)))
-                
+
                                 val = utility.NumberLerp(sinwave, {
                                     [1] = {
                                         start = 0,
@@ -2995,18 +3002,16 @@ function library:new(cfg)
                                         start = 1,
                                         number = library.flags[flag .. "_FADING_END"] + 1,
                                     },
-                                })	
+                                })
                             end
-                            if val ~= nil then 
-                                set(val) 
+                            if val ~= nil then
+                                set(val)
                             end
                         end
                     end)
                     flags[flag .. "_FADING"] = setfade
                 end
-            
-                flags[flag] = set
-            
+
                 function slider:set(value)
                     set(value)
                 end
