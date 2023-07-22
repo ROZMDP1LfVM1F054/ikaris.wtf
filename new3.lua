@@ -227,7 +227,6 @@ local keys = {
 --
 if not isfolder(library.settings.folder_name) then
     makefolder(library.settings.folder_name);
-    makefolder(library.settings.folder_name.."/configs");
     makefolder(library.settings.folder_name.."/assets");
 end;
 --
@@ -4676,7 +4675,7 @@ function library:new(cfg)
     function library:listconfigs(universal)
         local configs = {}
         local placeidfolder = string.format("%s//%s", library.settings.folder_name, game.PlaceId)
-        local universalfolder = folder .. "//universal"
+        local universalfolder = library.settings.folder_name .. "//universal"
 
         for _, config in next, (isfolder(placeidfolder) and listfiles(placeidfolder) or {}) do
             local name = config:gsub(placeidfolder .. "\\", ""):gsub(".json", "")
