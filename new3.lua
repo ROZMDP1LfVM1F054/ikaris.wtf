@@ -367,19 +367,6 @@ function library:change_theme_color(option, color)
         end
     end
 end;
-function library:load_config(cfg_name)
-    if isfile(cfg_name) then
-        local file = readfile(cfg_name)
-        local config = game:GetService("HttpService"):JSONDecode(file)
-
-        for flag, v in next, config do
-            local func = flags[flag]
-            if func then
-                func(v)
-            end
-        end
-    end
-end;
 -- // UI Functions
 local pickers = {};
 local innerpickers = {};
@@ -4625,27 +4612,85 @@ function library:new(cfg)
         return page;
     end;
     --
-    function window:get_config()
+    function library:saveconfig(name, universal)
         local configtbl = {}
+        local placeid = universal and "universal" or game.PlaceId
 
         for flag, _ in next, flags do
-            if not table.find(configignores, flag) then
-                local value = library.flags[flag]
-
-                if typeof(value) == "EnumItem" then
-                    configtbl[flag] = tostring(value)
-                elseif typeof(value) == "Color3" then
-                    configtbl[flag] = {color = value:ToHex(), alpha = value.A}
-                else
-                    configtbl[flag] = value
-                end
+            local value = library.flags[flag]
+            if typeof(value) == "EnumItem" then
+                configtbl[flag] = tostring(value)
+            elseif typeof(value) == "Color3" then
+                configtbl[flag] = { math.floor(value.R * 255), math.floor(value.G * 255), math.floor(value.B * 255) }
+            else
+                configtbl[flag] = value
             end
         end
 
-        local config = game:GetService("HttpService"):JSONEncode(configtbl)
-        --
-        return config
-    end;
+        local config = services.HttpService:JSONEncode(configtbl)
+        local folderpath = string.format("%s//%s", library.settings.folder_name, placeid)
+
+        if not isfolder(folderpath) then
+            makefolder(folderpath)
+        end
+
+        local filepath = string.format("%s//%s.json", folderpath, name)
+        writefile(filepath, config)
+    end
+
+    function library:deleteconfig(name, universal)
+        local placeid = universal and "universal" or game.PlaceId
+
+        local folderpath = string.format("%s//%s", library.settings.folder_name, placeid)
+
+        if isfolder(folderpath) then
+            local folderpath = string.format("%s//%s", library.settings.folder_name, placeid)
+            local filepath = string.format("%s//%s.json", library.settings.folder_name, name)
+
+            delfile(filepath)
+        end
+    end
+
+    function library:loadconfig(name)
+        local placeidfolder = string.format("%s//%s", library.settings.folder_name, game.PlaceId)
+        local placeidfile = string.format("%s//%s.json", placeidfolder, name)
+
+        local filepath
+        do
+            if isfolder(placeidfolder) and isfile(placeidfile) then
+                filepath = placeidfile
+            else
+                filepath = string.format("%s//universal//%s.json", folder, name)
+            end
+        end
+
+        local file = readfile(filepath)
+        local config = services.HttpService:JSONDecode(file)
+
+        for flag, v in next, config do
+            local func = flags[flag]
+            func(v)
+        end
+    end
+
+    function library:listconfigs(universal)
+        local configs = {}
+        local placeidfolder = string.format("%s//%s", library.settings.folder_name, game.PlaceId)
+        local universalfolder = folder .. "//universal"
+
+        for _, config in next, (isfolder(placeidfolder) and listfiles(placeidfolder) or {}) do
+            local name = config:gsub(placeidfolder .. "\\", ""):gsub(".json", "")
+            table.insert(configs, name)
+        end
+
+        if universal and isfolder(universalfolder) then
+            for _, config in next, (isfolder(placeidfolder) and listfiles(placeidfolder) or {}) do
+                configs[config:gsub(universalfolder .. "\\", "")] = readfile(config)
+            end
+        end
+
+        return configs
+    end
     -- // Return
     return window;
 end;
