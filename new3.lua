@@ -4650,25 +4650,17 @@ function library:new(cfg)
         end
     end
 
-    function library:loadconfig(name)
-        local placeidfolder = string.format("%s//%s", library.settings.folder_name, game.PlaceId)
-        local placeidfile = string.format("%s//%s.json", placeidfolder, name)
-
-        local filepath
-        do
-            if isfolder(placeidfolder) and isfile(placeidfile) then
-                filepath = placeidfile
-            else
-                filepath = string.format("%s//universal//%s.json", folder, name)
+    function library:loadconfig(cfg_name)
+        if isfile(cfg_name) then
+            local file = readfile(cfg_name)
+            local config = game:GetService("HttpService"):JSONDecode(file)
+    
+            for flag, v in next, config do
+                local func = flags[flag]
+                if func then
+                    func(v)
+                end
             end
-        end
-
-        local file = readfile(filepath)
-        local config = services.HttpService:JSONDecode(file)
-
-        for flag, v in next, config do
-            local func = flags[flag]
-            func(v)
         end
     end
 
