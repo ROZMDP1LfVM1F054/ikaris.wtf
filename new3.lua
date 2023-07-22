@@ -4667,8 +4667,10 @@ function library:new(cfg)
         local config = services.HttpService:JSONDecode(file)
 
         for flag, v in next, config do
-            local func = library.flags[flag]
-            func(v)
+            local func = flags[flag]
+            if func then
+                func(v)
+            end
         end
     end
 
