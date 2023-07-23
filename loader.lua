@@ -1,4 +1,4 @@
-local IMAGE_URL = IMAGE_URL
+local IMAGE_URL = "http://www.roblox.com/asset/?id=13869594717"
 
 local DURATION = 5
 local END_POSITION = Vector3.new(10, 20, 8)
