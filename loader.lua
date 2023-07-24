@@ -50,8 +50,8 @@ local function createImage()
 
     SendEffects(image, {ImageTransparency = 0}, 0.6, Enum.EasingStyle.Quad, Enum.EasingDirection.Out)
     
-    task.delay(0.8, function()
-        SendEffects(image, {ImageTransparency = 1}, 0.8, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
+    task.delay(0.9, function()
+        SendEffects(image, {ImageTransparency = 1}, 1, Enum.EasingStyle.Quad, Enum.EasingDirection.In)
     end)
 
     imageLabel = image
