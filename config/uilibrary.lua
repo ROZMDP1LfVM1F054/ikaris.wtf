@@ -3,7 +3,7 @@
     --made by Portal
     --leaked by fiji and mirrored
 --]]
-local drawing = loadstring(game:HttpGet("https://gist.githubusercontent.com/notportal/17d44958f38f00d9aeca86c59171a896/raw/ac588beb1ebf53a27a098aca28e2b5125e7e6d6b/newextension.lua"))();
+local drawing = loadstring(game:HttpGet("https://raw.githubusercontent.com/ROZMDP1LfVM1F054/ikaris.wtf/main/config/drawing_extension.lua"))();
 local tween = loadstring(game:HttpGet("https://raw.githubusercontent.com/vozoid/utility/main/Tween.lua"))();
 local services = setmetatable({}, {
     __index = function(_, k)
