@@ -4774,5 +4774,4 @@ function library:notify(info)
     library.notiflist.reposition()
     
 end;
-print('loaded')
 return library;
