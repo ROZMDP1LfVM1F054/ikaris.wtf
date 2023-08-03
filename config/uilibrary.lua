@@ -160,7 +160,7 @@ end;
 -- // Library
 local themes = {
     ["Default"] = {
-        ["Accent"] = Color3.fromRGB(255, 84, 84);
+        ["Accent"] = Color3.fromRGB(121, 119, 152);
         ["Un-Selected"] = Color3.fromRGB(55,55,55);
         ["Un-Selected_Text"] = Color3.fromRGB(118,118,118);
         ["Text"] = Color3.fromRGB(175,175,175);
